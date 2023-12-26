@@ -27,6 +27,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [App\Http\Controllers\FrontendController::class, 'index'])->name('home');
 Route::get('/about', [App\Http\Controllers\FrontendController::class, 'about'])->name('about');
 Route::get('/accommodation', [App\Http\Controllers\FrontendController::class, 'accommodation'])->name('accommodation');
+Route::get('/meeting-and-event', [App\Http\Controllers\FrontendController::class, 'meet'])->name('meet');
+Route::get('/dine-in', [App\Http\Controllers\FrontendController::class, 'dinein'])->name('dinein');
+Route::get('/Beauty-and-wellness', [App\Http\Controllers\FrontendController::class, 'beauty'])->name('beauty');
+Route::get('/Hyderabad-Attractions', [App\Http\Controllers\FrontendController::class, 'hyderabad_attractions'])->name('hyderabad_attractions');
 
 Auth::routes(['register' => false]);
 

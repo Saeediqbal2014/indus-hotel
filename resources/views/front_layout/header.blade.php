@@ -96,12 +96,12 @@
                                             <li><a href="room-noori-suite.php">Noori Suite</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="meeting-and-events.php">Meeting & Event</a>
+                                    <li><a href="{{ route('meet') }}">Meeting & Event</a>
                                     </li>
-                                    <li><a href="dine-in.php">Dine In</a>
+                                    <li><a href="{{ route('dinein') }}">Dine In</a>
                                     </li>
-                                    <li><a href="beauty-and-wellness.php">Beauty & Wellness</a></li>
-                                    <li><a href="hyderabad-attractions.php">Hyderabad Attractions</a></li>
+                                    <li><a href="{{ route('beauty') }}">Beauty & Wellness</a></li>
+                                    <li><a href="{{ route('hyderabad_attractions') }}">Hyderabad Attractions</a></li>
                                     <li><a href="contact.php">Contact Us</a></li>
                                 </ul>
                             </nav>

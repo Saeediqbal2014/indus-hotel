@@ -20,4 +20,23 @@ class FrontendController extends Controller
     {
         return view('frontend.accommodation');
     }
+
+    public function meet()
+    {
+        return view('frontend.meeting-and-event');
+    }
+
+    public function dinein()
+    {
+        return view('frontend.dine-in');
+    }
+    public function beauty()
+    {
+        return view('frontend.beauty-and-wellness');
+    }
+
+    public function hyderabad_attractions()
+    {
+        return view('frontend.hyderabad-attractions');
+    }
 }

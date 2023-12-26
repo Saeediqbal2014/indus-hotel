@@ -1,5 +1,5 @@
 @extends('front_layout.app')
-@section('title', 'Accommodation')
+@section('title', 'Meeting and event')
 @section('content')
     <!-- Sticky Header  -->
     <div class="sticky-header">
@@ -31,7 +31,7 @@
     <!--End Main Header -->
 
     <!-- Start main-content -->
-    <section class="page-title" style="background-image: url(images/background/hall_bg.jpg);">
+    <section class="page-title" style="background-image: url({{ asset('front_assets/images/background/hall_bg.jpg') }});">
         <div class="auto-container">
             <div class="title-outer text-center">
                 <h3 class="meeting-title"> Start Planning Your Meetings or Events Here
@@ -88,9 +88,9 @@
                         </div>
                         <div class="content-box">
                             <!-- <ul class="post-info">
-                                                                        <li><i class="fa-solid fa-ruler-triangle"></i>Area <span class="area-size-span">5350</span></li>
-                                                                        <li><i class="fa-solid fa-ruler-combined"></i>Dimensions <span class="area-size-span">107' x 50' x 14'</span></li>
-                                                                      </ul> -->
+                                                                                                                                            <li><i class="fa-solid fa-ruler-triangle"></i>Area <span class="area-size-span">5350</span></li>
+                                                                                                                                            <li><i class="fa-solid fa-ruler-combined"></i>Dimensions <span class="area-size-span">107' x 50' x 14'</span></li>
+                                                                                                                                          </ul> -->
                             <h4 class="title"><a href="#">CONTINENTAL HALL</a></h4>
                             <div class="hall_facilities">
                                 <ul class="post-info">
@@ -152,9 +152,8 @@
                         </div>
                         <div class="content-box">
                             <!-- <ul class="post-info">
-                                                                        <li><i class="fa-solid fa-ruler-triangle"></i>Area <span class="area-size-span">3000</span></li>
-                                                                        <li><i class="fa-solid fa-ruler-combined"></i>Dimensions <span class="area-size-span">60' x 50' x 13'</span></li>
-                                                                      </ul> -->
+                                    <li><i class="fa-solid fa-ruler-triangle"></i>Area <span class="area-size-span">3000</span></li>
+                                    </ul> -->
                             <h4 class="title"><a href="#">CRYSTAL HALL</a></h4>
                             <div class="hall_facilities">
                                 <ul class="post-info">
@@ -201,9 +200,9 @@
                         </div>
                         <div class="content-box">
                             <!-- <ul class="post-info">
-                                                                        <li><i class="fa-solid fa-ruler-triangle"></i>Area <span class="area-size-span">921.4</span></li>
-                                                                        <li><i class="fa-solid fa-ruler-combined"></i>Dimensions <span class="area-size-span">34' x 27.10' x 9.5'</span></li>
-                                                                      </ul> -->
+                                                                                                                                            <li><i class="fa-solid fa-ruler-triangle"></i>Area <span class="area-size-span">921.4</span></li>
+                                                                                                                                            <li><i class="fa-solid fa-ruler-combined"></i>Dimensions <span class="area-size-span">34' x 27.10' x 9.5'</span></li>
+                                                                                                                                          </ul> -->
                             <h4 class="title"><a href="#">DIAMOND HALL</a></h4>
                             <div class="hall_facilities">
                                 <ul class="post-info">
@@ -246,9 +245,9 @@
                         </div>
                         <div class="content-box">
                             <!-- <ul class="post-info">
-                                                                        <li><i class="fa-solid fa-ruler-triangle"></i>Area <span class="area-size-span">1676.01</span></li>
-                                                                        <li><i class="fa-solid fa-ruler-combined"></i>Dimensions <span class="area-size-span">48.3' x 34.7' x 13'</span></li>
-                                                                      </ul> -->
+                                                                                                                                            <li><i class="fa-solid fa-ruler-triangle"></i>Area <span class="area-size-span">1676.01</span></li>
+                                                                                                                                            <li><i class="fa-solid fa-ruler-combined"></i>Dimensions <span class="area-size-span">48.3' x 34.7' x 13'</span></li>
+                                                                                                                                          </ul> -->
                             <h4 class="title"><a href="#">PEARL HALL</a></h4>
                             <div class="hall_facilities">
                                 <ul class="post-info">
@@ -291,9 +290,9 @@
                         </div>
                         <div class="content-box">
                             <!-- <ul class="post-info">
-                                                                        <li><i class="fa-solid fa-ruler-triangle"></i>Area <span class="area-size-span">951.21</span></li>
-                                                                        <li><i class="fa-solid fa-ruler-combined"></i>Dimensions <span class="area-size-span">35.1' x 27.10' x 13'</span></li>
-                                                                      </ul> -->
+                                                                                                                                            <li><i class="fa-solid fa-ruler-triangle"></i>Area <span class="area-size-span">951.21</span></li>
+                                                                                                                                            <li><i class="fa-solid fa-ruler-combined"></i>Dimensions <span class="area-size-span">35.1' x 27.10' x 13'</span></li>
+                                                                                                                                          </ul> -->
                             <h4 class="title"><a href="#">MARVI HALL</a></h4>
                             <div class="hall_facilities">
                                 <ul class="post-info">
@@ -334,9 +333,9 @@
                         </div>
                         <div class="content-box">
                             <!-- <ul class="post-info">
-                                                                        <li><i class="fa-solid fa-ruler-triangle"></i>Area <span class="area-size-span">664</span></li>
-                                                                        <li><i class="fa-solid fa-ruler-combined"></i>Dimensions <span class="area-size-span">33.2' x 20' x 13'</span></li>
-                                                                      </ul> -->
+                                                                                                                                            <li><i class="fa-solid fa-ruler-triangle"></i>Area <span class="area-size-span">664</span></li>
+                                                                                                                                            <li><i class="fa-solid fa-ruler-combined"></i>Dimensions <span class="area-size-span">33.2' x 20' x 13'</span></li>
+                                                                                                                                          </ul> -->
                             <h4 class="title"><a href="#">JASMINE HALL</a></h4>
                             <div class="hall_facilities">
                                 <ul class="post-info">
@@ -383,9 +382,9 @@
                         </div>
                         <div class="content-box">
                             <!-- <ul class="post-info">
-                                                                        <li><i class="fa-solid fa-ruler-triangle"></i>Area <span class="area-size-span">264</span></li>
-                                                                        <li><i class="fa-solid fa-ruler-combined"></i>Dimensions <span class="area-size-span">20' x 13.2' x 10'</span></li>
-                                                                      </ul> -->
+                                                                                                                                            <li><i class="fa-solid fa-ruler-triangle"></i>Area <span class="area-size-span">264</span></li>
+                                                                                                                                            <li><i class="fa-solid fa-ruler-combined"></i>Dimensions <span class="area-size-span">20' x 13.2' x 10'</span></li>
+                                                                                                                                          </ul> -->
                             <h4 class="title"><a href="#">CONFERENCE ROOM</a></h4>
                             <div class="hall_facilities">
                                 <ul class="post-info">
@@ -426,9 +425,9 @@
                         </div>
                         <div class="content-box">
                             <!-- <ul class="post-info">
-                                                                        <li><i class="fa-solid fa-ruler-triangle"></i>Area <span class="area-size-span">271.92</span></li>
-                                                                        <li><i class="fa-solid fa-ruler-combined"></i>Dimensions <span class="area-size-span">20.6' x 13.2' x 13'</span></li>
-                                                                      </ul> -->
+                                                                                                                                            <li><i class="fa-solid fa-ruler-triangle"></i>Area <span class="area-size-span">271.92</span></li>
+                                                                                                                                            <li><i class="fa-solid fa-ruler-combined"></i>Dimensions <span class="area-size-span">20.6' x 13.2' x 13'</span></li>
+                                                                                                                                          </ul> -->
                             <h4 class="title"><a href="#">COMMITTEE ROOM</a></h4>
                             <div class="hall_facilities">
                                 <ul class="post-info">
@@ -475,9 +474,9 @@
                         </div>
                         <div class="content-box">
                             <!-- <ul class="post-info">
-                                                                        <li><i class="fa-solid fa-ruler-triangle"></i>Area <span class="area-size-span">466.9</span></li>
-                                                                        <li><i class="fa-solid fa-ruler-combined"></i>Dimensions <span class="area-size-span">23' x 20.3' x 12'</span></li>
-                                                                      </ul> -->
+                                                                                                                                            <li><i class="fa-solid fa-ruler-triangle"></i>Area <span class="area-size-span">466.9</span></li>
+                                                                                                                                            <li><i class="fa-solid fa-ruler-combined"></i>Dimensions <span class="area-size-span">23' x 20.3' x 12'</span></li>
+                                                                                                                                          </ul> -->
                             <h4 class="title"><a href="#">SENATE ROOM</a></h4>
                             <div class="hall_facilities">
                                 <ul class="post-info">
