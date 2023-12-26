@@ -86,7 +86,7 @@
                                     </li>
                                     <li><a href="{{ route('accommodation') }}">Accommodation</a>
                                         <ul>
-                                            <li><a href="deluxe_rooms.php">Deluxe Rooms</a></li>
+                                            <li><a href="{{ route('delux') }}">Deluxe Rooms</a></li>
                                             <li><a href="executive_rooms.php">Executive Rooms</a></li>
                                             <li><a href="executive_gold_rooms.php">Executive Gold Rooms</a></li>
                                             <li><a href="room-presidential-suite.php">Presidential Suite</a></li>
@@ -102,7 +102,7 @@
                                     </li>
                                     <li><a href="{{ route('beauty') }}">Beauty & Wellness</a></li>
                                     <li><a href="{{ route('hyderabad_attractions') }}">Hyderabad Attractions</a></li>
-                                    <li><a href="contact.php">Contact Us</a></li>
+                                    <li><a href="{{ route('contact') }}">Contact Us</a></li>
                                 </ul>
                             </nav>
                             <!-- Main Menu End-->

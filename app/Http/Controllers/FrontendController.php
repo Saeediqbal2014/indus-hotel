@@ -39,4 +39,14 @@ class FrontendController extends Controller
     {
         return view('frontend.hyderabad-attractions');
     }
+
+    public function contact()
+    {
+        return view('frontend.contact');
+    }
+
+    public function delux()
+    {
+        return view('frontend.deluxe_rooms');
+    }
 }

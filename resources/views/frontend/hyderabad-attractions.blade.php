@@ -2,7 +2,7 @@
 @section('title', 'Beauty and wellness')
 @section('content')
     <!-- Start main-content -->
-    <section class="page-title" style="background-image: url(images/banner/experiance.jpg);">
+    <section class="page-title" style="background-image: url({{ asset('front_assets/images/banner/experiance.jpg') }});">
         <div class="auto-container">
             <div class="title-outer text-center">
                 <h1 class="title">Hyderabad Attractions</h1>
@@ -258,80 +258,53 @@
                         </div>
                     </div>
                 </div>
-
-                <!--
-                                                                                                                                                    <div class="row">
-                                                                                                                                                            <h4 class="mb_40 mt_40 nearest_places">Nearest Restaurant & Cafe</h4>
-                                                                                                                                                            <div class="near_place_box col-lg-4 col-md-12 col-sm-12">
-                                                                                                                                                              <div class="near_place_inner_box">
-                                                                                                                                                              <h6 class="bolder">KFC</h6>
-                                                                                                                                                              <p>An ineternational fried chicken food chain that satisfy your fast food craving walking distance</p>
-                                                                                                                                                              <p class="text"><i class="fa-regular fa-location-dot location_icon "></i> From Indus to KFC <span class="bolder">120 M</span></p>
-                                                                                                                                                            </div>
-                                                                                                                                                          </div>
-                                                                                                                                                            
-                                                                                                                                                            <div class="near_place_box col-lg-4 col-md-12 col-sm-12">
-                                                                                                                                                              <div class="near_place_inner_box">
-                                                                                                                                                              <h6 class="bolder">McDonald's</h6>
-                                                                                                                                                              <p>A other world know international Food chain to and many peoples favorite</p>
-                                                                                                                                                              <p class="text"><i class="fa-regular fa-location-dot location_icon "></i> From Indus to McDonald's <span class="bolder">800 M</span></p>
-                                                                                                                                                            </div>
-                                                                                                                                                          </div>
-                                                                                                                                                            
-                                                                                                                                                            <div class="near_place_box col-lg-4 col-md-12 col-sm-12">
-                                                                                                                                                              <div class="near_place_inner_box">
-                                                                                                                                                              <h6 class="bolder">Lamoosh Cafe & Restaurant</h6>
-                                                                                                                                                              <p>Mostly famous for Continental cuisine but also have some good desi cuisine</p>
-                                                                                                                                                              <p class="text"><i class="fa-regular fa-location-dot location_icon "></i> From Indus to Boulevard Mall <span class="bolder">6.1 KM</span></p>
-                                                                                                                                                            </div>
-                                                                                                                                                          </div>
-                                                                                                                                                    </div> -->
-                <div class="row mb_40">
-                    <h4 class="mb_40 mt_40 nearest_places">Nearest Other Facilities</h4>
-                    <div class="near_place_box col-lg-4 col-md-12 col-sm-12">
-                        <div class="other_near_place_inner_box">
-                            <h6 class="bolder">Bank & ATM</h6>
-                            <p>Some of The nearest Bank ATM Services are</p>
-                            <p class="text"><i class="fa-regular fa-location-dot location_icon "></i> Ubl Bank <span
-                                    class="bolder">31 M</span></p>
-                            <p class="text"><i class="fa-regular fa-location-dot location_icon "></i> Al Habib Bank
-                                <span class="bolder">140 M</span>
-                            </p>
-                            <p class="text"><i class="fa-regular fa-location-dot location_icon "></i> MCB Bank <span
-                                    class="bolder">Within the Hotel</span></p>
-                        </div>
-                    </div>
-
-                    <div class="near_place_box col-lg-4 col-md-12 col-sm-12">
-                        <div class="other_near_place_inner_box">
-                            <h6 class="bolder">Pharmacies & Hospital</h6>
-                            <p>some nearby Pharmacies and Hospital</p>
-                            <p class="text"><i class="fa-regular fa-location-dot location_icon "></i> Medical store
-                                <span class="bolder">500 M</span>
-                            </p>
-                            <p class="text"><i class="fa-regular fa-location-dot location_icon "></i> Medical Store
-                                <span class="bolder">1.5 KM</span>
-                            </p>
-                            <p class="text"><i class="fa-regular fa-location-dot location_icon "></i> Genral Hospital
-                                <span class="bolder">3.5 KM</span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="near_place_box col-lg-4 col-md-12 col-sm-12">
-                        <div class="other_near_place_inner_box">
-                            <h6 class="bolder">Gas Stations</h6>
-                            <p>some nearby Gas and Car Service Stations</p>
-                            <p class="text"><i class="fa-regular fa-location-dot location_icon "></i> Shell Petrol
-                                Station<span class="bolder">700 M</span></p>
-                            <p class="text"><i class="fa-regular fa-location-dot location_icon "></i> PSO Petrol Station
-                                <span class="bolder">2.7 KM</span>
-                            </p>
-                            <p class="text"><i class="fa-regular fa-location-dot location_icon "></i> Total Petrol
-                                Station <span class="bolder">2.6 KM</span></p>
-                        </div>
+            </div>
+            <div class="row mb_40">
+                <h4 class="mb_40 mt_40 nearest_places">Nearest Other Facilities</h4>
+                <div class="near_place_box col-lg-4 col-md-12 col-sm-12">
+                    <div class="other_near_place_inner_box">
+                        <h6 class="bolder">Bank & ATM</h6>
+                        <p>Some of The nearest Bank ATM Services are</p>
+                        <p class="text"><i class="fa-regular fa-location-dot location_icon "></i> Ubl Bank <span
+                                class="bolder">31 M</span></p>
+                        <p class="text"><i class="fa-regular fa-location-dot location_icon "></i> Al Habib Bank
+                            <span class="bolder">140 M</span>
+                        </p>
+                        <p class="text"><i class="fa-regular fa-location-dot location_icon "></i> MCB Bank <span
+                                class="bolder">Within the Hotel</span></p>
                     </div>
                 </div>
+
+                <div class="near_place_box col-lg-4 col-md-12 col-sm-12">
+                    <div class="other_near_place_inner_box">
+                        <h6 class="bolder">Pharmacies & Hospital</h6>
+                        <p>some nearby Pharmacies and Hospital</p>
+                        <p class="text"><i class="fa-regular fa-location-dot location_icon "></i> Medical store
+                            <span class="bolder">500 M</span>
+                        </p>
+                        <p class="text"><i class="fa-regular fa-location-dot location_icon "></i> Medical Store
+                            <span class="bolder">1.5 KM</span>
+                        </p>
+                        <p class="text"><i class="fa-regular fa-location-dot location_icon "></i> Genral Hospital
+                            <span class="bolder">3.5 KM</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="near_place_box col-lg-4 col-md-12 col-sm-12">
+                    <div class="other_near_place_inner_box">
+                        <h6 class="bolder">Gas Stations</h6>
+                        <p>some nearby Gas and Car Service Stations</p>
+                        <p class="text"><i class="fa-regular fa-location-dot location_icon "></i> Shell Petrol
+                            Station<span class="bolder">700 M</span></p>
+                        <p class="text"><i class="fa-regular fa-location-dot location_icon "></i> PSO Petrol Station
+                            <span class="bolder">2.7 KM</span>
+                        </p>
+                        <p class="text"><i class="fa-regular fa-location-dot location_icon "></i> Total Petrol
+                            Station <span class="bolder">2.6 KM</span></p>
+                    </div>
+                </div>
+            </div>
 
             </div>
             </div>
