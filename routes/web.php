@@ -24,6 +24,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', [App\Http\Controllers\FrontendController::class, 'index'])->name('home');
+Route::get('/about', [App\Http\Controllers\FrontendController::class, 'about'])->name('about');
+Route::get('/accommodation', [App\Http\Controllers\FrontendController::class, 'accommodation'])->name('accommodation');
+
 Auth::routes(['register' => false]);
 
 Route::prefix('admin')->middleware(['auth'])->group(function () {
@@ -40,7 +44,6 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
         Route::post('profile-update', 'profile_update')->name('user.profile_update');
     });
     //Role Controller
-    
-    Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 });
 Route::get('/logout', [App\Http\Controllers\HomeController::class, 'logout'])->name('logout');

@@ -19,8 +19,8 @@
 <link href="{{ asset('layout_assets') }}/libs/quill/quill.snow.css" rel="stylesheet" type="text/css">
 {{-- <link rel="stylesheet" href="{{ asset('asset') }}/css/sweetalert2.css" /> --}}
 <style>
-.select2-container--default .select2-results__option--highlighted[aria-selected] {
-    background-color: #405189;
-    color: #ffffff;
-}
+    .select2-container--default .select2-results__option--highlighted[aria-selected] {
+        background-color: #405189;
+        color: #ffffff;
+    }
 </style>
