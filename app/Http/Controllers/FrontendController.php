@@ -2,18 +2,32 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\About;
+use App\Models\Discount;
+use App\Models\Facility;
+use App\Models\Slider;
+use App\Models\Welcome;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
 {
     public function index()
     {
-        return view('frontend.index');
+        $welcome = Welcome::first();
+        $about = About::first();
+        $images = Slider::get();
+        $discounts = Discount::get();
+
+        $facility = Facility::first();
+
+
+        return view('frontend.index', compact('images', 'welcome', 'about', 'facility', 'discounts'));
     }
 
     public function about()
     {
-        return view('frontend.about');
+        $about = About::first();
+        return view('frontend.about', compact('about'));
     }
 
     public function accommodation()

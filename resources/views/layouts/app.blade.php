@@ -108,10 +108,10 @@
                                         <span
                                             class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">{{ Auth::user()->name }}</span>
                                         <span class="d-none d-xl-block ms-1 fs-12 user-name-sub-text">
-                                            @php
+                                            {{-- @php
                                                 $role = \App\Models\Role::where('id', Auth::user()->role)->first();
                                             @endphp
-                                            {{ $role->name }}
+                                            {{ $role->name }} --}}
                                         </span>
                                     </span>
                                 </span>
@@ -119,11 +119,12 @@
                             <div class="dropdown-menu dropdown-menu-end">
                                 <!-- item-->
                                 <h6 class="dropdown-header">Welcome {{ Auth::user()->name }}!</h6>
-                                <a class="dropdown-item" href="{{ route('user.profile', Auth::user()->id) }}"><i
-                                        class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span
-                                        class="align-middle">Profile</span></a>
+                                <a class="dropdown-item" href=""><i
+                                        class="mdi
+                                    mdi-account-circle text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle">Profile</span></a>
 
-                                <a class="dropdown-item" href="{{ route('logout') }}"><i
+                                <a class="dropdown-item" href=""><i
                                         class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span
                                         class="align-middle" data-key="t-logout">Logout</span></a>
                             </div>
@@ -201,213 +202,184 @@
                                 aria-expanded="false" aria-controls="sidebarDashboards">
                                 <i class="ri-dashboard-2-line"></i> <span data-key="t-dashboards">Dashboards</span>
                             </a>
-                        </li> <!-- end Dashboard Menu -->
-                        @if(\Gate::allows('view', 'User') Or \Gate::allows('view', 'Role'))
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="#user" data-bs-toggle="collapse" role="button"
                                 aria-expanded="false" aria-controls="sidebarApps">
                                 <i class="ri-account-circle-line"></i> <span data-key="t-authentication">User</span>
                             </a>
                             <div class="collapse menu-dropdown" id="user">
-                                
-                                @if(\Gate::allows('view', 'User'))
+
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="{{ route('user.index') }}" class="nav-link" data-key="t-calendar">
-                                        User </a>
+                                        <a href="" class="nav-link" data-key="t-calendar">
+                                            User </a>
                                     </li>
                                 </ul>
-                                @endif
-                                @if(\Gate::allows('view', 'Role'))
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="{{ route('role.index') }}" class="nav-link"
-                                            data-key="t-nft-landing">Role </a>
+                                        <a href="" class="nav-link" data-key="t-nft-landing">Role </a>
                                     </li>
-                                </ul>
-                                @endif
-                            </div>
-                        </li>
-                        @endif
-                        
-                        @if(\Gate::allows('view', 'Member') Or \Gate::allows('view', 'MemberShip'))
-                        <li class="nav-item">
-                            <a class="nav-link menu-link" href="#member" data-bs-toggle="collapse" role="button"
-                                aria-expanded="false" aria-controls="memeberId">
-                                <i class="ri-account-circle-line"></i> <span data-key="t-landing">Member</span>
-                            </a>
-                            <div class="collapse menu-dropdown" id="member">
-                                <ul class="nav nav-sm flex-column">
-                                
-                                @if(\Gate::allows('view', 'Member'))
-                                    <li class="nav-item">
-                                        <a href="{{ route('member.all') }}" class="nav-link" data-key="t-one-page">
-                                            All Memeber </a>
-                                    </li>
-                                @endif
-                                @if(\Gate::allows('view', 'MemberShip'))
-                                <li class="nav-item">
-                                    <a href="{{ route('member_ship.plans') }}" class="nav-link"
-                                        data-key="t-one-page"> Member Ship Plans </a>
-                                </li>
-                                @endif
                                 </ul>
                             </div>
                         </li>
-                        @endif
-                        
-                        @if(\Gate::allows('view', 'Class') Or \Gate::allows('insert', 'Class') Or \Gate::allows('view', 'Enrollment') Or \Gate::allows('view', 'Schedule') )
+
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="#class" data-bs-toggle="collapse" role="button"
-                                aria-expanded="false" aria-controls="classId">
-                                <i class="ri-account-circle-line"></i> <span data-key="t-landing">Class and
-                                    Schedule</span>
+                            <a class="nav-link menu-link" href="#sidebarCharts" data-bs-toggle="collapse"
+                                role="button" aria-expanded="false" aria-controls="sidebarCharts">
+                                <i class="ri-pie-chart-line"></i> <span data-key="t-charts">Frontend</span>
                             </a>
-                            <div class="collapse menu-dropdown" id="class">
+                            <div class="collapse menu-dropdown" id="sidebarCharts">
                                 <ul class="nav nav-sm flex-column">
-                                @if(\Gate::allows('view', 'Class'))
 
                                     <li class="nav-item">
-                                        <a href="{{ route('class.all') }}" class="nav-link" data-key="t-one-page">
-                                           Class </a>
+                                        <a href="#sliders" class="nav-link" data-bs-toggle="collapse" role="button"
+                                            aria-expanded="false" aria-controls="sidebarApexcharts"
+                                            data-key="t-apexcharts">
+                                            Slider
+                                        </a>
+                                        <div class="collapse menu-dropdown" id="sliders">
+                                            <ul class="nav nav-sm flex-column">
+                                                <li class="nav-item">
+                                                    <a href="{{ url('admin/add-slider') }}" class="nav-link"
+                                                        data-key="t-line"> Add Slider
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="{{ url('admin/all-slider') }}" class="nav-link"
+                                                        data-key="t-area"> All Slider
+                                                    </a>
+                                                </li>
+
+                                            </ul>
+                                        </div>
                                     </li>
-                                @endif
-                                @if(\Gate::allows('view', 'Schedule'))
 
                                     <li class="nav-item">
-                                        <a href="{{ route('class.schedule') }}" class="nav-link"
-                                            data-key="t-one-page">Schedule </a>
+                                        <a href="#welcome" class="nav-link" data-bs-toggle="collapse" role="button"
+                                            aria-expanded="false" aria-controls="sidebarApexcharts"
+                                            data-key="t-apexcharts">
+                                            Welcome
+                                        </a>
+                                        <div class="collapse menu-dropdown" id="welcome">
+                                            <ul class="nav nav-sm flex-column">
+                                                <li class="nav-item">
+                                                    <a href="{{ url('admin/add-welcome') }}" class="nav-link"
+                                                        data-key="t-line"> Add welcome
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="{{ url('admin/all-welcome') }}" class="nav-link"
+                                                        data-key="t-area"> All welcome
+                                                    </a>
+                                                </li>
+
+                                            </ul>
+                                        </div>
                                     </li>
-                                @endif
-                                @if(\Gate::allows('view', 'Enrollment'))
 
                                     <li class="nav-item">
-                                        <a href="{{ route('class.enrollment') }}" class="nav-link"
-                                            data-key="t-one-page">Enrollment </a>
+                                        <a href="#about" class="nav-link" data-bs-toggle="collapse" role="button"
+                                            aria-expanded="false" aria-controls="sidebarApexcharts"
+                                            data-key="t-apexcharts">
+                                            about
+                                        </a>
+                                        <div class="collapse menu-dropdown" id="about">
+                                            <ul class="nav nav-sm flex-column">
+                                                {{-- <li class="nav-item">
+                                                    <a href="{{ url('admin/add-about') }}" class="nav-link"
+                                                        data-key="t-line"> Add about
+                                                    </a>
+                                                </li> --}}
+                                                <li class="nav-item">
+                                                    <a href="{{ url('admin/edit-about/1') }}" class="nav-link"
+                                                        data-key="t-area">About Us
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </li>
-                                @endif
-                                </ul>
-                            </div>
-                        </li>
-                        @endif
-                        @if(\Gate::allows('insert', 'Equipment') Or \Gate::allows('view', 'Member'))
-                        <li class="nav-item">
-                            <a class="nav-link menu-link" href="#equipment" data-bs-toggle="collapse" role="button"
-                                aria-expanded="false" aria-controls="equipment">
-                                <i class="ri-account-circle-line"></i> <span data-key="t-landing">Equipment</span>
-                            </a>
-                            <div class="collapse menu-dropdown" id="equipment">
-                                <ul class="nav nav-sm flex-column">
-                                @if(\Gate::allows('view', 'Equipment'))
+
                                     <li class="nav-item">
-                                        <a href="{{ route('equipmet.all') }}" class="nav-link"
-                                            data-key="t-one-page"> Equipment </a>
+                                        <a href="#facility" class="nav-link" data-bs-toggle="collapse"
+                                            role="button" aria-expanded="false" aria-controls="sidebarApexcharts"
+                                            data-key="t-apexcharts">
+                                            Facility
+                                        </a>
+                                        <div class="collapse menu-dropdown" id="facility">
+                                            <ul class="nav nav-sm flex-column">
+                                                {{-- <li class="nav-item">
+                                                    <a href="{{ url('admin/add-facility') }}" class="nav-link"
+                                                        data-key="t-line"> Add facility
+                                                    </a>
+                                                </li> --}}
+                                                <li class="nav-item">
+                                                    <a href="{{ url('admin/edit-facility/1') }}" class="nav-link"
+                                                        data-key="t-area">facility
+                                                    </a>
+                                                </li>
+
+                                            </ul>
+                                        </div>
                                     </li>
-                                @endif
-                                @if(\Gate::allows('view', 'Maintenance'))
+
                                     <li class="nav-item">
-                                        <a href="{{ route('equipmet.maintenance_all') }}" class="nav-link"
-                                            data-key="t-one-page"> Maintenance </a>
+                                        <a href="#discount" class="nav-link" data-bs-toggle="collapse"
+                                            role="button" aria-expanded="false" aria-controls="sidebarApexcharts"
+                                            data-key="t-apexcharts">
+                                            Discount
+                                        </a>
+
+                                        <div class="collapse menu-dropdown" id="discount">
+                                            <ul class="nav nav-sm flex-column">
+                                                <li class="nav-item">
+                                                    <a href="{{ url('admin/add-discount') }}" class="nav-link"
+                                                        data-key="t-line"> Add Discount
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="{{ url('admin/all-discount') }}" class="nav-link"
+                                                        data-key="t-area"> All Discount
+                                                    </a>
+                                                </li>
+
+                                            </ul>
+                                        </div>
                                     </li>
-                                @endif
-                                </ul>
-                            </div>
-                        </li>
-                        @endif
-                        @if(\Gate::allows('insert', 'Fitness_Assessment') Or \Gate::allows('view', 'Fitness_Assessment') Or \Gate::allows('view', 'Goal')  Or \Gate::allows('insert', 'Goal'))
-                        <li class="nav-item">
-                            <a class="nav-link menu-link" href="#fitness_assessment" data-bs-toggle="collapse"
-                                role="button" aria-expanded="false" aria-controls="fitness_assessment">
-                                <i class="ri-account-circle-line"></i> <span data-key="t-landing">Fitness
-                                    Assessment</span>
-                            </a>
-                            <div class="collapse menu-dropdown" id="fitness_assessment">
-                                <ul class="nav nav-sm flex-column">
-                                @if(\Gate::allows('view', 'Fitness_Assessment'))
+
+
                                     <li class="nav-item">
-                                        <a href="{{ route('fitness_assessment.all') }}" class="nav-link"
-                                            data-key="t-one-page"> Fitness Assessment </a>
+                                        <a href="#video" class="nav-link" data-bs-toggle="collapse" role="button"
+                                            aria-expanded="false" aria-controls="sidebarApexcharts"
+                                            data-key="t-apexcharts">
+                                            Video
+                                        </a>
+
+                                        <div class="collapse menu-dropdown" id="video">
+                                            <ul class="nav nav-sm flex-column">
+                                                <li class="nav-item">
+                                                    <a href="{{ url('admin/add-video') }}" class="nav-link"
+                                                        data-key="t-line"> Add Video
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="{{ url('admin/all-video') }}" class="nav-link"
+                                                        data-key="t-area"> All Video
+                                                    </a>
+                                                </li>
+
+                                            </ul>
+                                        </div>
                                     </li>
-                                @endif
-                                @if(\Gate::allows('view', 'Goal'))
-                                    <li class="nav-item">
-                                        <a href="{{ route('fitness_assessment.goal') }}" class="nav-link"
-                                            data-key="t-one-page"> Goal </a>
-                                    </li>
-                                @endif
+
+
 
                                 </ul>
                             </div>
                         </li>
-                        @endif
-                        @if(\Gate::allows('view', 'Gernal_Expenses') Or \Gate::allows('view', 'Expense_Category'))
-                        <li class="nav-item">
-                            <a class="nav-link menu-link" href="#expenses" data-bs-toggle="collapse"
-                                role="button" aria-expanded="false" aria-controls="expenses">
-                                <i class="ri-account-circle-line"></i> <span data-key="t-landing">Expenses</span>
-                            </a>
-                            <div class="collapse menu-dropdown" id="expenses">
-                                @if(\Gate::allows('view', 'Gernal_Expenses'))
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a href="{{ route('expenses.gernal') }}" class="nav-link"
-                                            data-key="t-one-page"> Gernal Expense </a>
-                                    </li>
-                                </ul>
-                                @endif
-                                @if(\Gate::allows('view', 'Expense_Category'))
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a href="{{ route('expenses.category') }}" class="nav-link"
-                                            data-key="t-one-page"> Expense Category </a>
-                                    </li>
-                                </ul>
-                                @endif
-                            </div>
-                        </li>
-                        @endif
-                        @if(\Gate::allows('view', 'Billing_Payments'))
-                        <li class="nav-item">
-                            <a class="nav-link menu-link" href="#billing" data-bs-toggle="collapse"
-                                role="button" aria-expanded="false" aria-controls="billing">
-                                <i class="ri-account-circle-line"></i> <span data-key="t-landing">Billing and Payments</span>
-                            </a>
-                            <div class="collapse menu-dropdown" id="billing">
-                                <ul class="nav nav-sm flex-column">
-                                @if(\Gate::allows('view', 'Billing_Payments'))
-                                    <li class="nav-item">
-                                        <a href="{{ route('payment.add') }}" class="nav-link"
-                                            data-key="t-one-page"> Member Payments </a>
-                                    </li>
-                                @endif
-                                </ul>
-                            </div>
-                        </li>
-                        @endif
-                        @if(\Gate::allows('view', 'Days_Report') Or \Gate::allows('view', 'Monthly_Report'))
-                        <li class="nav-item">
-                            <a class="nav-link menu-link" href="#reports" data-bs-toggle="collapse"
-                                role="button" aria-expanded="false" aria-controls="reports">
-                                <i class="ri-account-circle-line"></i> <span data-key="t-landing">Reports</span>
-                            </a>
-                            <div class="collapse menu-dropdown" id="reports">
-                                <ul class="nav nav-sm flex-column">
-                                @if(\Gate::allows('view', 'Days_Report'))
-                                    <li class="nav-item">
-                                        <a href="{{ route('report.day_report') }}" class="nav-link"
-                                            data-key="t-one-page"> Days Report </a>
-                                    </li>
-                                @endif
-                                @if(\Gate::allows('view', 'Monthly_Report'))
-                                    <li class="nav-item">
-                                        <a href="{{ route('report.monthly_report') }}" class="nav-link"
-                                            data-key="t-one-page"> Monthly Report </a>
-                                    </li>
-                                @endif
-                                </ul>
-                            </div>
-                        </li>
-                        @endif
+
+
+                        {{-- @endif --}}
                     </ul>
                 </div>
                 <!-- Sidebar -->
@@ -417,38 +389,31 @@
         </div>
         <!-- Left Sidebar End -->
         <!-- Vertical Overlay-->
-        <div class="vertical-overlay"></div>
 
-        <!-- ============================================================== -->
-        <!-- Start right Content here -->
-        <!-- ============================================================== -->
-        <div class="main-content">
+        <div class="container-fluid">
+            @yield('content')
+        </div>
+    </div>
+    <!-- End Page-content -->
 
-            <div class="page-content">
-                <div class="container-fluid">
-                    @yield('content')
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                    <script>
+                        document.write(new Date().getFullYear())
+                    </script> © Gexton.
                 </div>
-            </div>
-            <!-- End Page-content -->
-
-            <footer class="footer">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <script>
-                                document.write(new Date().getFullYear())
-                            </script> © Gexton.
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="text-sm-end d-none d-sm-block">
-                                Design & Develop by Gexton Inc
-                            </div>
-                        </div>
+                <div class="col-sm-6">
+                    <div class="text-sm-end d-none d-sm-block">
+                        Design & Develop by Gexton Inc
                     </div>
                 </div>
-            </footer>
+            </div>
         </div>
-        <!-- end main content-->
+    </footer>
+    </div>
+    <!-- end main content-->
 
     </div>
     <!-- END layout-wrapper -->

@@ -46,13 +46,13 @@
 
                             <div class="room-block col-lg-4 col-md-4">
                                 <!-- <div class="price_box">
-                                                                                                                                                                        <div class="rate_box">
-                                                                                                                                                                   <h3><sup>PKR</sup>20,000
-                                                                                                                                                                   <span class="tax_text">Plus Tax</span>
-                                                                                                                                                                </h3>
-                                                                                                                                                                    
-                                                                                                                                                                </div>
-                                                                                                                                                               </div> -->
+                                                                                                                                                                            <div class="rate_box">
+                                                                                                                                                                       <h3><sup>PKR</sup>20,000
+                                                                                                                                                                       <span class="tax_text">Plus Tax</span>
+                                                                                                                                                                    </h3>
+                                                                                                                                                                        
+                                                                                                                                                                    </div>
+                                                                                                                                                                   </div> -->
                                 <a href="room-deluxe-king.php" class="theme-btn btn-style-one read-more room_btn">Discover
                                     More</a>
                             </div>
@@ -101,13 +101,13 @@
 
                             <div class="room-block col-lg-4 col-md-4">
                                 <!-- <div class="price_box">
-                                                                                                                 <div class="rate_box">
-                                                                                                             <h3><sup>PKR</sup>20,000
-                                                                                                              <span class="tax_text">Plus Tax</span>
-                                                                                                         </h3>
-                                                                                                                                                                    
-                                                                                                          </div>
-                                                                                                         </div> -->
+                                                                                                                     <div class="rate_box">
+                                                                                                                 <h3><sup>PKR</sup>20,000
+                                                                                                                  <span class="tax_text">Plus Tax</span>
+                                                                                                             </h3>
+                                                                                                                                                                        
+                                                                                                              </div>
+                                                                                                             </div> -->
                                 <a href="room-deluxe-twin-sharing.php"
                                     class="theme-btn btn-style-one read-more room_btn">Discover
                                     More</a>

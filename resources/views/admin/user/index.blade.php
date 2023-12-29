@@ -58,78 +58,76 @@
                                                 <th class="sort" data-sort="email">Email</th>
                                                 <th class="sort" data-sort="email">Role</th>
                                                 <th class="sort" data-sort="date">Joining Date</th>
-                                          
+
                                                 <th class="sort" data-sort="action">Action</th>
                                             </tr>
                                         </thead>
                                         <tbody class="list form-check-all">
                                             @foreach ($users as $user)
                                                 <tr>
-                                                    @if($user->id == 1)
-                                                    
+                                                    @if ($user->id == 1)
                                                     @else
-                                                    <th scope="row">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox"
-                                                                value="{{ $user->id }}" name="chk_child"
-                                                                value="option1">
-                                                        </div>
-                                                    </th>
-                                                    <td class="customer_name">{{ $user->name }}</td>
-                                                    <td class="email">{{ $user->email }}</td>
-                                                    <td class="email">{{ $user->role_data->name }}</td>
-                                                    <td class="date">{{ $user->created_at }}
-                                                    </td>
-                                                    
-                                                    <td>
-                                                        <div class="d-flex gap-2">
-                                                            <div class="edit">
-                                                                <a href="{{ route('user.edit', $user->id) }}"
-                                                                    class="btn btn-sm btn-success edit-item-btn">Edit</a>
+                                                        <th scope="row">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="{{ $user->id }}" name="chk_child"
+                                                                    value="option1">
                                                             </div>
-                                                            <div class="remove">
-                                                                <button class="btn btn-sm btn-danger remove-item-btn"
-                                                                    data-bs-toggle="modal"
-                                                                    data-bs-target="#remove_data">Remove</button>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                @endif
-                                                <div id="remove_data" class="modal fade zoomIn" tabindex="-1"
-                                                    aria-hidden="true">
-                                                    <div class="modal-dialog modal-dialog-centered">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <button type="button" class="btn-close"
-                                                                    data-bs-dismiss="modal" aria-label="Close"
-                                                                    id="NotificationModalbtn-close"></button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <div class="mt-2 text-center">
-                                                                    <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json"
-                                                                        trigger="loop"
-                                                                        colors="primary:#f7b84b,secondary:#f06548"
-                                                                        style="width:100px;height:100px"></lord-icon>
-                                                                    <div class="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
-                                                                        <h4>Are you sure ?</h4>
-                                                                        <p class="text-muted mx-4 mb-0">Are you sure you
-                                                                            want to remove this user ?</p>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
-                                                                    <button type="button" class="btn w-sm btn-light"
-                                                                        data-bs-dismiss="modal">Close</button>
-                                                                    <button onclick="ajaxRequest(this)"
-                                                                        data-url="{{ route('user.delete', $user->id) }}"
-                                                                        class="btn w-sm btn-danger"
-                                                                        id="delete-notification">Yes, Delete It!</button>
-                                                                </div>
-                                                            </div>
+                                                        </th>
+                                                        <td class="customer_name">{{ $user->name }}</td>
+                                                        <td class="email">{{ $user->email }}</td>
+                                                        <td class="email">{{ $user->role_data->name }}</td>
+                                                        <td class="date">{{ $user->created_at }}
+                                                        </td>
 
-                                                        </div><!-- /.modal-content -->
-                                                    </div><!-- /.modal-dialog -->
-                                                </div><!-- /.modal -->
+                                                        <td>
+                                                            <div class="d-flex gap-2">
+                                                                <div class="edit">
+                                                                    <a href="{{ route('user.edit', $user->id) }}"
+                                                                        class="btn btn-sm btn-success edit-item-btn">Edit</a>
+                                                                </div>
+                                                                <div class="remove">
+                                                                    <button class="btn btn-sm btn-danger remove-item-btn"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#remove_data">Remove</button>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                </tr>
+                                            @endif
+                                            <div id="remove_data" class="modal fade zoomIn" tabindex="-1"
+                                                aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                                aria-label="Close" id="NotificationModalbtn-close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="mt-2 text-center">
+                                                                <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json"
+                                                                    trigger="loop"
+                                                                    colors="primary:#f7b84b,secondary:#f06548"
+                                                                    style="width:100px;height:100px"></lord-icon>
+                                                                <div class="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
+                                                                    <h4>Are you sure ?</h4>
+                                                                    <p class="text-muted mx-4 mb-0">Are you sure you
+                                                                        want to remove this user ?</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
+                                                                <button type="button" class="btn w-sm btn-light"
+                                                                    data-bs-dismiss="modal">Close</button>
+                                                                <button onclick="ajaxRequest(this)"
+                                                                    data-url="{{ route('user.delete', $user->id) }}"
+                                                                    class="btn w-sm btn-danger"
+                                                                    id="delete-notification">Yes, Delete It!</button>
+                                                            </div>
+                                                        </div>
+
+                                                    </div><!-- /.modal-content -->
+                                                </div><!-- /.modal-dialog -->
+                                            </div><!-- /.modal -->
                                             @endforeach
                                         </tbody>
                                     </table>
@@ -180,9 +178,9 @@
         function deleteMultiple() {
             var selectedValues = [];
             var isChecked = $("input[name='chk_child']").is(":checked");
-            if(isChecked){
+            if (isChecked) {
                 $("input[name='chk_child']:checked").each(function() {
-                selectedValues.push($(this).val()); 
+                    selectedValues.push($(this).val());
                 });
                 delete_data(selectedValues);
             } else Swal.fire({
@@ -192,8 +190,11 @@
                 showCloseButton: !0
             })
         }
-        function delete_data(id){
-            getAjaxRequests(`{{ url('user-delete-all') }}`, {ids:id}, 'GET',
+
+        function delete_data(id) {
+            getAjaxRequests(`{{ url('user-delete-all') }}`, {
+                    ids: id
+                }, 'GET',
                 function(data) {
                     console.log(data);
                 }

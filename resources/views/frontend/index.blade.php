@@ -4,84 +4,34 @@
     <!-- banner section -->
     <section class="banner-section">
         <div class="banner-slider">
-            <div class="banner-slide">
-                <figure class="image bg_clr"><img src="{{ asset('front_assets/images/slider/slider1.jpg') }}" alt="">
-                </figure>
+            @foreach ($images as $image)
+                <div class="banner-slide">
+                    <figure class="image bg_clr"><img src="{{ asset('slider_images') }}/{{ $image->image }}" alt="">
+                    </figure>
 
-                <div class="content-box overlay">
-                    <span class="sub-title" data-animation-in="fadeInUp" data-delay-in="0.1">Where Tradition Meets
-                        Luxury</span>
-                    <h1 data-animation-in="fadeInUp" data-delay-in="0.3">Experience the Heart of Hyderabad at Indus Hotel
-                    </h1>
-                    <a href="accommodation.php" class="btn" data-animation-in="fadeInUp" data-delay-in="0.5">rooms &
-                        suites</a>
+                    <div class="content-box overlay">
+                        {{-- <span class="sub-title" data-animation-in="fadeInUp" data-delay-in="0.1">Where Tradition Meets
+                            Luxury</span> --}}
+
+                        <h1 data-animation-in="fadeInUp" data-delay-in="0.3"> {{ $image->text }}
+                        </h1>
+                        <a href="{{ route('accommodation') }}" class="btn" data-animation-in="fadeInUp"
+                            data-delay-in="0.5">rooms &
+                            suites</a>
+                    </div>
                 </div>
-            </div>
-            <div class="banner-slide">
-                <figure class="image bg_clr wow fadeInUp"><img src="{{ asset('front_assets/images/slider/slider2.jpg') }}"
-                        alt=""></figure>
-                <div class="content-box overlay">
-                    <span class="sub-title" data-animation-in="fadeInUp" data-delay-in="0.1">Unforgettable Holidays.</span>
-                    <h1 data-animation-in="fadeInUp" data-delay-in="0.3">Stay at our luxury hotel in Hyderabad Pakistan</h1>
-                    <a href="accommodation.php" class="btn" data-animation-in="fadeInUp" data-delay-in="0.5">rooms &
-                        suites</a>
-                </div>
-            </div>
-            <div class="banner-slide">
-                <figure class="image bg_clr wow fadeInUp"><img src="{{ asset('front_assets/images/slider/slider3.jpg') }}"
-                        alt=""></figure>
-                <div class="content-box overlay">
-                    <span class="sub-title" data-animation-in="fadeInUp" data-delay-in="0.1">Indus Hotel </span>
-                    <h1 data-animation-in="fadeInUp" data-delay-in="0.3">Your Oasis in the Heart of Hyderabad </h1>
-                    <a href="accommodation.php" class="btn" data-animation-in="fadeInUp" data-delay-in="0.5">rooms &
-                        suites</a>
-                </div>
-            </div>
-            <div class="banner-slide">
-                <figure class="image bg_clr"><img src="{{ asset('front_assets/images/slider/slider4.jpg') }}"
-                        alt="">
-                </figure>
-                <div class="content-box overlay">
-                    <span class="sub-title" data-animation-in="fadeInUp" data-delay-in="0.1">Where Tradition Meets
-                        Luxury</span>
-                    <h1 data-animation-in="fadeInUp" data-delay-in="0.3">Experience the Heart of Hyderabad at Indus Hotel
-                    </h1>
-                    <a href="accommodation.php" class="btn" data-animation-in="fadeInUp" data-delay-in="0.5">rooms &
-                        suites</a>
-                </div>
-            </div>
-            <div class="banner-slide">
-                <figure class="image bg_clr wow fadeInUp"><img src="{{ asset('front_assets/images/slider/slider5.jpg') }}"
-                        alt=""></figure>
-                <div class="content-box overlay">
-                    <span class="sub-title" data-animation-in="fadeInUp" data-delay-in="0.1">Unforgettable Holidays.</span>
-                    <h1 data-animation-in="fadeInUp" data-delay-in="0.3">Stay at our luxury hotel in Hyderabad Pakistan</h1>
-                    <a href="accommodation.php" class="btn" data-animation-in="fadeInUp" data-delay-in="0.5">rooms &
-                        suites</a>
-                </div>
-            </div>
+            @endforeach
+
+
         </div>
         <!-- <div class="checkout-form-section wow slideInUp">
-                                                                                                                                                                                                                                                                            </div> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </div> -->
     </section>
     <!-- End banner section -->
     <section>
-        <div class="welcome_div">
-            <div class="welcome_div_sub">
-                <div class="center_align">
-                    <span class="section_top_heading">Welcome to the Indus Hotel</span>
-                    <h3 class="">
-                        Where Luxury Meets Culture in Hyderabad</h3>
-                    <p>Located in the heart of Hyderabad, the Indus Hotel stands as a testament to luxury, culture, and
-                        exceptional hospitality. Situated along the prestigious Shahrah-e-Fatima Jinnah, also known as
-                        Thandi Sarak, our hotel enjoys a prime location in one of the most affluent areas of the city..</p>
+        {!! $welcome->section !!}
 
-                    <a href="about.php" class="sohohotel-button1 theme-btn btn-style-one">Learn More</a>
-                    <div class="sohohotel-clearboth"></div>
-                </div>
-            </div>
-        </div>
-        </div>
+
     </section>
 
     <!-- About Section -->
@@ -89,47 +39,29 @@
         <div class="auto-container">
             <div class="row">
                 <!-- Content Column -->
-                <div class="content-column col-xl-6 col-lg-6 order-lg-2 wow fadeInRight" data-wow-delay="600ms">
-                    <div class="inner-column">
-                        <div class="sec-title">
-                            <span class="sub-title">Indus Hotel</span>
-                            <h2>A Jewel in the Heart of Hyderabad</h2>
-                            <div class="text">Hotel Logo is Blind Dolphin, as Blind Dolphin is found only in Indus River,
-                                which has given name to this Hotel.<br> Due to location, hospitality and facilities, it
-                                always remains booked. Virtually all V.I.P. functions are arranged in the Hotel. The Highest
-                                Government dignitaries including President of Pakistan, Prime Ministers, Diplomats and other
-                                eminent people have visited the hotel and have appreciated the services and facilities from
-                                time to time.</div>
-                        </div>
-                        <div class="btn-box">
-                            <a href="about.php" class="theme-btn btn-style-one"><span class="btn-title">Discover
-                                    More</span></a>
-                            <div class="contact-info">
-                                <div class="icon-box"><i class="flaticon-customer-service"></i></div>
-                                <span>Booking Now</span>
-                                <h4 class="title">+92 22 2782514-15</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {!! $about->text !!}
 
                 <!-- Image Column -->
                 <div class="image-column col-xl-6 col-lg-6">
                     <div class="inner-column wow fadeInLeft">
+
                         <figure class="image-1 overlay-anim wow fadeInUp">
-                            <img src="{{ asset('front_assets/images/indus-dolphine-long.jpeg') }}" alt=""
+                            <img src="{{ asset('about_images') }}/{{ $about->image }}" alt=""
                                 style="max-width:470px;">
                         </figure>
+
                         <figure class="image-2 overlay-anim wow fadeInLeft">
-                            <img src="{{ asset('front_assets/images/indus_dolphine.jpeg') }}" width="291"
-                                alt="">
+                            <img src="{{ asset('about_images') }}/{{ $about->image }}" width="291"
+                                style="height:210px !important;" alt="">
                         </figure>
+
                         <div class="btn-box">
                             <a href="video/indus_vid2.mp4" class="play-now-two" data-fancybox="gallery" data-caption="">
                                 <i class="icon fa fa-play" aria-hidden="true"></i>
                                 <span class="ripple"></span>
                             </a>
                         </div>
+
                         <div class="exp-box bounce-y">
                             <figure class=" overlay-anim wow fadeInLeft"><img
                                     src="{{ asset('front_assets/images/logo.png') }}" style="max-width:200px;"
@@ -309,157 +241,8 @@
 
     <!-- service-section -->
     <section class="service-section">
-        <div class="auto-container">
-            <div class="sec-title text-center wow slideInUp">
-                <span class="sub-title">Indus Services</span>
-                <h2>Hotel Facilities</h2>
-            </div>
-            <div class="row">
-                <!-- service-block -->
-                <div class="service-block col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box wow fadeIn" data-wow-delay="100ms">
-                        <div class="icon-box wow fadeInUp">
-                            <img src="{{ asset('front_assets/images/facilities_icon/resturent-b.png') }}"
-                                class="facilities_icon_b">
-                            <img src="{{ asset('front_assets/images/facilities_icon/resturent-w.png') }}"
-                                class="facilities_icon_w">
-                        </div>
-                        <div class="content-box">
-                            <h4 class="title"><a href="#">Restaurants</a></h4>
-                            <div class="text">Experience fine dining excellence at our curated culinary destination,
-                                offering a fusion of flavors in a luxurious ambiance</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- service-block -->
-                <div class="service-block col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box wow fadeIn" data-wow-delay="200ms">
-                        <div class="icon-box wow fadeInUp">
-                            <img src="{{ asset('front_assets/images/facilities_icon/buffet-b.png') }}"
-                                class="facilities_icon_b">
-                            <img src="{{ asset('front_assets/images/facilities_icon/buffet-w.png') }}"
-                                class="facilities_icon_w">
-                        </div>
-                        <div class="content-box">
-                            <h4 class="title"><a href="#">Complimentary Breakfast</a></h4>
-                            <div class="text">Start your day with our delicious Complimentary Pakistani and continental
-                                buffet breakfast <span class="red_clr">Mon—Sun 07:00AM-11:00AM</span> </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- service-block -->
-                <div class="service-block col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box wow fadeIn" data-wow-delay="300ms">
-                        <div class="icon-box wow fadeInUp">
-                            <img src="{{ asset('front_assets/images/facilities_icon/conferance-b.png') }}"
-                                class="facilities_icon_b">
-                            <img src="{{ asset('front_assets/images/facilities_icon/conferance-w.png') }}"
-                                class="facilities_icon_w">
-                        </div>
-                        <div class="content-box">
-                            <h4 class="title"><a href="#">Banquet & Conference Hall</a></h4>
-                            <div class="text"> Elevate your events with our versatile and sophisticated banquet and
-                                conference halls and make memorable occasions</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- service-block -->
-                <div class="service-block col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box wow fadeIn" data-wow-delay="400ms">
-                        <div class="icon-box wow fadeInUp">
-                            <img src="{{ asset('front_assets/images/facilities_icon/giftshop-b.png') }}"
-                                class="facilities_icon_b">
-                            <img src="{{ asset('front_assets/images/facilities_icon/giftshop-w.png ') }}"
-                                class="facilities_icon_w">
-                        </div>
-                        <div class="content-box">
-                            <h4 class="title"><a href="#">Gift Shop</a></h4>
-                            <div class="text">Explore our curated collection at the Indus Hotel's Gift Shop, where unique
-                                treasures await to elevate your stay.</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- service-block -->
-                <div class="service-block col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box wow fadeIn" data-wow-delay="500ms">
-                        <div class="icon-box wow fadeInUp">
-                            <img src="{{ asset('front_assets/images/facilities_icon/laundry-b.png') }}"
-                                class="facilities_icon_b">
-                            <img src="{{ asset('front_assets/images/facilities_icon/laundry-w.png') }}"
-                                class="facilities_icon_w">
-                        </div>
-                        <div class="content-box">
-                            <h4 class="title"><a href="#">Laundry</a></h4>
-                            <div class="text">Immaculate care with our top-tier laundry services, ensuring a seamless and
-                                refreshing stay.</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- service-block -->
-                <div class="service-block col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box wow fadeIn" data-wow-delay="600ms">
-                        <div class="icon-box wow fadeInUp">
-                            <img src="{{ asset('front_assets/images/facilities_icon/car-parking-b.png') }}"
-                                class="facilities_icon_b">
-                            <img src="{{ asset('front_assets/images/facilities_icon/car-parking-w.png') }}"
-                                class="facilities_icon_w">
-                        </div>
-                        <div class="content-box">
-                            <h4 class="title"><a href="#">On-site Car Parking</a></h4>
-                            <div class="text">Convenient and secure on-site parking available for our guests' ease and
-                                peace of mind at Indus Hotel.</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- service-block -->
-                <div class="service-block col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box wow fadeIn" data-wow-delay="400ms">
-                        <div class="icon-box wow fadeInUp">
-                            <img src="{{ asset('front_assets/images/facilities_icon/generator-b.png') }}"
-                                class="facilities_icon_b">
-                            <img src="{{ asset('front_assets/images/facilities_icon/generator-w.png') }}"
-                                class="facilities_icon_w">
-                        </div>
-                        <div class="content-box">
-                            <h4 class="title"><a href="#">24-hour Backup Generator</a></h4>
-                            <div class="text">Reliable power Our 24/7 backup generator ensures uninterrupted comfort
-                                during your stay at Indus Hotel.</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- service-block -->
-                <div class="service-block col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box wow fadeIn" data-wow-delay="500ms">
-                        <div class="icon-box wow fadeInUp">
-                            <img src="{{ asset('front_assets/images/facilities_icon/gym-b.png') }}"
-                                class="facilities_icon_b">
-                            <img src="{{ asset('front_assets/images/facilities_icon/gym-w.png') }}"
-                                class="facilities_icon_w">
-                        </div>
-                        <div class="content-box">
-                            <h4 class="title"><a href="#">Gym</a></h4>
-                            <div class="text">Unleash your fitness journey in our state-of-the-art gym, tailored for your
-                                wellness needs at Indus Hotel.</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- service-block -->
-                <div class="service-block col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box wow fadeIn" data-wow-delay="600ms">
-                        <div class="icon-box wow fadeInUp">
-                            <img src="{{ asset('front_assets/images/facilities_icon/parlour-b1.png') }}"
-                                class="facilities_icon_b">
-                            <img src="{{ asset('images/facilities_icon/parlour-w1.png') }}" class="facilities_icon_w">
-                        </div>
-                        <div class="content-box">
-                            <h4 class="title"><a href="#">Indus Beauty Parlour</a></h4>
-                            <div class="text">Keep your clothes in top condition with two complimentary pieces of
-                                pressing service per day.</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {!! $facility->section !!}
+
     </section>
     <!-- End service-section -->
 
@@ -498,15 +281,11 @@
                 <h2>Don't Miss Our Valueable Offers</h2>
             </div>
             <div class="offer-slider">
-                <div class="offer-slide">
-                    <img src="{{ asset('front_assets/images/offers/offer1.jpeg') }}" alt="">
-                </div>
-                <div class="offer-slide">
-                    <img src="{{ asset('front_assets/images/offers/offer2.jpeg') }} " alt="">
-                </div>
-                <div class="offer-slide">
-                    <img src="{{ asset('front_assets/images/offers/offer') }} " alt="">
-                </div>
+                @foreach ($discounts as $image)
+                    <div class="offer-slide">
+                        <img src="{{ asset('discount_images') }}/{{ $image->image }}" alt="">
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -533,7 +312,7 @@
     {{-- <include 'client-reviews.php';> --}}
 
     <section class="client-section pb-90">
-        <div class="bg bg-image" style="background-image: url(images/background/3.jpg);"></div>
+        <div class="bg bg-image" style="background-image: url({{ 'front_assets/images/background/3.jpg' }});"></div>
         <div class="auto-container">
             <div class="sec-title light text-center"> <span class="sub-title">What says for customer</span>
                 <h2>What Client's Say?</h2>
