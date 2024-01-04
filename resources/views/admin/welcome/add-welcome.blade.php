@@ -18,7 +18,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header align-items-center d-flex">
-                            <h4 class="card-title mb-0 flex-grow-1"> {{ isset($welcome) ? 'Edit' : 'Add' }} welcome image
+                            <h4 class="card-title mb-0 flex-grow-1"> {{ isset($welcome) ? 'Edit' : 'Add' }} welcome
                             </h4>
                             <div class="flex-shrink-0">
 
@@ -34,10 +34,17 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="mb-3">
-                                                    <label for="firstNameinput" class="form-label">Text Here</label>
+                                                    <label for="firstNameinput" class="form-label">Heading</label>
                                                     <textarea id="" class="form-control" name="section">{{ $welcome->section ?? '' }}</textarea>
-
-
+                                                    @error('section')
+                                                        <div class="alert alert-danger">{{ $message }}</div>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="mb-3">
+                                                    <label for="firstNameinput" class="form-label">Paragraph</label>
+                                                    <textarea id="" class="form-control" name="para">{{ $welcome->para ?? '' }}</textarea>
                                                     @error('section')
                                                         <div class="alert alert-danger">{{ $message }}</div>
                                                     @enderror
@@ -53,7 +60,7 @@
                                                 <div class="">
                                                     <button type="submit"
                                                         class="btn btn-primary">{{ isset($welcome) ? 'Update' : 'Add' }}
-                                                        welcome Image</button>
+                                                        welcome </button>
                                                 </div>
                                             </div>
 
@@ -72,10 +79,5 @@
             <div class="d-none code-view">
                 <pre class="language-markup" style="height: 375px;">
 
-                                                                                                                            <script>
-                                                                                                                                CKEDITOR.replace('text1');
-                                                                                                                                CKEDITOR.replace('text2');
-                                                                                                                                CKEDITOR.replace('text3');
-                                                                                                                            </script>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <!--end row-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <!--end row-->
 @endsection

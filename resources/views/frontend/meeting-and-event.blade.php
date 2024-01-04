@@ -31,6 +31,7 @@
     <!--End Main Header -->
 
     <!-- Start main-content -->
+
     <section class="page-title" style="background-image: url({{ asset('front_assets/images/background/hall_bg.jpg') }});">
         <div class="auto-container">
             <div class="title-outer text-center">
@@ -67,65 +68,73 @@
         <div class="auto-container">
             <div class="row">
                 <!-- News Block -->
-                <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
-                    <div class="inner-box wow fadeInLeft">
-                        <div class="image-box">
-                            <figure class="image overlay-anim">
-                                <a href="images/hall/continental1.jpg" data-lightbox="continental">
-                                    <img src="{{ asset('front_assets/images/hall/continental1.jpg') }}" alt=""></a>
-                                <a href="images/hall/continental2.jpg" class="dis_no" data-lightbox="continental">
-                                    <img src="{{ asset('front_assets/images/hall/continental2.jpg') }}" alt=""></a>
-                                <a href="images/hall/continental3.jpg" class="dis_no" data-lightbox="continental">
-                                    <img src="{{ asset('front_assets/images/hall/continental3.jpg') }}" alt=""></a>
-                                <a href="{{ asset('front_assets/images/hall/continental4.jpg') }}" class="dis_no"
-                                    data-lightbox="continental">
-                                    <img src="images/hall/continental4.jpg" alt=""></a>
-                                <a href="{{ asset('front_assets/images/hall/continental5.jpg') }}" class="dis_no"
-                                    data-lightbox="continental">
-                                    <img src="{{ asset('front_assets/images/hall/continental5.jpg') }}" alt=""></a>
-                            </figure>
-                            <!-- <span class="date">DEC<br><small>20</small></span> -->
-                        </div>
-                        <div class="content-box">
-                            <!-- <ul class="post-info">
-                                                                                                                                            <li><i class="fa-solid fa-ruler-triangle"></i>Area <span class="area-size-span">5350</span></li>
-                                                                                                                                            <li><i class="fa-solid fa-ruler-combined"></i>Dimensions <span class="area-size-span">107' x 50' x 14'</span></li>
-                                                                                                                                          </ul> -->
-                            <h4 class="title"><a href="#">CONTINENTAL HALL</a></h4>
-                            <div class="hall_facilities">
-                                <ul class="post-info">
-                                    <li><img src="{{ asset('front_assets/images/hall/icon/banquet.png') }}"
-                                            class="img_icon"><span class="area-size-span">BANQUET</span></li>
-                                    <li><i class="fa-solid fa-bell-concierge"></i><span
-                                            class="area-size-span">RECEPTION</span></li>
-                                    <!-- <li><i class="fa-solid fa-ruler-triangle"></i><span class="area-size-span">THEATRE</span></li> -->
-                                    <li><i class="fa-regular fa-tablet-rugged"></i><span
-                                            class="area-size-span">THEATRE</span></li>
-                                </ul>
+
+
+                @foreach ($events as $event)
+                    <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
+                        <div class="inner-box wow fadeInLeft">
+                            <div class="image-box">
+                                <figure class="image overlay-anim">
+                                    @if (count($event->image) > 0)
+                                        <a href="{{ asset('event_images/' . $event->image[0]) }}"
+                                            data-lightbox="continental">
+                                            <img src="{{ asset('event_images/' . $event->image[0]) }}" alt="">
+                                        </a>
+                                    @endif
+
+                                    @if (count($event->image) > 1)
+                                        @foreach ($event->image as $index => $imageName)
+                                            @if ($index > 0)
+                                                <a href="{{ asset('event_images/' . $imageName) }}" class="dis_no"
+                                                    data-lightbox="continental">
+                                                    <img src="{{ asset('event_images/' . $imageName) }}" alt="">
+                                                </a>
+                                            @endif
+                                        @endforeach
+                                    @endif
+                                </figure>
                             </div>
-                            <div class="hall_facilities">
-                                <ul class="post-info">
-                                    <li><img src="{{ asset('front_assets/images/hall/icon/conferance.png') }}"
-                                            class="img_icon"><span class="area-size-span">CONFERANCE</span></li>
-                                    <li><i class="fa-regular fa-screen-users"></i><span
-                                            class="area-size-span">CLASSROOM</span></li>
-                                    <!-- <li><i class="fa-solid fa-ruler-triangle"></i><span class="area-size-span">THEATRE</span></li> -->
-                                    <li><img src="{{ asset('front_assets/images/hall/icon/boardroom.png') }}"
-                                            class="img_icon"><span class="area-size-span">BOARDROOM</span></li>
-                                </ul>
+                            <div class="content-box">
+                                <h4 class="title"><a href="#">{{ $event->title }}</a></h4>
+                                <div class="hall_facilities">
+                                    <ul class="post-info">
+                                        <li><img src="{{ asset('front_assets/images/hall/icon/banquet.png') }}"
+                                                class="img_icon"><span class="area-size-span">BANQUET</span></li>
+                                        <li><i class="fa-solid fa-bell-concierge"></i><span
+                                                class="area-size-span">RECEPTION</span></li>
+                                        <!-- <li><i class="fa-solid fa-ruler-triangle"></i><span class="area-size-span">THEATRE</span></li> -->
+                                        <li><i class="fa-regular fa-tablet-rugged"></i><span
+                                                class="area-size-span">THEATRE</span></li>
+                                    </ul>
+                                </div>
+                                <div class="hall_facilities">
+                                    <ul class="post-info">
+                                        <li><img src="{{ asset('front_assets/images/hall/icon/conferance.png') }}"
+                                                class="img_icon"><span class="area-size-span">CONFERANCE</span></li>
+                                        <li><i class="fa-regular fa-screen-users"></i><span
+                                                class="area-size-span">CLASSROOM</span></li>
+                                        <!-- <li><i class="fa-solid fa-ruler-triangle"></i><span class="area-size-span">THEATRE</span></li> -->
+                                        <li><img src="{{ asset('front_assets/images/hall/icon/boardroom.png') }}"
+                                                class="img_icon"><span class="area-size-span">BOARDROOM</span></li>
+                                    </ul>
+                                </div>
+                                <a href="contact.php" class="read-more" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">
+                                    Reserve Now<i class="fa-solid fa-arrow-right"></i>
+                                </a>
                             </div>
-                            <a href="contact.php" class="read-more" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">Reserve Now<i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
-                </div>
+                @endforeach
+
                 <!-- News Block -->
-                <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="100ms">
+                {{-- <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="100ms">
                     <div class="inner-box wow fadeInLeft" data-wow-delay="200ms">
                         <div class="image-box">
                             <figure class="image overlay-anim">
                                 <a href="{{ asset('front_assets/images/hall/crystal1.jpg') }}" data-lightbox="crystal">
                                     <img src="{{ asset('front_assets/images/hall/crystal1.jpg') }}" alt=""></a>
+
                                 <a href="{{ asset('front_assets/images/hall/crystal2.jpg') }}" class="dis_no"
                                     data-lightbox="crystal">
                                     <img src="{{ asset('front_assets/images/hall/crystal2.jpg') }}" alt=""></a>
@@ -152,8 +161,8 @@
                         </div>
                         <div class="content-box">
                             <!-- <ul class="post-info">
-                                    <li><i class="fa-solid fa-ruler-triangle"></i>Area <span class="area-size-span">3000</span></li>
-                                    </ul> -->
+                                            <li><i class="fa-solid fa-ruler-triangle"></i>Area <span class="area-size-span">3000</span></li>
+                                            </ul> -->
                             <h4 class="title"><a href="#">CRYSTAL HALL</a></h4>
                             <div class="hall_facilities">
                                 <ul class="post-info">
@@ -181,9 +190,9 @@
                                 data-bs-target="#exampleModal">Reserve Now<i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- News Block -->
-                <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="200ms">
+                {{-- <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="200ms">
                     <div class="inner-box wow fadeInLeft" data-wow-delay="300ms">
                         <div class="image-box">
                             <figure class="image overlay-anim">
@@ -200,9 +209,9 @@
                         </div>
                         <div class="content-box">
                             <!-- <ul class="post-info">
-                                                                                                                                            <li><i class="fa-solid fa-ruler-triangle"></i>Area <span class="area-size-span">921.4</span></li>
-                                                                                                                                            <li><i class="fa-solid fa-ruler-combined"></i>Dimensions <span class="area-size-span">34' x 27.10' x 9.5'</span></li>
-                                                                                                                                          </ul> -->
+                                                                                                                                                    <li><i class="fa-solid fa-ruler-triangle"></i>Area <span class="area-size-span">921.4</span></li>
+                                                                                                                                                    <li><i class="fa-solid fa-ruler-combined"></i>Dimensions <span class="area-size-span">34' x 27.10' x 9.5'</span></li>
+                                                                                                                                                  </ul> -->
                             <h4 class="title"><a href="#">DIAMOND HALL</a></h4>
                             <div class="hall_facilities">
                                 <ul class="post-info">
@@ -230,9 +239,9 @@
                                 data-bs-target="#exampleModal">Reserve Now<i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- News Block -->
-                <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="300ms">
+                {{-- <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="300ms">
                     <div class="inner-box wow fadeInLeft">
                         <div class="image-box">
                             <figure class="image overlay-anim">
@@ -245,9 +254,9 @@
                         </div>
                         <div class="content-box">
                             <!-- <ul class="post-info">
-                                                                                                                                            <li><i class="fa-solid fa-ruler-triangle"></i>Area <span class="area-size-span">1676.01</span></li>
-                                                                                                                                            <li><i class="fa-solid fa-ruler-combined"></i>Dimensions <span class="area-size-span">48.3' x 34.7' x 13'</span></li>
-                                                                                                                                          </ul> -->
+                                                                                                                                                    <li><i class="fa-solid fa-ruler-triangle"></i>Area <span class="area-size-span">1676.01</span></li>
+                                                                                                                                                    <li><i class="fa-solid fa-ruler-combined"></i>Dimensions <span class="area-size-span">48.3' x 34.7' x 13'</span></li>
+                                                                                                                                                  </ul> -->
                             <h4 class="title"><a href="#">PEARL HALL</a></h4>
                             <div class="hall_facilities">
                                 <ul class="post-info">
@@ -275,9 +284,9 @@
                                 data-bs-target="#exampleModal">Reserve Now<i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- News Block -->
-                <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="400ms">
+                {{-- <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="400ms">
                     <div class="inner-box wow fadeInLeft" data-wow-delay="200ms">
                         <div class="image-box">
                             <figure class="image overlay-anim">
@@ -290,9 +299,9 @@
                         </div>
                         <div class="content-box">
                             <!-- <ul class="post-info">
-                                                                                                                                            <li><i class="fa-solid fa-ruler-triangle"></i>Area <span class="area-size-span">951.21</span></li>
-                                                                                                                                            <li><i class="fa-solid fa-ruler-combined"></i>Dimensions <span class="area-size-span">35.1' x 27.10' x 13'</span></li>
-                                                                                                                                          </ul> -->
+                                                                                                                                                    <li><i class="fa-solid fa-ruler-triangle"></i>Area <span class="area-size-span">951.21</span></li>
+                                                                                                                                                    <li><i class="fa-solid fa-ruler-combined"></i>Dimensions <span class="area-size-span">35.1' x 27.10' x 13'</span></li>
+                                                                                                                                                  </ul> -->
                             <h4 class="title"><a href="#">MARVI HALL</a></h4>
                             <div class="hall_facilities">
                                 <ul class="post-info">
@@ -320,9 +329,9 @@
                                 data-bs-target="#exampleModal">Reserve Now<i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- News Block -->
-                <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="500ms">
+                {{-- <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="500ms">
                     <div class="inner-box wow fadeInLeft" data-wow-delay="300ms">
                         <div class="image-box">
                             <figure class="image overlay-anim">
@@ -333,9 +342,9 @@
                         </div>
                         <div class="content-box">
                             <!-- <ul class="post-info">
-                                                                                                                                            <li><i class="fa-solid fa-ruler-triangle"></i>Area <span class="area-size-span">664</span></li>
-                                                                                                                                            <li><i class="fa-solid fa-ruler-combined"></i>Dimensions <span class="area-size-span">33.2' x 20' x 13'</span></li>
-                                                                                                                                          </ul> -->
+                                                                                                                                                    <li><i class="fa-solid fa-ruler-triangle"></i>Area <span class="area-size-span">664</span></li>
+                                                                                                                                                    <li><i class="fa-solid fa-ruler-combined"></i>Dimensions <span class="area-size-span">33.2' x 20' x 13'</span></li>
+                                                                                                                                                  </ul> -->
                             <h4 class="title"><a href="#">JASMINE HALL</a></h4>
                             <div class="hall_facilities">
                                 <ul class="post-info">
@@ -363,9 +372,9 @@
                                 data-bs-target="#exampleModal">Reserve Now<i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- News Block -->
-                <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="500ms">
+                {{-- <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="500ms">
                     <div class="inner-box wow fadeInLeft" data-wow-delay="300ms">
                         <div class="image-box">
                             <figure class="image overlay-anim">
@@ -382,9 +391,9 @@
                         </div>
                         <div class="content-box">
                             <!-- <ul class="post-info">
-                                                                                                                                            <li><i class="fa-solid fa-ruler-triangle"></i>Area <span class="area-size-span">264</span></li>
-                                                                                                                                            <li><i class="fa-solid fa-ruler-combined"></i>Dimensions <span class="area-size-span">20' x 13.2' x 10'</span></li>
-                                                                                                                                          </ul> -->
+                                                                                                                                                    <li><i class="fa-solid fa-ruler-triangle"></i>Area <span class="area-size-span">264</span></li>
+                                                                                                                                                    <li><i class="fa-solid fa-ruler-combined"></i>Dimensions <span class="area-size-span">20' x 13.2' x 10'</span></li>
+                                                                                                                                                  </ul> -->
                             <h4 class="title"><a href="#">CONFERENCE ROOM</a></h4>
                             <div class="hall_facilities">
                                 <ul class="post-info">
@@ -412,9 +421,9 @@
                                 data-bs-target="#exampleModal">Reserve Now<i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- News Block -->
-                <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="500ms">
+                {{-- <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="500ms">
                     <div class="inner-box wow fadeInLeft" data-wow-delay="300ms">
                         <div class="image-box">
                             <figure class="image overlay-anim">
@@ -425,9 +434,9 @@
                         </div>
                         <div class="content-box">
                             <!-- <ul class="post-info">
-                                                                                                                                            <li><i class="fa-solid fa-ruler-triangle"></i>Area <span class="area-size-span">271.92</span></li>
-                                                                                                                                            <li><i class="fa-solid fa-ruler-combined"></i>Dimensions <span class="area-size-span">20.6' x 13.2' x 13'</span></li>
-                                                                                                                                          </ul> -->
+                                                                                                                                                    <li><i class="fa-solid fa-ruler-triangle"></i>Area <span class="area-size-span">271.92</span></li>
+                                                                                                                                                    <li><i class="fa-solid fa-ruler-combined"></i>Dimensions <span class="area-size-span">20.6' x 13.2' x 13'</span></li>
+                                                                                                                                                  </ul> -->
                             <h4 class="title"><a href="#">COMMITTEE ROOM</a></h4>
                             <div class="hall_facilities">
                                 <ul class="post-info">
@@ -455,9 +464,9 @@
                                 data-bs-target="#exampleModal">Reserve Now<i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- News Block -->
-                <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="500ms">
+                {{-- <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="500ms">
                     <div class="inner-box wow fadeInLeft" data-wow-delay="300ms">
                         <div class="image-box">
                             <figure class="image overlay-anim">
@@ -474,9 +483,9 @@
                         </div>
                         <div class="content-box">
                             <!-- <ul class="post-info">
-                                                                                                                                            <li><i class="fa-solid fa-ruler-triangle"></i>Area <span class="area-size-span">466.9</span></li>
-                                                                                                                                            <li><i class="fa-solid fa-ruler-combined"></i>Dimensions <span class="area-size-span">23' x 20.3' x 12'</span></li>
-                                                                                                                                          </ul> -->
+                                                                                                                                                    <li><i class="fa-solid fa-ruler-triangle"></i>Area <span class="area-size-span">466.9</span></li>
+                                                                                                                                                    <li><i class="fa-solid fa-ruler-combined"></i>Dimensions <span class="area-size-span">23' x 20.3' x 12'</span></li>
+                                                                                                                                                  </ul> -->
                             <h4 class="title"><a href="#">SENATE ROOM</a></h4>
                             <div class="hall_facilities">
                                 <ul class="post-info">
@@ -504,7 +513,7 @@
                                 data-bs-target="#exampleModal">Reserve Now<i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>
@@ -520,8 +529,8 @@
                 </div>
                 <div class="modal-body">
                     <div class="container">
-                        <form class="" action="hall_inquiry.php" method="post"
-                            onSubmit="return formValidation();" name="hall_inquiry_form" id="hall_inquiry_form">
+                        <form class="" action="hall_inquiry.php" method="post" onSubmit="return formValidation();"
+                            name="hall_inquiry_form" id="hall_inquiry_form">
                             <div class="row mb-2">
                                 <div class="col-md-4">
                                     <label for="Title" class="col-form-label">Title</label>

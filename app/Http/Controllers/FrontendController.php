@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\Dinein;
 use App\Models\Discount;
 use App\Models\Facility;
+use App\Models\Event;
 use App\Models\Slider;
+use App\Models\Video;
 use App\Models\Welcome;
 use Illuminate\Http\Request;
 
@@ -17,11 +20,9 @@ class FrontendController extends Controller
         $about = About::first();
         $images = Slider::get();
         $discounts = Discount::get();
-
+        $vidoes = Video::first();
         $facility = Facility::first();
-
-
-        return view('frontend.index', compact('images', 'welcome', 'about', 'facility', 'discounts'));
+        return view('frontend.index', compact('images', 'welcome', 'about', 'facility', 'discounts', 'vidoes'));
     }
 
     public function about()
@@ -37,12 +38,15 @@ class FrontendController extends Controller
 
     public function meet()
     {
-        return view('frontend.meeting-and-event');
+        $events = Event::get();
+
+        return view('frontend.meeting-and-event', compact('events'));
     }
 
     public function dinein()
     {
-        return view('frontend.dine-in');
+        $dineins = Dinein::get();
+        return view('frontend.dine-in', compact('dineins'));
     }
     public function beauty()
     {

@@ -25,12 +25,32 @@
 
         </div>
         <!-- <div class="checkout-form-section wow slideInUp">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </div> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </div> -->
     </section>
     <!-- End banner section -->
     <section>
-        {!! $welcome->section !!}
 
+        <div class="welcome_div">
+            <div class="welcome_div_sub">
+                <div class="center_align">
+
+                    <div class="welcome_div">
+                        <div class="welcome_div_sub">
+                            <div class="center_align">
+                                <span class="section_top_heading">Welcome to the Indus Hotel</span>
+                                <h3 class="">
+                                    {{ $welcome->section }}</h3>
+                                <p>
+                                    {{ $welcome->para }}</h3>
+                                </p>
+
+                                <a href="about.php" class="sohohotel-button1 theme-btn btn-style-one">Learn More</a>
+                                <div class="sohohotel-clearboth"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
     </section>
 
@@ -44,7 +64,6 @@
                 <!-- Image Column -->
                 <div class="image-column col-xl-6 col-lg-6">
                     <div class="inner-column wow fadeInLeft">
-
                         <figure class="image-1 overlay-anim wow fadeInUp">
                             <img src="{{ asset('about_images') }}/{{ $about->image }}" alt=""
                                 style="max-width:470px;">
@@ -70,6 +89,7 @@
                             <div class="text">Rooms with all the best facilities and premium services
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -259,6 +279,7 @@
                     <p class="m-0">Check-in <span class="time-in-out">02:00 pm</span></p>
                     <p class="m-0">Check-out <span class="time-in-out">12:00 pm</span></p>
                 </div>
+
                 <div class="col-md-4">
                     <h6>Pet Policy</h6>
                     <p class="m-0">Pets Not Allowed</p>
@@ -291,14 +312,16 @@
     </section>
     <!-- video-section -->
     <section class="video-section">
-        <div class="bg bg-image bg_clr" style="background-image: url(images/background/video_bg.jpg);"></div>
+        <div class="bg bg-image bg_clr"
+            style="background-image: url({{ asset('front_assets/images/background/video_bg.jpg') }});"></div>
         <div class="auto-container">
             <div class="row">
                 <div class="content-column col-lg-5 col-md-12 col-sm-12">
                 </div>
                 <div class="btn-column col-lg-7 col-md-12 col-sm-12">
                     <div class="inner-column video_pos">
-                        <a href="video/indus.mp4" class="play-now-two" data-fancybox="gallery" data-caption="">
+                        <a href="{{ asset('video_videos/indus_vid2.mp4') }}" class="play-now-two"
+                            data-fancybox="gallery" data-caption="">
                             <img src="{{ asset('front_assets/images/icons/play.png') }}" alt="" />
                             <span class="ripple"></span>
                         </a>

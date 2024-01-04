@@ -7,8 +7,10 @@ use App\Http\Controllers\Administrator\RoleController;
 use App\Http\Controllers\Administrator\UserController;
 use App\Http\Controllers\frontend\DiscountController;
 use App\Http\Controllers\frontend\AboutController;
+use App\Http\Controllers\frontend\EventController;
 use App\Http\Controllers\frontend\FacilityController;
 use App\Http\Controllers\frontend\SliderController;
+use App\Http\Controllers\frontend\DineinController;
 use App\Http\Controllers\frontend\VideoController;
 use App\Http\Controllers\frontend\WelcomeController;
 use Illuminate\Support\Facades\Auth;
@@ -111,6 +113,27 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
         // Route::post('update-slider/{id}', 'update')->name('updateslider');
         Route::get('delete-video/{id}', 'deletevideo')->name('deletevideo');
     });
+
+    Route::controller(EventController::class)->as('event.')->group(function () {
+
+        Route::get('/all-event',  'index')->name('all-event');
+        Route::get('/add-event',  'add_event')->name('add-event');
+        Route::post('/save-event',  'store')->name('store_event');
+        Route::get('edit-event/{id}', 'edit')->name('editevent');
+        Route::put('update-event/{id}', 'update')->name('update');
+        Route::get('delete-event/{id}', 'deleteevent')->name('deleteevent');
+    });
+
+    Route::controller(DineinController::class)->as('dinein.')->group(function () {
+
+        Route::get('/all-dinein',  'index')->name('all-dinein');
+        Route::get('/add-dinein',  'add_dinein')->name('add-dinein');
+        Route::post('/save-dinein',  'store')->name('store_dinein');
+        Route::get('edit-dinein/{id}', 'edit')->name('editdinein');
+        Route::put('update-dinein/{id}', 'update')->name('update');
+        Route::get('delete-dinein/{id}', 'deletedinein')->name('deletedinein');
+    });
+
 
     //Role Controller
 

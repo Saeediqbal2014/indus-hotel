@@ -30,7 +30,7 @@
                                         <div class="col-sm-auto">
                                             <div>
                                                 <button type="button" class="btn btn-success add-btn" id="create-btn"
-                                                    onclick="window.location.href='{{ url('admin/add-slider') }}'">
+                                                    onclick="window.location.href='{{ url('admin/add-welcome') }}'">
                                                     <i class="ri-add-line align-bottom me-1"></i> Add
                                                 </button>
                                                 <button class="btn btn-soft-danger" onclick="deleteMultiple()"><i
@@ -80,18 +80,14 @@
                                                         <td class="id" style="display:none;"><a
                                                                 href="javascript:void(0);"
                                                                 class="fw-medium link-primary">#VZ2101</a></td>
-                                                        <td class="customer_name">
 
-                                                            <img style="width: 200px; height: 100px;"
-                                                                src="{{ asset('slider_images') }}/{{ $image->image }}">
-                                                        </td>
                                                         <td class="customer_name">{{ $image->text }}
                                                         </td>
                                                         <td>
 
                                                             <div class="d-flex gap-2">
                                                                 <div class="edit">
-                                                                    <a href="{{ route('slider.editslider', $image->id) }}"
+                                                                    <a href="{{ route('welcome.editwelcome', $image->id) }}"
                                                                         class="btn btn-sm btn-success edit-item-btn">Edit</a>
                                                                 </div>
                                                                 <div class="remove">
@@ -131,7 +127,7 @@
                                                                         <button type="button" class="btn w-sm btn-light"
                                                                             data-bs-dismiss="modal">Close</button>
                                                                         <button onclick="ajaxRequest(this)"
-                                                                            data-url="{{ route('slider.deleteslider', $image->id) }}"
+                                                                            data-url="{{ route('welcome.deletewelcome', $image->id) }}"
                                                                             class="btn
                                                                  w-sm btn-danger"
                                                                             id="delete-notification">Yes,

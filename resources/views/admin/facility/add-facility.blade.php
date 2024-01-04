@@ -65,7 +65,8 @@
                                                 <div class="">
                                                     <button type="submit"
                                                         class="btn btn-primary">{{ isset($facility) ? 'Update' : 'Add' }}
-                                                        facility </button>
+                                                        facility
+                                                    </button>
                                                 </div>
                                             </div>
 
@@ -84,16 +85,16 @@
             <div class="d-none code-view">
                 <pre class="language-markup" style="height: 375px;">
 
-                                                        {{-- <script>
+                                                                                                                {{-- <script>
                                 $('#summernote').summernote({
                                     placeholder: 'Hello Bootstrap 4',
                                     tabsize: 2,
                                     height: 100
                                 });
                             </script> --}}
-                                                            <script>
-                                                                CKEDITOR.replace('myTextarea');
-                                                            </script>
+                                                                                                                    <script>
+                                                                                                                        CKEDITOR.replace('myTextarea');
+                                                                                                                    </script>
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <!--end row-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <!--end row-->
 @endsection

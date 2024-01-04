@@ -11,7 +11,7 @@ class VideoController extends Controller
     public function index()
     {
         // dd(" index");
-        $videos = Video::latest()->get();
+        $videos = Video::get();
         return view('admin.video.index', ['videos' => $videos]);
     }
 
@@ -24,40 +24,44 @@ class VideoController extends Controller
 
     public function store(Request $request)
     {
-        // dd($request->all());
+        $videoData = $request->all();
 
-        $video = $request->all();
-        if ($request->video_id != null) {
+        // If video_id is present, it means it's an update
+        if ($request->has('video_id') && $request->video_id != null) {
             $video_update = Video::find($request->video_id);
         }
+
+        // Handle file upload
         if ($request->hasFile('video')) {
-            $video = $request->file('video');
-            $filename = $video->getClientOriginalName();
+            $videoFile = $request->file('video');
+            $filename = $videoFile->getClientOriginalName();
             $destinationPath = public_path() . '/video_videos/';
-            $video->move($destinationPath, $filename);
-            // dd($filename);
-            $video['video'] = $filename;
-        } elseif ($request->video_id != null && $request->hasFile('video') == null) {
-            $video['video'] = $video_update->video;
+            $videoFile->move($destinationPath, $filename);
+            $videoData['video'] = $filename;
+        } elseif (isset($video_update) && $video_update->video != null) {
+            // If no file is uploaded in the update, retain the existing video file
+            $videoData['video'] = $video_update->video;
         }
-        if ($request->video_id != null) {
-            $video_update->update($video);
-            $msg = 'video Updated';
-            // dd($msg);
+
+        // Update or create the video record
+        if (isset($video_update)) {
+            $video_update->update($videoData);
+            $msg = 'Video Updated';
         } else {
-            Video::create($video);
-            $msg = 'video Inserted';
-            // dd($msg);
+            Video::create($videoData);
+            $msg = 'Video Inserted';
+
             return response()->json([
-                'success' => 'Data Inserted',
+                'success' => $msg,
                 'redirect' => route('video.all-video'),
             ]);
         }
+
         return response()->json([
-            'success' => 'Data updated',
-            'redirect' => route('video.all-video'),
+            'success' => $msg,
+            'reload' => true
+            // 'redirect' => route('video.all-video'),
         ]);
-        // return redirect('admin/all-video');
     }
 
 

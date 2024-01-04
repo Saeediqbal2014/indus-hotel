@@ -18,7 +18,6 @@ class WelcomeController extends Controller
     public function add_welcome()
     {
         // dd(" index");
-
         return view('admin.welcome.add-welcome');
     }
 

@@ -58,7 +58,7 @@
                                                                 value="option">
                                                         </div>
                                                     </th>
-                                                    <th class="sort" data-sort="customer_name">Image</th>
+                                                    <th class="sort" data-sort="customer_name">video</th>
                                                     <th class="sort" data-sort="customer_name">Text</th>
 
                                                     <th class="sort" data-sort="customer_name">Action</th>
@@ -66,7 +66,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody class="list form-check-all">
-                                                @foreach ($images as $image)
+                                                @foreach ($videos as $v)
                                                     <tr>
                                                         <th scope="row">
                                                             <div class="form-check">
@@ -74,36 +74,38 @@
                                                                     name="chk_child" value="option1">
                                                             </div>
 
-
-
                                                         </th>
                                                         <td class="id" style="display:none;"><a
                                                                 href="javascript:void(0);"
                                                                 class="fw-medium link-primary">#VZ2101</a></td>
                                                         <td class="customer_name">
 
-                                                            <img style="width: 200px; height: 100px;"
-                                                                src="{{ asset('video_images') }}/{{ $image->image }}">
+                                                            <video width="320" height="240" controls>
+                                                                <source
+                                                                    src="{{ asset('video_videos/') }}/{{ $v->video }}"
+                                                                    type="video/mp4">
+                                                                Your browser does not support the video tag.
+                                                            </video>
                                                         </td>
-                                                        <td class="customer_name">{{ $image->text }}
+                                                        <td class="customer_name">{{ $v->text }}
                                                         </td>
                                                         <td>
 
                                                             <div class="d-flex gap-2">
                                                                 <div class="edit">
-                                                                    <a href="{{ route('video.editvideo', $image->id) }}"
+                                                                    <a href="{{ route('video.editvideo', $v->id) }}"
                                                                         class="btn btn-sm btn-success edit-item-btn">Edit</a>
                                                                 </div>
                                                                 <div class="remove">
                                                                     <button class="btn btn-sm btn-danger remove-item-btn"
                                                                         data-bs-toggle="modal"
-                                                                        data-bs-target="#remove_data{{ $image->id }}">Remove</button>
+                                                                        data-bs-target="#remove_data{{ $v->id }}">Remove</button>
                                                                 </div>
                                                             </div>
                                                         </td>
 
                                                     </tr>
-                                                    <div id="remove_data{{ $image->id }}" class="modal fade zoomIn"
+                                                    <div id="remove_data{{ $v->id }}" class="modal fade zoomIn"
                                                         tabindex="-1" aria-hidden="true">
                                                         <div class="modal-dialog modal-dialog-centered">
                                                             <div class="modal-content">
@@ -131,7 +133,7 @@
                                                                         <button type="button" class="btn w-sm btn-light"
                                                                             data-bs-dismiss="modal">Close</button>
                                                                         <button onclick="ajaxRequest(this)"
-                                                                            data-url="{{ route('video.deletevideo', $image->id) }}"
+                                                                            data-url="{{ route('video.deletevideo', $v->id) }}"
                                                                             class="btn
                                                                  w-sm btn-danger"
                                                                             id="delete-notification">Yes,

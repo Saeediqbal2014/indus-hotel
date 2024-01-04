@@ -28,22 +28,21 @@
                             @csrf
                             <div class="card-body">
                                 <div class="live-preview">
-                                    <form action="javascript:void(0);">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="mb-3">
-                                                    <label for="firstNameinput" class="form-label">Image</label>
-                                                    <input type="file" class="form-control" name="video"
-                                                        id="firstNameinput" required>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="firstNameinput" class="form-label">Image</label>
+                                                <input type="file" class="form-control" name="video" accept="video/*"
+                                                    id="firstNameinput">
 
-                                                    @error('image')
-                                                        <div class="alert alert-danger">{{ $message }}</div>
-                                                    @enderror
-                                                </div>
+                                                @error('image')
+                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                @enderror
                                             </div>
+                                        </div>
 
 
-                                            {{-- <div class="col-md-6">
+                                        {{-- <div class="col-md-6">
                                                 <div class="mb-3">
                                                     <label for="firstNameinput" class="form-label">Text Here</label>
                                                     <input type="text" class="form-control"
@@ -56,39 +55,39 @@
                                                 </div>
                                             </div> --}}
 
-                                            @isset($video)
-                                                <input type="hidden" value="{{ $video->id }}" name="video_id">
-                                            @endisset
+                                        @isset($video)
+                                            <input type="hidden" value="{{ $video->id }}" name="video_id">
+                                        @endisset
 
-                                            <!--end col-->
-                                            <div class="col-md-12 ">
-                                                <div class="">
-                                                    <button type="submit"
-                                                        class="btn btn-primary">{{ isset($video) ? 'Update' : 'Add' }}
-                                                        video Image</button>
-                                                </div>
+                                        <!--end col-->
+                                        <div class="col-md-12 ">
+                                            <div class="">
+                                                <button type="submit"
+                                                    class="btn btn-primary">{{ isset($video) ? 'Update' : 'Add' }}
+                                                    video Image</button>
                                             </div>
-
-                                            @isset($video)
-                                                <div class="col-md-12">
-                                                    <img style="width: 200px; height: 100px;"
-                                                        src="{{ asset('video_images') }}/{{ $video->image }}">
-                                                </div>
-                                            @endisset
-
-                                            <!--end col-->
                                         </div>
 
-                                        <!--end row-->
-                                    </form>
-                                </div>
-                            </div>
+                                        @isset($video)
+                                            <div class="col-md-12">
+                                                <img style="width: 200px; height: 100px;"
+                                                    src="http://127.0.0.1:8000/video_videos/indus_vid2.mp4">
+                                            </div>
+                                        @endisset
+
+                                        <!--end col-->
+                                    </div>
+
+                                    <!--end row-->
+                        </form>
                     </div>
                 </div>
             </div>
-            <div class="d-none code-view">
-                <pre class="language-markup" style="height: 375px;">
+        </div>
+    </div>
+    <div class="d-none code-view">
+        <pre class="language-markup" style="height: 375px;">
 
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <!--end row-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <!--end row-->
 @endsection
