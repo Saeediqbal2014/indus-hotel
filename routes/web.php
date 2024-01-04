@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\frontend\AccommodationController;
 use App\Http\Controllers\Administrator\EquipmentController;
 use App\Http\Controllers\Administrator\ExpenseController;
 use App\Http\Controllers\Administrator\GymClassController;
@@ -54,7 +55,12 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
         Route::get('edit-profile/{id}', 'edit_profile')->name('user.edit_profile');
         Route::post('profile-update', 'profile_update')->name('user.profile_update');
     });
+    Route::controller(AccommodationController::class)->as('accommodation.')->group(function () {
+        Route::get('/all-accommodation',  'index')->name('all');
+        Route::get('/add-accommodation',  'create')->name('add');
+        Route::post('/store-accommodation',  'store')->name('store');
 
+    });
     Route::controller(SliderController::class)->as('slider.')->group(function () {
 
         Route::get('/all-slider',  'index')->name('all-slider');

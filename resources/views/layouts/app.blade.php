@@ -231,7 +231,28 @@
                             </a> --}}
                             {{-- <div class="collapse menu-dropdown" id="sidebarCharts"> --}}
                             <ul class="nav nav-sm flex-column">
+                                <li class="nav-item">
+                                    <a href="#accommodation" class="nav-link" data-bs-toggle="collapse" role="button"
+                                        aria-expanded="false" aria-controls="sidebarApexcharts"
+                                        data-key="t-apexcharts">
+                                        Accommodation
+                                    </a>
+                                    <div class="collapse menu-dropdown" id="accommodation">
+                                        <ul class="nav nav-sm flex-column">
+                                            <li class="nav-item">
+                                                <a href="{{ route('accommodation.add') }}" class="nav-link"
+                                                    data-key="t-line"> Add Accommodation
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="{{ route('accommodation.all') }}" class="nav-link"
+                                                    data-key="t-area"> All Accommodation
+                                                </a>
+                                            </li>
 
+                                        </ul>
+                                    </div>
+                                </li>
                                 <li class="nav-item">
                                     <a href="#sliders" class="nav-link" data-bs-toggle="collapse" role="button"
                                         aria-expanded="false" aria-controls="sidebarApexcharts"
