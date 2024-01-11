@@ -30,7 +30,7 @@
                                         <div class="col-sm-auto">
                                             <div>
                                                 <button type="button" class="btn btn-success add-btn" id="create-btn"
-                                                    onclick="window.location.href='{{ url('admin/add-slider') }}'">
+                                                    onclick="window.location.href='{{ route('accommodation.add') }}'">
                                                     <i class="ri-add-line align-bottom me-1"></i> Add
                                                 </button>
                                                 <button class="btn btn-soft-danger" onclick="deleteMultiple()"><i
@@ -58,15 +58,15 @@
                                                                 value="option">
                                                         </div>
                                                     </th>
+                                                    <th class="sort" data-sort="customer_name">Name</th>
                                                     <th class="sort" data-sort="customer_name">Image</th>
-                                                    <th class="sort" data-sort="customer_name">Text</th>
 
                                                     <th class="sort" data-sort="customer_name">Action</th>
 
                                                 </tr>
                                             </thead>
                                             <tbody class="list form-check-all">
-                                                @foreach ($accommodations as $accommodation)
+                                                @foreach ($accommodations as $image)
                                                     <tr>
                                                         <th scope="row">
                                                             <div class="form-check">
@@ -75,19 +75,36 @@
                                                             </div>
 
 
-
                                                         </th>
                                                         <td class="id" style="display:none;"><a
                                                                 href="javascript:void(0);"
                                                                 class="fw-medium link-primary">#VZ2101</a></td>
+                                                        <td class="customer_name">{{ $image->name }} </td>
 
-                                                        {{-- <td class="customer_name">{{ $image->text }}
-                                                        </td> --}}
+                                                        <td class="customer_name">
+                                                            @php
+                                                                $imageArray = json_decode($image->images);
+                                                            @endphp
+
+                                                            @if (is_array($imageArray))
+                                                                <!-- Display multiple images if $imageArray is an array -->
+                                                                @foreach ($imageArray as $imageName)
+                                                                    <img style="width: 200px; height: 100px;"
+                                                                        src="{{ asset('rooms_images/' . $imageName) }}"
+                                                                        alt="DineIn Image">
+                                                                @endforeach
+                                                            @else
+                                                                <!-- Display a single image if $imageArray is not an array -->
+                                                                <img style="width: 200px; height: 100px;"
+                                                                    src="{{ asset('rooms_images/' . $imageArray) }}"
+                                                                    alt="DineIn Image">
+                                                            @endif
+                                                        </td>
                                                         <td>
 
                                                             <div class="d-flex gap-2">
                                                                 <div class="edit">
-                                                                    <a href="{{ route('slider.editslider', $image->id) }}"
+                                                                    <a href="{{ route('accommodation.edit', $image->id) }}"
                                                                         class="btn btn-sm btn-success edit-item-btn">Edit</a>
                                                                 </div>
                                                                 <div class="remove">
@@ -127,9 +144,8 @@
                                                                         <button type="button" class="btn w-sm btn-light"
                                                                             data-bs-dismiss="modal">Close</button>
                                                                         <button onclick="ajaxRequest(this)"
-                                                                            data-url="{{ route('slider.deleteslider', $image->id) }}"
-                                                                            class="btn
-                                                                 w-sm btn-danger"
+                                                                            data-url="{{ route('accommodation.delete_accommodation', $image->id) }}"
+                                                                            class="btn w-sm btn-danger"
                                                                             id="delete-notification">Yes,
                                                                             Delete
                                                                             It!</button>

@@ -17,7 +17,9 @@ class Accommodation extends Model
         'occupancy',
         'packages',
     ];
-    function accommodation_cat()  {
-        return $this->hasOne(AccommodationCategory::class,'id','accommodation_cat_id');
+    function accommodation_cat()
+    {
+        return $this->hasOne(AccommodationCategory::class, 'id', 'accommodation_cat_id');
     }
+
 }

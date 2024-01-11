@@ -7,13 +7,13 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Gym - Admin & Dashboard</title>
+    <title>Indus - Admin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-    <link rel="shortcut icon" href="{{ asset('layout_assets') }}/images/favicon.ico">
+    <link rel="shortcut icon" href="{{ asset('front_assets/images/logo.png') }}">
     @include('layouts.header')
 </head>
 
@@ -232,8 +232,8 @@
                             {{-- <div class="collapse menu-dropdown" id="sidebarCharts"> --}}
                             <ul class="nav nav-sm flex-column">
                                 <li class="nav-item">
-                                    <a href="#accommodation" class="nav-link" data-bs-toggle="collapse" role="button"
-                                        aria-expanded="false" aria-controls="sidebarApexcharts"
+                                    <a href="#accommodation" class="nav-link" data-bs-toggle="collapse"
+                                        role="button" aria-expanded="false" aria-controls="sidebarApexcharts"
                                         data-key="t-apexcharts">
                                         Accommodation
                                     </a>
@@ -440,6 +440,73 @@
                                     </div>
                                 </li>
 
+
+                                <li class="nav-item">
+                                    <a href="#beauty" class="nav-link" data-bs-toggle="collapse" role="button"
+                                        aria-expanded="false" aria-controls="sidebarApexcharts"
+                                        data-key="t-apexcharts">
+                                        Beauty And Wellness
+                                    </a>
+                                    <div class="collapse menu-dropdown" id="beauty">
+                                        <ul class="nav nav-sm flex-column">
+                                            <li class="nav-item">
+                                                <a href="{{ url('admin/add-beauty') }}" class="nav-link"
+                                                    data-key="t-line"> Add Beauty
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="{{ url('admin/all-beauty') }}" class="nav-link"
+                                                    data-key="t-area"> All Beauty
+                                                </a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="#place" class="nav-link" data-bs-toggle="collapse" role="button"
+                                        aria-expanded="false" aria-controls="sidebarApexcharts"
+                                        data-key="t-apexcharts">
+
+                                        Hyderabad places
+                                    </a>
+                                    <div class="collapse menu-dropdown" id="place">
+                                        <ul class="nav nav-sm flex-column">
+                                            <li class="nav-item">
+                                                <a href="{{ url('admin/add-place') }}" class="nav-link"
+                                                    data-key="t-line"> Add Place
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="{{ url('admin/all-place') }}" class="nav-link"
+                                                    data-key="t-area"> All Places
+                                                </a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="#contact" class="nav-link" data-bs-toggle="collapse" role="button"
+                                        aria-expanded="false" aria-controls="sidebarApexcharts"
+                                        data-key="t-apexcharts">
+
+                                        Contact
+                                    </a>
+                                    <div class="collapse menu-dropdown" id="contact">
+                                        <ul class="nav nav-sm flex-column">
+
+                                            <li class="nav-item">
+                                                <a href="{{ route('contact.all') }}" class="nav-link"
+                                                    data-key="t-area"> All Contact
+                                                </a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </li>
 
 
                             </ul>

@@ -25,7 +25,7 @@
 
         </div>
         <!-- <div class="checkout-form-section wow slideInUp">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </div> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div> -->
     </section>
     <!-- End banner section -->
     <section>
@@ -44,7 +44,8 @@
                                     {{ $welcome->para }}</h3>
                                 </p>
 
-                                <a href="about.php" class="sohohotel-button1 theme-btn btn-style-one">Learn More</a>
+                                <a href="{{ url('/about') }}" class="sohohotel-button1 theme-btn btn-style-one">Learn
+                                    More</a>
                                 <div class="sohohotel-clearboth"></div>
                             </div>
                         </div>
@@ -59,8 +60,26 @@
         <div class="auto-container">
             <div class="row">
                 <!-- Content Column -->
-                {!! $about->text !!}
+                {{-- {!! $about->text !!} --}}
 
+                <div class="content-column col-xl-6 col-lg-6 order-lg-2 wow fadeInRight" data-wow-delay="600ms">
+                    <div class="inner-column">
+                        <div class="sec-title">
+                            <span class="sub-title">Indus Hotel</span>
+                            <h2>{{ $about->heading }}</h2>
+                            <div class="text">{{ $about->para }}</div>
+                        </div>
+                        <div class="btn-box">
+                            <a href="about.php" class="theme-btn btn-style-one"><span class="btn-title">Discover
+                                    More</span></a>
+                            <div class="contact-info">
+                                <div class="icon-box"><i class="flaticon-customer-service"></i></div>
+                                <span>Booking Now</span>
+                                <h4 class="title">+92 22 2782514-15</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- Image Column -->
                 <div class="image-column col-xl-6 col-lg-6">
                     <div class="inner-column wow fadeInLeft">
@@ -107,37 +126,47 @@
             <div class="row">
                 <!-- room-block -->
                 <div class="rooms_slider">
-                    <div class="room_slide">
 
-                        <div class="room-block">
-                            <div class="inner-box wow fadeIn">
-                                <div class="image-box">
-                                    <figure class="image-2 overlay-anim"><img
-                                            src="{{ asset('front_assets//images/room/deluxe/deluxe1.jpg') }}"
-                                            alt="">
-                                    </figure>
-                                </div>
-                                <div class="content-box">
-                                    <h6 class="title"><a href="room-deluxe-king.php">Deluxe King</a></h6>
-                                    <!--<span class="price">20,000 / + Tax</span>-->
-                                </div>
-                                <div class="box-caption">
-                                    <a href="room-deluxe-king.php" title="" class="book-btn">Book now</a>
-                                    <ul class="bx-links">
-                                        <li><a href="#" title=""><i class="fa fa-wifi"></i></a></li>
-                                        <li><a href="#" title=""><i
-                                                    class="fa-solid fa-martini-glass-citrus"></i></a></li>
-                                        <li><a href="#" title=""><i class="fa-solid fa-utensils"></i></a>
-                                        </li>
-                                        <li><a href="#" title=""><i class="fa fa-bed"></i></a></li>
-                                    </ul>
+                    @foreach ($accommodations as $accommodation)
+                        <div class="room_slide">
+
+                            <div class="room-block">
+                                <div class="inner-box wow fadeIn">
+                                    <div class="image-box">
+                                        <figure class="image-2 overlay-anim">
+                                            @php
+                                                $images = json_decode($accommodation->images);
+                                            @endphp
+
+                                            <img src="{{ asset('rooms_images/' . $images[0]) }}" alt="">
+
+                                        </figure>
+                                    </div>
+                                    <div class="content-box">
+                                        <h6 class="title"><a
+                                                href="{{ route('single_room', $accommodation->id) }}">{{ $accommodation->name }}</a>
+                                        </h6>
+                                        <!--<span class="price">20,000 / + Tax</span>-->
+                                    </div>
+                                    <div class="box-caption">
+                                        <a href="{{ route('single_room', $accommodation->id) }}" title=""
+                                            class="book-btn">Book now</a>
+                                        <ul class="bx-links">
+                                            <li><a href="#" title=""><i class="fa fa-wifi"></i></a></li>
+                                            <li><a href="#" title=""><i
+                                                        class="fa-solid fa-martini-glass-citrus"></i></a></li>
+                                            <li><a href="#" title=""><i class="fa-solid fa-utensils"></i></a>
+                                            </li>
+                                            <li><a href="#" title=""><i class="fa fa-bed"></i></a></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
+                            <!-- room-block -->
                         </div>
-                        <!-- room-block -->
-                    </div>
+                    @endforeach
 
-                    <div class="room_slide">
+                    {{-- <div class="room_slide">
 
                         <div class="room-block ">
                             <div class="inner-box wow fadeIn">
@@ -165,8 +194,8 @@
                             </div>
                         </div>
                         <!-- room-block -->
-                    </div>
-                    <div class="room_slide">
+                    </div> --}}
+                    {{-- <div class="room_slide">
 
                         <div class="room-block ">
                             <div class="inner-box wow fadeIn">
@@ -196,8 +225,8 @@
                             </div>
                         </div>
                         <!-- room-block -->
-                    </div>
-                    <div class="room_slide">
+                    </div> --}}
+                    {{-- <div class="room_slide">
 
                         <div class="room-block ">
                             <div class="inner-box wow fadeIn">
@@ -223,8 +252,8 @@
                             </div>
                         </div>
                         <!-- room-block -->
-                    </div>
-                    <div class="room_slide">
+                    </div> --}}
+                    {{-- <div class="room_slide">
 
                         <div class="room-block ">
                             <div class="inner-box wow fadeIn">
@@ -251,7 +280,7 @@
                             </div>
                         </div>
                         <!-- room-block -->
-                    </div>
+                    </div> --}}
                 </div>
 
             </div>

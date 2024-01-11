@@ -26,38 +26,38 @@
                         <h2>Feel free to write</h2>
                     </div>
                     <!-- Contact Form -->
-                    <form id="contact_form" name="contact_form" class="" action="contact_inquary.php" method="post">
+                    <form class="ajaxForm" action="{{ route('contact.store') }}" method="post">
+                        @csrf
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="mb-3">
-                                    <input name="form_name" id="form_name" class="form-control" type="text"
-                                        placeholder="Enter Name">
+                                    <input name="name" id="form_name" class="form-control" type="text"
+                                        placeholder="Enter Name" required>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="mb-3">
-                                    <input name="form_email" id="form_email" class="form-control required email"
-                                        type="email" placeholder="Enter Email">
+                                    <input name="email" id="form_email" class="form-control required email" type="email"
+                                        placeholder="Enter Email" required>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="mb-3">
-                                    <input name="form_subject" id="form_subject" class="form-control required"
-                                        type="text" placeholder="Enter Subject">
+                                    <input name="subject" id="form_subject" class="form-control required" type="text"
+                                        placeholder="Enter Subject" required>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="mb-3">
-                                    <input name="form_phone" id="form_phone" class="form-control" type="text"
-                                        placeholder="Enter Phone">
+                                    <input name="phone" id="form_phone" class="form-control" type="text"
+                                        placeholder="Enter Phone" required>
                                 </div>
                             </div>
                         </div>
                         <div class="mb-3">
-                            <textarea name="form_message" id="form_message" class="form-control required" rows="10"
-                                placeholder="Enter Message"></textarea>
+                            <textarea name="message" id="form_message" class="form-control required" rows="10" placeholder="Enter Message"></textarea>
                         </div>
                         <div class="mb-5  dis_flx">
                             <input name="form_botcheck" class="form-control" type="hidden" value="">
@@ -66,11 +66,13 @@
                             </div>
                             <div id="submit" class="mt20"
                                 style="background-size: 100%; background-repeat:
-                       no-repeat;">
-                                <input type='submit' id='submit_form'
+                                no-repeat;">
+                                {{-- <input type='submit' id='submit_form'
                                     value='Send Message'class="theme-btn
-                                                                                                        btn-style-one btn-main "
-                                    data-loading-text="Please wait..." onclick="msgSubmit()">
+                                                                                                                                                                                                                                                        btn-style-one btn-main "
+                                    data-loading-text="Please wait..." onclick="msgSubmit()"> --}}
+                                <input type='submit' value='Send Message' style="color: #aa8453 !important"
+                                    class="theme-btn btn-style-one read-more ">
                             </div>
                         </div>
                     </form>

@@ -11,7 +11,6 @@ class DineinController extends Controller
     public function index()
     {
         // dd(" index");
-
         $images = Dinein::latest()->get();
         return view('admin.dinein.index', ['images' => $images]);
     }

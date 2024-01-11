@@ -6,12 +6,15 @@ use App\Http\Controllers\Administrator\ExpenseController;
 use App\Http\Controllers\Administrator\GymClassController;
 use App\Http\Controllers\Administrator\RoleController;
 use App\Http\Controllers\Administrator\UserController;
+use App\Http\Controllers\frontend\BeautyController;
 use App\Http\Controllers\frontend\DiscountController;
 use App\Http\Controllers\frontend\AboutController;
+use App\Http\Controllers\frontend\ContactController;
 use App\Http\Controllers\frontend\EventController;
 use App\Http\Controllers\frontend\FacilityController;
 use App\Http\Controllers\frontend\SliderController;
 use App\Http\Controllers\frontend\DineinController;
+use App\Http\Controllers\frontend\PlaceController;
 use App\Http\Controllers\frontend\VideoController;
 use App\Http\Controllers\frontend\WelcomeController;
 use Illuminate\Support\Facades\Auth;
@@ -37,10 +40,15 @@ Route::get('/dine-in', [App\Http\Controllers\FrontendController::class, 'dinein'
 Route::get('/Beauty-and-wellness', [App\Http\Controllers\FrontendController::class, 'beauty'])->name('beauty');
 Route::get('/Hyderabad-Attractions', [App\Http\Controllers\FrontendController::class, 'hyderabad_attractions'])->name('hyderabad_attractions');
 Route::get('/contact', [App\Http\Controllers\FrontendController::class, 'contact'])->name('contact');
-Route::get('/deluxe-rooms', [App\Http\Controllers\FrontendController::class, 'delux'])->name('delux');
-
+Route::get('/deluxe-rooms/{id}', [App\Http\Controllers\FrontendController::class, 'delux'])->name('delux');
+Route::get('/rooms/{id}', [App\Http\Controllers\FrontendController::class, 'single_room'])->name('single_room');
 
 Auth::routes(['register' => false]);
+Route::controller(ContactController::class)->as('contact.')->group(function () {
+    Route::get('/admin/all-messages',  'index')->name('all');
+    Route::post('/store-messages',  'store')->name('store');
+    Route::get('delete-messages/{id}', 'delete')->name('delete');
+});
 
 Route::prefix('admin')->middleware(['auth'])->group(function () {
     //User Controller
@@ -58,9 +66,11 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::controller(AccommodationController::class)->as('accommodation.')->group(function () {
         Route::get('/all-accommodation',  'index')->name('all');
         Route::get('/add-accommodation',  'create')->name('add');
+        Route::get('edit-accommodation/{id}', 'edit')->name('edit');
         Route::post('/store-accommodation',  'store')->name('store');
-
+        Route::get('delete-accommodation/{id}', 'delete_accommodation')->name('delete_accommodation');
     });
+
     Route::controller(SliderController::class)->as('slider.')->group(function () {
 
         Route::get('/all-slider',  'index')->name('all-slider');
@@ -69,6 +79,26 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
         Route::get('edit-slider/{id}', 'edit')->name('editslider');
         // Route::post('update-slider/{id}', 'update')->name('updateslider');
         Route::get('delete-slider/{id}', 'deleteslider')->name('deleteslider');
+    });
+
+    Route::controller(BeautyController::class)->as('beauty.')->group(function () {
+
+        Route::get('/all-beauty',  'index')->name('all-beauty');
+        Route::get('/add-beauty',  'add_beauty')->name('add-beauty');
+        Route::post('/save-beauty',  'store')->name('store_beauty');
+        Route::get('edit-beauty/{id}', 'edit')->name('editbeauty');
+        // Route::post('update-beauty/{id}', 'update')->name('updatebeauty');
+        Route::get('delete-beauty/{id}', 'deletebeauty')->name('deletebeauty');
+    });
+
+    Route::controller(PlaceController::class)->as('place.')->group(function () {
+
+        Route::get('/all-place',  'index')->name('all-place');
+        Route::get('/add-place',  'add_place')->name('add-place');
+        Route::post('/save-place',  'store')->name('store_place');
+        Route::get('edit-place/{id}', 'edit')->name('editplace');
+        // Route::post('update-place/{id}', 'update')->name('updatebeauty');
+        Route::get('delete-place/{id}', 'deleteplace')->name('deleteplace');
     });
     Route::controller(WelcomeController::class)->as('welcome.')->group(function () {
 
@@ -116,7 +146,6 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
         Route::get('/add-video',  'add_video')->name('add-video');
         Route::post('/save-video',  'store')->name('store_video');
         Route::get('edit-video/{id}', 'edit')->name('editvideo');
-        // Route::post('update-slider/{id}', 'update')->name('updateslider');
         Route::get('delete-video/{id}', 'deletevideo')->name('deletevideo');
     });
 

@@ -86,15 +86,35 @@
                                     </li>
                                     <li><a href="{{ route('accommodation') }}">Accommodation</a>
                                         <ul>
-                                            <li><a href="{{ route('delux') }}">Deluxe Rooms</a></li>
-                                            <li><a href="executive_rooms.php">Executive Rooms</a></li>
-                                            <li><a href="executive_gold_rooms.php">Executive Gold Rooms</a></li>
-                                            <li><a href="room-presidential-suite.php">Presidential Suite</a></li>
-                                            <li><a href="room-diplomatic-suite.php">Diplomatic Suite</a></li>
-                                            <li><a href="room-vip-suite.php">Vip Suite</a></li>
-                                            <li><a href="room-khaleej-suite.php">Khaleej Suite</a></li>
-                                            <li><a href="room-noori-suite.php">Noori Suite</a></li>
+                                            @foreach ($roomTypes as $roomType)
+                                                @php
+                                                    $room_suit = explode(' ', $roomType->name);
+                                                    $room_id = App\Models\Accommodation::where('accommodation_cat_id', $roomType->id)
+                                                        ->select('id')
+                                                        ->first();
+                                                @endphp
+                                                <li>
+                                                    @if ($room_suit['1'] == 'Suite')
+                                                        <a
+                                                            href="{{ route('single_room', $room_id) }}">{{ $roomType->name }}</a>
+                                                    @else
+                                                        <a
+                                                            href="{{ route('delux', $roomType->id) }}">{{ $roomType->name }}</a>
+                                                    @endif
+                                                </li>
+                                            @endforeach
                                         </ul>
+
+                                        {{-- <ul> --}}
+                                        {{-- <li><a href="{{ route('delux') }}">Deluxe Rooms</a></li> --}}
+                                        {{-- <li><a href="executive_rooms.php">Executive Rooms</a></li> --}}
+                                        {{-- <li><a href="executive_gold_rooms.php">Executive Gold Rooms</a></li> --}}
+                                        {{-- <li><a href="room-presidential-suite.php">Presidential Suite</a></li> --}}
+                                        {{-- <li><a href="room-diplomatic-suite.php">Diplomatic Suite</a></li> --}}
+                                        {{-- <li><a href="room-vip-suite.php">Vip Suite</a></li> --}}
+                                        {{-- <li><a href="room-khaleej-suite.php">Khaleej Suite</a></li> --}}
+                                        {{-- <li><a href="room-noori-suite.php">Noori Suite</a></li> --}}
+                                        {{-- </ul> --}}
                                     </li>
                                     <li><a href="{{ route('meet') }}">Meeting & Event</a>
                                     </li>
