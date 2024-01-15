@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Query Form Submission</title>
+    <title>Room Request Form Submission</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -215,16 +215,20 @@
 
     <div class="container">
         <div id="main" class="main-col">
-            <h1>Query Form Submission</h1>
-            {{-- <p><strong>Title:</strong> {{ $query['title'] }}</p> --}}
-            <p><strong>Name:</strong> {{ $query['title'] }} {{ $query['first_name'] }} {{ $query['last_name'] }}</p>
-            <p><strong>Email:</strong> {{ $query['email'] }}</p>
-            <p><strong>Phone:</strong> {{ $query['phone'] }}</p>
-            <p><strong>Country:</strong> {{ $query['country'] }}</p>
-            <p><strong>Hall Name:</strong> {{ $query['hall'] }}</p>
-            <p><strong>Event:</strong> {{ $query['event'] }}</p>
-            <p><strong>Comment:</strong></p>
-            <p>{{ $query['comment'] }}</p>
+            <h1>roomsrequest Form Submission</h1>
+            {{-- <p><strong>Title:</strong> {{ $roomsrequest['title'] }}</p> --}}
+            <p><strong>Name:</strong> {{ $roomsrequest['first_name'] }}</p>
+            <p><strong>Room Name:</strong> {{ $roomsrequest['room'] }}</p>
+            <p><strong>Adults:</strong> {{ $roomsrequest['adults'] }}</p>
+            <p><strong>Chlidren:</strong> {{ $roomsrequest['children'] }}</p>
+            <p><strong>Email:</strong> {{ $roomsrequest['email'] }}</p>
+            <p><strong>Phone:</strong> {{ $roomsrequest['phone'] }}</p>
+            <p><strong>Country:</strong> {{ $roomsrequest['country'] }}</p>
+            <p><strong>Check in:</strong> {{ $roomsrequest['checkin'] }}</p>
+            <p><strong>Check Out:</strong> {{ $roomsrequest['checkout'] }}</p>
+
+            <p><strong>Special Arrangments:</strong>{{ $roomsrequest['special_arrangments'] }}</p>
+            <p></p>
             {{-- <p>Thank you for reaching out! We will get back to you as soon as possible.</p> --}}
         </div>
     </div>

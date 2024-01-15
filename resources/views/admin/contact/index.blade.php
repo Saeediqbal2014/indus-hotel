@@ -29,10 +29,10 @@
                                     <div class="row g-4 mb-3">
                                         <div class="col-sm-auto">
                                             <div>
-                                                <button type="button" class="btn btn-success add-btn" id="create-btn"
+                                                {{-- <button type="button" class="btn btn-success add-btn" id="create-btn"
                                                     onclick="window.location.href='{{ url('admin/add-contact') }}'">
                                                     <i class="ri-add-line align-bottom me-1"></i> Add
-                                                </button>
+                                                </button> --}}
                                                 {{-- <button class="btn btn-soft-danger" onclick="deleteMultiple()"><i
                                                         class="ri-delete-bin-2-line"></i></button> --}}
                                             </div>

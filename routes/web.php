@@ -17,6 +17,7 @@ use App\Http\Controllers\frontend\SliderController;
 use App\Http\Controllers\frontend\DineinController;
 use App\Http\Controllers\frontend\PlaceController;
 use App\Http\Controllers\frontend\QueryController;
+use App\Http\Controllers\frontend\RoomsrequestController;
 use App\Http\Controllers\frontend\VideoController;
 use App\Http\Controllers\frontend\WelcomeController;
 use Illuminate\Support\Facades\Auth;
@@ -55,6 +56,12 @@ Route::controller(QueryController::class)->as('query.')->group(function () {
     Route::get('/admin/all-query',  'index')->name('all');
     Route::post('/store-query',  'store')->name('store');
     Route::get('delete-query/{id}', 'delete')->name('delete');
+});
+
+Route::controller(RoomsrequestController::class)->as('roomsrequest.')->group(function () {
+    Route::get('/admin/all-roomsrequest',  'index')->name('all');
+    Route::post('/store-roomsrequest',  'store')->name('store');
+    Route::get('delete-roomsrequest/{id}', 'delete')->name('delete');
 });
 
 Route::prefix('admin')->middleware(['auth'])->group(function () {

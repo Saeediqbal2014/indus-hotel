@@ -230,7 +230,7 @@
             <p><strong>Email:</strong> {{ $contact['email'] }}</p>
             <p><strong>Message:</strong> {{ $contact['message'] }}</p>
 
-            <p>Thank you for reaching out! We will get back to you as soon as possible.</p>
+            {{-- <p>Thank you for reaching out! We will get back to you as soon as possible.</p> --}}
         </div>
     </div>
 

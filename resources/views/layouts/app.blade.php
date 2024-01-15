@@ -494,19 +494,33 @@
                                 </ul>
                             </div>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#query" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarApps">
+                                <i class="ri-contacts-book-line"></i> <span data-key="t-authentication">
+                                    Query</span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="query">
+                                <ul class="nav nav-sm flex-column">
 
+                                    <li class="nav-item">
+                                        <a href="{{ route('query.all') }}" class="nav-link" data-key="t-area">
+                                            All Query
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </li>
 
                     </ul>
                 </div>
                 </li>
-
-
                 {{-- @endif --}}
                 </ul>
             </div>
             <!-- Sidebar -->
         </div>
-
         <div class="sidebar-background"></div>
     </div>
     <!-- Left Sidebar End -->

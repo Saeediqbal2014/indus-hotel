@@ -90,29 +90,38 @@
                 <div class="col-xl-4 col-lg-5">
                     <div class="sidebar side_bar_position">
                         <div class="sidebar__post sticky">
-                            <form class="" action="send_inquary.php" method="post"
-                                onSubmit="return formValidation();" name="sidebar_form" id="sidebar_form">
+                            <form class="ajaxForm" action="{{ route('roomsrequest.store') }}" method="post"
+                                id="sidebar_form">
+                                @csrf
+
+                                <input type="hidden" name="room" value="{{ $rooms->name }}">
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <div class="mb-3">
                                             <div class="checkout-field">
                                                 <label class="form-label">Full Name</label>
                                                 <div class="chk-field">
-                                                    <input class="inp_style" required type="text" name="f_name"
+                                                    <input class="inp_style" required type="text" name="first_name"
                                                         id="f_name" placeholder="Your Full Name" />
+                                                    @error('first_name')
+                                                        <div class="alert alert-danger">{{ $message }}</div>
+                                                    @enderror
                                                     <!-- <i class="fa fa-calendar"></i> -->
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <input type="hidden" id="room" value="" name="room" />
+
                                     <div class="col-sm-12">
                                         <div class="mb-3">
                                             <div class="checkout-field">
                                                 <label class="form-label">Number</label>
                                                 <div class="chk-field">
-                                                    <input class="inp_style" required name="m_num" id="m_num"
+                                                    <input class="inp_style" required name="phone" id="m_num"
                                                         type="Number" placeholder="Your Number" />
+                                                    @error('phone')
+                                                        <div class="alert alert-danger">{{ $message }}</div>
+                                                    @enderror
                                                     <!-- <i class="fa fa-calendar"></i> -->
                                                 </div>
                                             </div>
@@ -123,8 +132,11 @@
                                             <div class="checkout-field">
                                                 <label class="form-label">Email</label>
                                                 <div class="chk-field">
-                                                    <input class="inp_style" required name="e_id" id="e_id"
+                                                    <input class="inp_style" required name="email" id="e_id"
                                                         type="email" placeholder="Your Email" />
+                                                    @error('email')
+                                                        <div class="alert alert-danger">{{ $message }}</div>
+                                                    @enderror
                                                     <!-- <i class="fa fa-calendar"></i> -->
                                                 </div>
                                             </div>
@@ -137,8 +149,9 @@
                                                 <div class="chk-field">
                                                     <div class="d_flex">
                                                         <select id="country"
-                                                            class="form-control order_input sidebar_country" required
-                                                            aria-required="true" aria-invalid="false" name="country">
+                                                            class="form-control order_input sidebar_country" name="country"
+                                                            required aria-required="true" aria-invalid="false"
+                                                            name="country">
                                                             <option value="" selected disabled>Select Country
                                                             </option>
                                                             <option value="Afghanistan">Afghanistan</option>
@@ -357,6 +370,9 @@
                                                             <option value="Zambia">Zambia</option>
                                                             <option value="Zimbabwe">Zimbabwe</option>
                                                         </select>
+                                                        @error('country')
+                                                            <div class="alert alert-danger">{{ $message }}</div>
+                                                        @enderror
                                                     </div>
                                                 </div>
                                             </div>
@@ -369,8 +385,12 @@
                                                 <label class="form-label">Check In</label>
                                                 <div class="chk-field">
                                                     <input class= "date-pick t-check-in date_picker" required
-                                                        name="startdate" id="startdate date" data-provide="date_picker"
+                                                        name="checkin" id="startdate date" data-provide="date_picker"
                                                         type="text" placeholder="Arrive Date" />
+                                                    @error('checkin')
+                                                        <div class="alert alert-danger">{{ $message }}</div>
+                                                    @enderror
+
                                                     <!-- <i class="fa fa-calendar"></i> -->
                                                 </div>
                                             </div>
@@ -382,8 +402,11 @@
                                                 <label class="form-label">Check Out</label>
                                                 <div class="chk-field">
                                                     <input class= "date-pick t-check-out date_picker" required
-                                                        name="enddate" id="enddate date" data-provide="date_picker"
+                                                        name="checkout" id="enddate date" data-provide="date_picker"
                                                         type="text" placeholder="Departure Date" />
+                                                    @error('checkout')
+                                                        <div class="alert alert-danger">{{ $message }}</div>
+                                                    @enderror
                                                     <!-- <i class="fa fa-calendar"></i> -->
                                                 </div>
                                             </div>
@@ -392,29 +415,35 @@
                                     <div class="col-sm-12">
                                         <div class="mb-3">
                                             <label class="form-label">Adults</label>
-                                            <select class= "form-select form-control bg-white" required name="adult_num"
+                                            <select class= "form-select form-control bg-white" required name="adults"
                                                 id="adult_num">
-                                                <option selected disabled value="">Select</option>
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
+
+                                                <option selected value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
                                             </select>
+                                            @error('adult')
+                                                <div class="alert alert-danger">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                     </div>
 
                                     <div class="col-sm-12">
                                         <div class="mb-3">
                                             <label class="form-label">Children</label>
-                                            <select class= "form-select form-control bg-white" required name="child_num"
+                                            <select class= "form-select form-control bg-white" required name="children"
                                                 id="child_num">
                                                 <option selected disabled value="">Select</option>
-                                                <option>0</option>
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
+                                                <option value="0">0</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4"></option>
                                             </select>
+                                            @error('children')
+                                                <div class="alert alert-danger">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
@@ -423,23 +452,27 @@
                                         <div class="checkout-field">
                                             <label class="form-label">Any Special Arrangments</label>
                                             <div class="chk-field">
-                                                <textarea name="msg_box" id="msg_box" class="form-control spcl-arrag" id="" cols="10"
+                                                <textarea name="special_arrangments" id="msg_box" class="form-control spcl-arrag" id="" cols="10"
                                                     rows="4" placeholder="Any Query or Any Special Arrangment"></textarea>
                                                 <!-- <i class="fa fa-calendar"></i> -->
+                                                @error('special_arrangments')
+                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <input name="form_botcheck" class="form-control" type="hidden" value="">
+                                    {{-- <input name="form_botcheck" class="form-control" type="hidden" value="">
                                     <div class="g-recaptcha" data-sitekey="6Ld9MyUpAAAAAEQ4im_xUthSS8YWrpxmyPkKS0XG"
-                                        style="background-size: 100%; background-repeat: no-repeat;"></div>
+                                        style="background-size: 100%; background-repeat: no-repeat;"></div> --}}
                                     <div id="submit" class="mt20"
                                         style="background-size: 100%; background-repeat: no-repeat;">
-                                        <input type='submit' id='submit_form'
-                                            value='Check Availability'class="theme-btn btn-style-one w-100 mt-3 btn-main"
-                                            data-loading-text="Please wait..." onclick="msgSubmit()">
+                                        <input type='submit'
+                                            value='Check Availability'class="theme-btn btn-style-one w-100 mt-3 btn-main">
                                     </div>
+                                </div>
+
                             </form>
                         </div>
                     </div>
