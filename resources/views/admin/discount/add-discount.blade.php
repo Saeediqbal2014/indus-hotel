@@ -16,7 +16,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header align-items-center d-flex">
-                            <h4 class="card-title mb-0 flex-grow-1"> {{ isset($discount) ? 'Edit' : 'Add' }} discount image
+                            <h4 class="card-title mb-0 flex-grow-1"> {{ isset($discount) ? 'Edit' : 'Add' }} discount Post
                             </h4>
                             <div class="flex-shrink-0">
 
@@ -90,5 +90,5 @@
                 <pre class="language-markup" style="height: 375px;">
 
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <!--end row-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <!--end row-->
 @endsection

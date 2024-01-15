@@ -33,11 +33,11 @@
                                                     onclick="window.location.href='{{ url('admin/add-welcome') }}'">
                                                     <i class="ri-add-line align-bottom me-1"></i> Add
                                                 </button>
-                                                <button class="btn btn-soft-danger" onclick="deleteMultiple()"><i
-                                                        class="ri-delete-bin-2-line"></i></button>
+                                                {{-- <button class="btn btn-soft-danger" onclick="deleteMultiple()"><i
+                                                        class="ri-delete-bin-2-line"></i></button> --}}
                                             </div>
                                         </div>
-                                        <div class="col-sm">
+                                        {{-- <div class="col-sm">
                                             <div class="d-flex justify-content-sm-end">
                                                 <div class="search-box ms-2">
                                                     <input type="text" class="form-control search"
@@ -45,7 +45,7 @@
                                                     <i class="ri-search-line search-icon"></i>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                     </div>
 
                                     <div class="table-responsive table-card mt-3 mb-1">

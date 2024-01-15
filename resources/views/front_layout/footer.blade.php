@@ -8,8 +8,9 @@
                 <div class="footer-column col-lg-4 col-sm-6">
                     <div class="footer-widget about-widget wow fadeInLeft">
                         <div class="widget-content">
-                            <div class="logo"><a href="index.php"> <img src="{{ asset('front_assets/images/logo.png') }}"
-                                        alt="" title=""></a></div>
+                            <div class="logo"><a href="{{ route('home') }}"> <img
+                                        src="{{ asset('front_assets/images/logo.png') }}" alt=""
+                                        title=""></a></div>
                             <div class="text">We welcome to the best hotel in Hyderabad. <br> Indus Hotel provide you
                                 comfortable room and beautiful environment with hospitality of Sindh </div>
                             <ul class="social-icon-two">
@@ -117,7 +118,11 @@
 <script src="{{ asset('front_assets/js/script.js') }}"></script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
 </script>
-
+<script src="{{ asset('asset') }}/js/jquery.form.js"></script>
+<script src="{{ asset('asset') }}/js/select2.min.js"></script>
+<script src="{{ asset('asset') }}/js/parsley.min.js"></script>
+<script src="{{ asset('asset') }}/js/sweetalert2.min.js"></script>
+<script src="{{ asset('asset') }}/js/custom.js"></script>
 
 </body>
 

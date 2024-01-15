@@ -30,22 +30,22 @@
                         <div class="navbar-brand-box horizontal-logo">
                             <a href="index-2.html" class="logo logo-dark">
                                 <span class="logo-sm">
-                                    <img src="{{ asset('layout_assets') }}/images/logo-sm.png" alt=""
+                                    <img src="{{ asset('front_assets/images/logo.png') }}" alt=""
                                         height="22">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="{{ asset('layout_assets') }}/images/logo-dark.png" alt=""
+                                    <img src="{{ asset('front_assets/images/logo.png') }}" alt=""
                                         height="17">
                                 </span>
                             </a>
 
                             <a href="index-2.html" class="logo logo-light">
                                 <span class="logo-sm">
-                                    <img src="{{ asset('layout_assets') }}/images/logo-sm.png" alt=""
+                                    <img src="{{ asset('front_assets/images/logo.png') }}" alt=""
                                         height="22">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="{{ asset('layout_assets') }}/images/logo-light.png" alt=""
+                                    <img src="{{ asset('front_assets/images/logo.png') }}" alt=""
                                         height="17">
                                 </span>
                             </a>
@@ -169,19 +169,19 @@
                 <!-- Dark Logo-->
                 <a href="index-2.html" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="{{ asset('layout_assets') }}/images/logo-sm.png" alt="" height="22">
+                        <img src="{{ asset('front_assets/images/logo.png') }}" alt="" height="72">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{ asset('layout_assets') }}/images/logo-dark.png" alt="" height="17">
+                        <img src="{{ asset('front_assets/images/logo.png') }}" alt="" height="72">
                     </span>
                 </a>
                 <!-- Light Logo-->
                 <a href="index-2.html" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="{{ asset('layout_assets') }}/images/logo-sm.png" alt="" height="22">
+                        <img src="{{ asset('front_assets/images/logo.png') }}" alt="" height="72">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{ asset('layout_assets') }}/images/logo-light.png" alt="" height="17">
+                        <img src="{{ asset('front_assets/images/logo.png') }}" alt="" height="72">
                     </span>
                 </a>
                 <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
@@ -196,320 +196,307 @@
                     <div id="two-column-menu">
                     </div>
                     <ul class="navbar-nav" id="navbar-nav">
-                        <li class="menu-title"><span data-key="t-menu">Menu</span></li>
+                        <li class="menu-title"><span data-key="t-menu">Dashbord</span></li>
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="{{ route('home') }}" role="button"
+                            <a class="nav-link menu-link" href="{{ route('dashboard') }}" role="button"
                                 aria-expanded="false" aria-controls="sidebarDashboards">
-                                <i class="ri-dashboard-2-line"></i> <span data-key="t-dashboards">Dashboards</span>
+                                <i class="ri-dashboard-2-line"></i> <span data-key="t-dashboards">Dashboard</span>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link menu-link" href="#user" data-bs-toggle="collapse" role="button"
-                                aria-expanded="false" aria-controls="sidebarApps">
-                                <i class="ri-account-circle-line"></i> <span data-key="t-authentication">User</span>
-                            </a>
-                            <div class="collapse menu-dropdown" id="user">
+                        {{-- <li class="menu-title"><span data-key="t-menu">Manage Website</span></li> --}}
 
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#accommodation1" data-bs-toggle="collapse"
+                                role="button" aria-expanded="false" aria-controls="sidebarApps">
+                                <i class="ri-pages-line"></i> <span data-key="t-authentication">
+                                    Accommodation</span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="accommodation1">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="" class="nav-link" data-key="t-calendar">
-                                            User </a>
+                                        <a href="{{ route('accommodation.add') }}" class="nav-link"
+                                            data-key="t-line"> Add Accommodation
+                                        </a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a href="{{ route('accommodation.all') }}" class="nav-link"
+                                            data-key="t-area"> All Accommodation
+                                        </a>
+                                    </li>
+
                                 </ul>
+                            </div>
+                        </li>
+                        {{-- <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarCharts" data-bs-toggle="collapse"
+                                role="button" aria-expanded="false" aria-controls="sidebarCharts">
+                                <i class="ri-pie-chart-line"></i> <span data-key="t-charts">Frontend</span>
+                            </a>
+
+                        {{-- <div class="collapse menu-dropdown" id="sidebarCharts"> --}}
+
+
+
+
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sliders" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarApps">
+                                <i class="ri-image-fill"></i> <span data-key="t-authentication">
+                                    Slider</span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="sliders">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="" class="nav-link" data-key="t-nft-landing">Role </a>
+                                        <a href="{{ url('admin/add-slider') }}" class="nav-link" data-key="t-line">
+                                            Add Slider
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{ url('admin/all-slider') }}" class="nav-link" data-key="t-area">
+                                            All Slider
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#welcome" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarApps">
+                                <i class="ri-gallery-line"></i> <span data-key="t-authentication">
+                                    Welcome</span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="welcome">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="{{ url('http://127.0.0.1:8000/admin/edit-welcome/1') }}"
+                                            class="nav-link" data-key="t-line"> Add welcome
+                                        </a>
+                                    </li>
+                                    {{-- <li class="nav-item">
+                                                    <a href="{{ url('admin/all-welcome') }}" class="nav-link"
+                                                        data-key="t-area"> All welcome
+                                                    </a>
+                                                </li> --}}
+
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#about" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarApps">
+                                <i class="ri-folder-user-line"></i> <span data-key="t-authentication">
+                                    About</span>
+                            </a>
+
+                            <div class="collapse menu-dropdown" id="about">
+                                <ul class="nav nav-sm flex-column">
+                                    {{-- <li class="nav-item">
+                                                    <a href="{{ url('admin/add-about') }}" class="nav-link"
+                                                        data-key="t-line"> Add about
+                                                    </a>
+                                                </li> --}}
+                                    <li class="nav-item">
+                                        <a href="{{ url('admin/edit-about/1') }}" class="nav-link"
+                                            data-key="t-area">About Us
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
 
                         <li class="nav-item">
-                            {{-- <a class="nav-link menu-link" href="#sidebarCharts" data-bs-toggle="collapse"
-                                role="button" aria-expanded="false" aria-controls="sidebarCharts">
-                                <i class="ri-pie-chart-line"></i> <span data-key="t-charts">Frontend</span>
-                            </a> --}}
-                            {{-- <div class="collapse menu-dropdown" id="sidebarCharts"> --}}
-                            <ul class="nav nav-sm flex-column">
-                                <li class="nav-item">
-                                    <a href="#accommodation" class="nav-link" data-bs-toggle="collapse"
-                                        role="button" aria-expanded="false" aria-controls="sidebarApexcharts"
-                                        data-key="t-apexcharts">
-                                        Accommodation
-                                    </a>
-                                    <div class="collapse menu-dropdown" id="accommodation">
-                                        <ul class="nav nav-sm flex-column">
-                                            <li class="nav-item">
-                                                <a href="{{ route('accommodation.add') }}" class="nav-link"
-                                                    data-key="t-line"> Add Accommodation
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="{{ route('accommodation.all') }}" class="nav-link"
-                                                    data-key="t-area"> All Accommodation
-                                                </a>
-                                            </li>
-
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#sliders" class="nav-link" data-bs-toggle="collapse" role="button"
-                                        aria-expanded="false" aria-controls="sidebarApexcharts"
-                                        data-key="t-apexcharts">
-                                        Slider
-                                    </a>
-                                    <div class="collapse menu-dropdown" id="sliders">
-                                        <ul class="nav nav-sm flex-column">
-                                            <li class="nav-item">
-                                                <a href="{{ url('admin/add-slider') }}" class="nav-link"
-                                                    data-key="t-line"> Add Slider
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="{{ url('admin/all-slider') }}" class="nav-link"
-                                                    data-key="t-area"> All Slider
-                                                </a>
-                                            </li>
-
-                                        </ul>
-                                    </div>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="#welcome" class="nav-link" data-bs-toggle="collapse" role="button"
-                                        aria-expanded="false" aria-controls="sidebarApexcharts"
-                                        data-key="t-apexcharts">
-                                        Welcome
-                                    </a>
-                                    <div class="collapse menu-dropdown" id="welcome">
-                                        <ul class="nav nav-sm flex-column">
-                                            <li class="nav-item">
-                                                <a href="{{ url('http://127.0.0.1:8000/admin/edit-welcome/1') }}"
-                                                    class="nav-link" data-key="t-line"> Add welcome
-                                                </a>
-                                            </li>
-                                            {{-- <li class="nav-item">
-                                                    <a href="{{ url('admin/all-welcome') }}" class="nav-link"
-                                                        data-key="t-area"> All welcome
-                                                    </a>
-                                                </li> --}}
-
-                                        </ul>
-                                    </div>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="#about" class="nav-link" data-bs-toggle="collapse" role="button"
-                                        aria-expanded="false" aria-controls="sidebarApexcharts"
-                                        data-key="t-apexcharts">
-                                        about
-                                    </a>
-                                    <div class="collapse menu-dropdown" id="about">
-                                        <ul class="nav nav-sm flex-column">
-                                            {{-- <li class="nav-item">
-                                                    <a href="{{ url('admin/add-about') }}" class="nav-link"
-                                                        data-key="t-line"> Add about
-                                                    </a>
-                                                </li> --}}
-                                            <li class="nav-item">
-                                                <a href="{{ url('admin/edit-about/1') }}" class="nav-link"
-                                                    data-key="t-area">About Us
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="#facility" class="nav-link" data-bs-toggle="collapse" role="button"
-                                        aria-expanded="false" aria-controls="sidebarApexcharts"
-                                        data-key="t-apexcharts">
-                                        Facility
-                                    </a>
-                                    <div class="collapse menu-dropdown" id="facility">
-                                        <ul class="nav nav-sm flex-column">
-                                            {{-- <li class="nav-item">
+                            <a class="nav-link menu-link" href="#facility" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarApps">
+                                <i class="ri-customer-service-2-line"></i> <span data-key="t-authentication">
+                                    Facility</span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="facility">
+                                <ul class="nav nav-sm flex-column">
+                                    {{-- <li class="nav-item">
                                                     <a href="{{ url('admin/add-facility') }}" class="nav-link"
                                                         data-key="t-line"> Add facility
                                                     </a>
                                                 </li> --}}
-                                            <li class="nav-item">
-                                                <a href="{{ url('admin/edit-facility/1') }}" class="nav-link"
-                                                    data-key="t-area">facility
-                                                </a>
-                                            </li>
+                                    <li class="nav-item">
+                                        <a href="{{ url('admin/edit-facility/1') }}" class="nav-link"
+                                            data-key="t-area">facility
+                                        </a>
+                                    </li>
 
-                                        </ul>
-                                    </div>
-                                </li>
+                                </ul>
+                            </div>
+                        </li>
 
-                                <li class="nav-item">
-                                    <a href="#discount" class="nav-link" data-bs-toggle="collapse" role="button"
-                                        aria-expanded="false" aria-controls="sidebarApexcharts"
-                                        data-key="t-apexcharts">
-                                        Discount
-                                    </a>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#discount" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarApps">
+                                <i class="ri-percent-line"></i> <span data-key="t-authentication">
+                                    Discount</span>
+                            </a>
 
-                                    <div class="collapse menu-dropdown" id="discount">
-                                        <ul class="nav nav-sm flex-column">
-                                            <li class="nav-item">
-                                                <a href="{{ url('admin/add-discount') }}" class="nav-link"
-                                                    data-key="t-line"> Add Discount
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="{{ url('admin/all-discount') }}" class="nav-link"
-                                                    data-key="t-area"> All Discount
-                                                </a>
-                                            </li>
+                            <div class="collapse menu-dropdown" id="discount">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="{{ url('admin/add-discount') }}" class="nav-link"
+                                            data-key="t-line"> Add Discount
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{ url('admin/all-discount') }}" class="nav-link"
+                                            data-key="t-area"> All Discount
+                                        </a>
+                                    </li>
 
-                                        </ul>
-                                    </div>
-                                </li>
-
-
-                                <li class="nav-item">
-                                    <a href="#video" class="nav-link" data-bs-toggle="collapse" role="button"
-                                        aria-expanded="false" aria-controls="sidebarApexcharts"
-                                        data-key="t-apexcharts">
-                                        Video
-                                    </a>
-
-                                    <div class="collapse menu-dropdown" id="video">
-                                        <ul class="nav nav-sm flex-column">
-                                            <li class="nav-item">
-                                                <a href="{{ url('admin/add-video') }}" class="nav-link"
-                                                    data-key="t-line"> Add Video
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="{{ url('admin/all-video') }}" class="nav-link"
-                                                    data-key="t-area"> All Video
-                                                </a>
-                                            </li>
-
-                                        </ul>
-                                    </div>
-                                </li>
+                                </ul>
+                            </div>
+                        </li>
 
 
-                                <li class="nav-item">
-                                    <a href="#events" class="nav-link" data-bs-toggle="collapse" role="button"
-                                        aria-expanded="false" aria-controls="sidebarApexcharts"
-                                        data-key="t-apexcharts">
-                                        Event
-                                    </a>
-                                    <div class="collapse menu-dropdown" id="events">
-                                        <ul class="nav nav-sm flex-column">
-                                            <li class="nav-item">
-                                                <a href="{{ url('admin/add-event') }}" class="nav-link"
-                                                    data-key="t-line"> Add Event
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="{{ url('admin/all-event') }}" class="nav-link"
-                                                    data-key="t-area"> All Event
-                                                </a>
-                                            </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#video" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarApps">
+                                <i class="ri-video-line"></i> <span data-key="t-authentication">
+                                    Video</span>
+                            </a>
 
-                                        </ul>
-                                    </div>
-                                </li>
+                            <div class="collapse menu-dropdown" id="video">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="{{ url('admin/add-video') }}" class="nav-link" data-key="t-line">
+                                            Add Video
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{ url('admin/all-video') }}" class="nav-link" data-key="t-area">
+                                            All Video
+                                        </a>
+                                    </li>
 
-                                <li class="nav-item">
-                                    <a href="#dineins" class="nav-link" data-bs-toggle="collapse" role="button"
-                                        aria-expanded="false" aria-controls="sidebarApexcharts"
-                                        data-key="t-apexcharts">
-                                        Dine in
-                                    </a>
-                                    <div class="collapse menu-dropdown" id="dineins">
-                                        <ul class="nav nav-sm flex-column">
-                                            <li class="nav-item">
-                                                <a href="{{ url('admin/add-dinein') }}" class="nav-link"
-                                                    data-key="t-line"> Add Dine In
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="{{ url('admin/all-dinein') }}" class="nav-link"
-                                                    data-key="t-area"> All Dine in
-                                                </a>
-                                            </li>
-
-                                        </ul>
-                                    </div>
-                                </li>
+                                </ul>
+                            </div>
+                        </li>
 
 
-                                <li class="nav-item">
-                                    <a href="#beauty" class="nav-link" data-bs-toggle="collapse" role="button"
-                                        aria-expanded="false" aria-controls="sidebarApexcharts"
-                                        data-key="t-apexcharts">
-                                        Beauty And Wellness
-                                    </a>
-                                    <div class="collapse menu-dropdown" id="beauty">
-                                        <ul class="nav nav-sm flex-column">
-                                            <li class="nav-item">
-                                                <a href="{{ url('admin/add-beauty') }}" class="nav-link"
-                                                    data-key="t-line"> Add Beauty
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="{{ url('admin/all-beauty') }}" class="nav-link"
-                                                    data-key="t-area"> All Beauty
-                                                </a>
-                                            </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#event" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarApps">
+                                <i class="ri-calendar-event-fill"></i> <span data-key="t-authentication">
+                                    Event</span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="event">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="{{ url('admin/add-event') }}" class="nav-link" data-key="t-line">
+                                            Add Event
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{ url('admin/all-event') }}" class="nav-link" data-key="t-area">
+                                            All Event
+                                        </a>
+                                    </li>
 
-                                        </ul>
-                                    </div>
-                                </li>
+                                </ul>
+                            </div>
+                        </li>
 
-                                <li class="nav-item">
-                                    <a href="#place" class="nav-link" data-bs-toggle="collapse" role="button"
-                                        aria-expanded="false" aria-controls="sidebarApexcharts"
-                                        data-key="t-apexcharts">
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#dineins" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarApps">
+                                <i class="ri-restaurant-2-line"></i> <span data-key="t-authentication">
+                                    DineIn</span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="dineins">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="{{ url('admin/add-dinein') }}" class="nav-link" data-key="t-line">
+                                            Add Dine In
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{ url('admin/all-dinein') }}" class="nav-link" data-key="t-area">
+                                            All Dine in
+                                        </a>
+                                    </li>
 
-                                        Hyderabad places
-                                    </a>
-                                    <div class="collapse menu-dropdown" id="place">
-                                        <ul class="nav nav-sm flex-column">
-                                            <li class="nav-item">
-                                                <a href="{{ url('admin/add-place') }}" class="nav-link"
-                                                    data-key="t-line"> Add Place
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="{{ url('admin/all-place') }}" class="nav-link"
-                                                    data-key="t-area"> All Places
-                                                </a>
-                                            </li>
-
-                                        </ul>
-                                    </div>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="#contact" class="nav-link" data-bs-toggle="collapse" role="button"
-                                        aria-expanded="false" aria-controls="sidebarApexcharts"
-                                        data-key="t-apexcharts">
-
-                                        Contact
-                                    </a>
-                                    <div class="collapse menu-dropdown" id="contact">
-                                        <ul class="nav nav-sm flex-column">
-
-                                            <li class="nav-item">
-                                                <a href="{{ route('contact.all') }}" class="nav-link"
-                                                    data-key="t-area"> All Contact
-                                                </a>
-                                            </li>
-
-                                        </ul>
-                                    </div>
-                                </li>
+                                </ul>
+                            </div>
+                        </li>
 
 
-                            </ul>
+                        <li class="nav-item">
+
+                            <a class="nav-link menu-link" href="#beauty" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarApps">
+                                <i class="ri-brush-line"></i> <span data-key="t-authentication">
+                                    Beauty And Wellness</span>
+                            </a>
+
+                            <div class="collapse menu-dropdown" id="beauty">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="{{ url('admin/add-beauty') }}" class="nav-link" data-key="t-line">
+                                            Add Beauty
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{ url('admin/all-beauty') }}" class="nav-link" data-key="t-area">
+                                            All Beauty
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#place" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarApps">
+                                <i class="ri-map-pin-line"></i> <span data-key="t-authentication">
+                                    Hyderabad places</span>
+                            </a>
+
+                            <div class="collapse menu-dropdown" id="place">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="{{ url('admin/add-place') }}" class="nav-link" data-key="t-line">
+                                            Add Place
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{ url('admin/all-place') }}" class="nav-link" data-key="t-area">
+                                            All Places
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#contact" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarApps">
+                                <i class="ri-contacts-book-line"></i> <span data-key="t-authentication">
+                                    Contact</span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="contact">
+                                <ul class="nav nav-sm flex-column">
+
+                                    <li class="nav-item">
+                                        <a href="{{ route('contact.all') }}" class="nav-link" data-key="t-area">
+                                            All Contact
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </li>
+
+
+                    </ul>
                 </div>
                 </li>
 

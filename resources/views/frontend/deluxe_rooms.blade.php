@@ -1,5 +1,5 @@
 @extends('front_layout.app')
-@section('title', 'Deluxe-rooms')
+@section('title', 'Rooms')
 @section('content')
     <!-- Start main-content -->
     <section class="page-title" style="background-image: url({{ asset('front_assets/images/banner/room.jpg') }});">
@@ -51,8 +51,8 @@
 
                                 <div class="room-block col-lg-4 col-md-4">
                                     <!-- <div class="price_box">
-                                                                                                                                                                                                                                                                                                                                                                                                <div class="rate_box">
-                                                                                                                                                                                                                                                                                                                                                                                       </div> -->
+                                                                                                                                                                                                                                                                                                                                                                                                        <div class="rate_box">
+                                                                                                                                                                                                                                                                                                                                                                                               </div> -->
                                     <a href="{{ route('single_room', $room->id) }}"
                                         class="theme-btn btn-style-one read-more room_btn">Discover
                                         More</a>

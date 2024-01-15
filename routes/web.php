@@ -10,11 +10,13 @@ use App\Http\Controllers\frontend\BeautyController;
 use App\Http\Controllers\frontend\DiscountController;
 use App\Http\Controllers\frontend\AboutController;
 use App\Http\Controllers\frontend\ContactController;
+use App\Http\Controllers\frontend\DashboardController;
 use App\Http\Controllers\frontend\EventController;
 use App\Http\Controllers\frontend\FacilityController;
 use App\Http\Controllers\frontend\SliderController;
 use App\Http\Controllers\frontend\DineinController;
 use App\Http\Controllers\frontend\PlaceController;
+use App\Http\Controllers\frontend\QueryController;
 use App\Http\Controllers\frontend\VideoController;
 use App\Http\Controllers\frontend\WelcomeController;
 use Illuminate\Support\Facades\Auth;
@@ -49,15 +51,20 @@ Route::controller(ContactController::class)->as('contact.')->group(function () {
     Route::post('/store-messages',  'store')->name('store');
     Route::get('delete-messages/{id}', 'delete')->name('delete');
 });
+Route::controller(QueryController::class)->as('query.')->group(function () {
+    Route::get('/admin/all-query',  'index')->name('all');
+    Route::post('/store-query',  'store')->name('store');
+    Route::get('delete-query/{id}', 'delete')->name('delete');
+});
 
 Route::prefix('admin')->middleware(['auth'])->group(function () {
     //User Controller
-    Route::controller(UserController::class)->group(function () {
-        Route::get('/', 'index')->name('user.index');
-        Route::get('user-add', 'create')->name('user.add');
-        Route::post('user-save', 'store')->name('user.save');
-        Route::get('user-edit/{id}', 'edit')->name('user.edit');
-        Route::get('user-delete/{id}', 'delete')->name('user.delete');
+    Route::controller(DashboardController::class)->group(function () {
+        Route::get('/', 'index')->name('dashboard');
+        // Route::get('user-add', 'create')->name('user.add');
+        // Route::post('user-save', 'store')->name('user.save');
+        // Route::get('user-edit/{id}', 'edit')->name('user.edit');
+        // Route::get('user-delete/{id}', 'delete')->name('user.delete');
         //Profile
         Route::get('profile/{id}', 'profile')->name('user.profile');
         Route::get('edit-profile/{id}', 'edit_profile')->name('user.edit_profile');

@@ -16,7 +16,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header align-items-center d-flex">
-                            <h4 class="card-title mb-0 flex-grow-1"> {{ isset($about) ? 'Edit' : 'Add' }} about image
+                            <h4 class="card-title mb-0 flex-grow-1"> {{ isset($about) ? 'Edit' : 'Add' }} About Us
                             </h4>
                             <div class="flex-shrink-0">
 
@@ -115,8 +115,8 @@
                 <pre class="language-markup" style="height: 375px;">
 
 
-                                                                                                                                                                                                                <script>
-                                                                                                                                                                                                                    CKEDITOR.replace('myTextarea');
-                                                                                                                                                                                                                </script>
-                                                                                                                                                                                            <!--end row-->
+                                                                                                                                                                                                                        <script>
+                                                                                                                                                                                                                            CKEDITOR.replace('myTextarea');
+                                                                                                                                                                                                                        </script>
+                                                                                                                                                                                                    <!--end row-->
 @endsection

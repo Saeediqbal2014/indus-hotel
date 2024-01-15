@@ -1,5 +1,5 @@
 @extends('front_layout.app')
-@section('title', 'Beauty and wellness')
+@section('title', 'hyderabad-attractions')
 @section('content')
     <!-- Start main-content -->
     <section class="page-title" style="background-image: url({{ asset('front_assets/images/banner/experiance.jpg') }});">
@@ -158,32 +158,32 @@
                 </div>
 
                 <!--
-                                                                                <div class="row">
-                                                                                        <h4 class="mb_40 mt_40 nearest_places">Nearest Restaurant & Cafe</h4>
-                                                                                        <div class="near_place_box col-lg-4 col-md-12 col-sm-12">
-                                                                                          <div class="near_place_inner_box">
-                                                                                          <h6 class="bolder">KFC</h6>
-                                                                                          <p>An ineternational fried chicken food chain that satisfy your fast food craving walking distance</p>
-                                                                                          <p class="text"><i class="fa-regular fa-location-dot location_icon "></i> From Indus to KFC <span class="bolder">120 M</span></p>
-                                                                                        </div>
-                                                                                      </div>
-                                                                                        
-                                                                                        <div class="near_place_box col-lg-4 col-md-12 col-sm-12">
-                                                                                          <div class="near_place_inner_box">
-                                                                                          <h6 class="bolder">McDonald's</h6>
-                                                                                          <p>A other world know international Food chain to and many peoples favorite</p>
-                                                                                          <p class="text"><i class="fa-regular fa-location-dot location_icon "></i> From Indus to McDonald's <span class="bolder">800 M</span></p>
-                                                                                        </div>
-                                                                                      </div>
-                                                                                        
-                                                                                        <div class="near_place_box col-lg-4 col-md-12 col-sm-12">
-                                                                                          <div class="near_place_inner_box">
-                                                                                          <h6 class="bolder">Lamoosh Cafe & Restaurant</h6>
-                                                                                          <p>Mostly famous for Continental cuisine but also have some good desi cuisine</p>
-                                                                                          <p class="text"><i class="fa-regular fa-location-dot location_icon "></i> From Indus to Boulevard Mall <span class="bolder">6.1 KM</span></p>
-                                                                                        </div>
-                                                                                      </div>
-                                                                                </div> -->
+                                                                                    <div class="row">
+                                                                                            <h4 class="mb_40 mt_40 nearest_places">Nearest Restaurant & Cafe</h4>
+                                                                                            <div class="near_place_box col-lg-4 col-md-12 col-sm-12">
+                                                                                              <div class="near_place_inner_box">
+                                                                                              <h6 class="bolder">KFC</h6>
+                                                                                              <p>An ineternational fried chicken food chain that satisfy your fast food craving walking distance</p>
+                                                                                              <p class="text"><i class="fa-regular fa-location-dot location_icon "></i> From Indus to KFC <span class="bolder">120 M</span></p>
+                                                                                            </div>
+                                                                                          </div>
+                                                                                            
+                                                                                            <div class="near_place_box col-lg-4 col-md-12 col-sm-12">
+                                                                                              <div class="near_place_inner_box">
+                                                                                              <h6 class="bolder">McDonald's</h6>
+                                                                                              <p>A other world know international Food chain to and many peoples favorite</p>
+                                                                                              <p class="text"><i class="fa-regular fa-location-dot location_icon "></i> From Indus to McDonald's <span class="bolder">800 M</span></p>
+                                                                                            </div>
+                                                                                          </div>
+                                                                                            
+                                                                                            <div class="near_place_box col-lg-4 col-md-12 col-sm-12">
+                                                                                              <div class="near_place_inner_box">
+                                                                                              <h6 class="bolder">Lamoosh Cafe & Restaurant</h6>
+                                                                                              <p>Mostly famous for Continental cuisine but also have some good desi cuisine</p>
+                                                                                              <p class="text"><i class="fa-regular fa-location-dot location_icon "></i> From Indus to Boulevard Mall <span class="bolder">6.1 KM</span></p>
+                                                                                            </div>
+                                                                                          </div>
+                                                                                    </div> -->
                 <div class="row mb_40">
                     <h4 class="mb_40 mt_40 nearest_places">Nearest Other Facilities</h4>
                     <div class="near_place_box col-lg-4 col-md-12 col-sm-12">

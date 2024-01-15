@@ -1,5 +1,5 @@
 @extends('front_layout.app')
-@section('title', 'rooms')
+@section('title', $rooms->name)
 @section('content')
     <!-- Start main-content -->
     <section class="page-title" style="background-image: url({{ asset('front_assets/images/banner/room.jpg') }});">

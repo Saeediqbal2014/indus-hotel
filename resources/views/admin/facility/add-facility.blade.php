@@ -47,7 +47,7 @@
                                             <div class="col-md-12">
                                                 <div class="mb-3">
                                                     <label for="firstNameinput" class="form-label">Text Here</label>
-                                                    <textarea id="" class="form-control" name="section">{{ $facility->section ?? '' }}</textarea>
+                                                    <textarea id="" cols="130" rows="130" class="form-control" name="section">{{ $facility->section ?? '' }}</textarea>
                                                     {{-- <div id="summernote"></div> --}}
 
                                                     @error('section')
@@ -85,16 +85,16 @@
             <div class="d-none code-view">
                 <pre class="language-markup" style="height: 375px;">
 
-                                                                                                                {{-- <script>
+                                                                                                                                        {{-- <script>
                                 $('#summernote').summernote({
                                     placeholder: 'Hello Bootstrap 4',
                                     tabsize: 2,
                                     height: 100
                                 });
                             </script> --}}
-                                                                                                                    <script>
-                                                                                                                        CKEDITOR.replace('myTextarea');
-                                                                                                                    </script>
+                                                                                                                                            <script>
+                                                                                                                                                CKEDITOR.replace('myTextarea');
+                                                                                                                                            </script>
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <!--end row-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <!--end row-->
 @endsection

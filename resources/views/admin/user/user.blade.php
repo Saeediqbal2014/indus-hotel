@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('content')
-
     <div class="row">
         <div class="col-12">
             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
@@ -23,39 +22,45 @@
                 </div><!-- end card header -->
                 <div class="card-body">
                     <div class="live-preview">
-                        <form class="row g-3 needs-validation ajaxForm" novalidate action="{{ route('user.save') }}" method="post">
+                        <form class="row g-3 needs-validation ajaxForm" novalidate action="{{ route('user.save') }}"
+                            method="post">
                             @csrf
                             <div class="col-xxl-3 col-md-6">
                                 <label for="" class="form-label">Full Name</label>
-                                <input type="text" class="form-control" name="name" value="{{ $user->name ?? '' }}" placeholder="Full Name" required>
+                                <input type="text" class="form-control" name="name" value="{{ $user->name ?? '' }}"
+                                    placeholder="Full Name" required>
                             </div>
                             <div class="col-xxl-3 col-md-6">
                                 <label for="" class="form-label">Role</label>
-                                <select class="form-control" name="role" data-toggle="select2" >
-                                    <option value=" " >Select Role</option>
+                                <select class="form-control" name="role" data-toggle="select2">
+                                    <option value=" ">Select Role</option>
                                     @foreach ($roles as $role)
-                                        @if($role->id == 1)
+                                        @if ($role->id == 1)
                                         @else
-                                        <option value="{{$role->id}}" {{ isset($user) &&$user->role  == $role->id ? 'selected' : '' }}>
-                                            {{$role->name}}
-                                        </option>
+                                            <option value="{{ $role->id }}"
+                                                {{ isset($user) && $user->role == $role->id ? 'selected' : '' }}>
+                                                {{ $role->name }}
+                                            </option>
                                         @endif
                                     @endforeach
                                 </select>
                             </div>
                             <div class="col-xxl-3 col-md-6">
-                                    <label class="form-label">Email</label>
-                                    <input type="email" class="form-control form-control-icon" value="{{ $user->email ?? '' }}" placeholder="email@gmail.com" name="email" required>
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control form-control-icon"
+                                    value="{{ $user->email ?? '' }}" placeholder="email@gmail.com" name="email" required>
                             </div>
                             <div class="col-xxl-3 col-md-6">
-                                    <label for="iconInput" class="form-label">Password</label>
-                                    <input type="text" class="form-control form-control-icon" name="password" value="" placeholder="password" required>
+                                <label for="iconInput" class="form-label">Password</label>
+                                <input type="text" class="form-control form-control-icon" name="password" value=""
+                                    placeholder="password" required>
                             </div>
-                            @isset($user)  
-                                <input type="hidden" name="user_id" value="{{$user->id}}">
+                            @isset($user)
+                                <input type="hidden" name="user_id" value="{{ $user->id }}">
                             @endisset
                             <div class="col-12">
-                                <button class="btn btn-primary" type="submit"> {{ isset($user) ? 'Edit' : 'Add' }} User</button>
+                                <button class="btn btn-primary" type="submit"> {{ isset($user) ? 'Edit' : 'Add' }}
+                                    User</button>
                             </div>
                         </form>
                     </div>

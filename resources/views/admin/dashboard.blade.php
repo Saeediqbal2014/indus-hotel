@@ -46,7 +46,7 @@
                                             <div class="d-flex align-items-center">
                                                 <div class="flex-grow-1 overflow-hidden">
                                                     <p class="text-uppercase fw-medium text-muted text-truncate mb-0"> Total
-                                                        Earnings</p>
+                                                        Rooms</p>
                                                 </div>
                                                 <div class="flex-shrink-0">
                                                     <h5 class="text-success fs-14 mb-0">
@@ -76,7 +76,8 @@
                                         <div class="card-body">
                                             <div class="d-flex align-items-center">
                                                 <div class="flex-grow-1 overflow-hidden">
-                                                    <p class="text-uppercase fw-medium text-muted text-truncate mb-0">Orders
+                                                    <p class="text-uppercase fw-medium text-muted text-truncate mb-0">
+                                                        Bookings
                                                     </p>
                                                 </div>
                                                 <div class="flex-shrink-0">
@@ -108,7 +109,7 @@
                                             <div class="d-flex align-items-center">
                                                 <div class="flex-grow-1 overflow-hidden">
                                                     <p class="text-uppercase fw-medium text-muted text-truncate mb-0">
-                                                        Customers</p>
+                                                        Requests</p>
                                                 </div>
                                                 <div class="flex-shrink-0">
                                                     <h5 class="text-success fs-14 mb-0">

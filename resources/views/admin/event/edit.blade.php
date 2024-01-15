@@ -16,7 +16,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header align-items-center d-flex">
-                            <h4 class="card-title mb-0 flex-grow-1"> {{ isset($event) ? 'Edit' : 'Add' }} event image
+                            <h4 class="card-title mb-0 flex-grow-1"> {{ isset($event) ? 'Edit' : 'Add' }} Events
                             </h4>
                             <div class="flex-shrink-0">
 

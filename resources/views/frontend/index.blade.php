@@ -1,5 +1,5 @@
 @extends('front_layout.app')
-@section('title', 'home')
+@section('title', 'Indus Hotel')
 @section('content')
     <!-- banner section -->
     <section class="banner-section">
@@ -25,7 +25,7 @@
 
         </div>
         <!-- <div class="checkout-form-section wow slideInUp">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </div> -->
     </section>
     <!-- End banner section -->
     <section>
@@ -70,7 +70,7 @@
                             <div class="text">{{ $about->para }}</div>
                         </div>
                         <div class="btn-box">
-                            <a href="about.php" class="theme-btn btn-style-one"><span class="btn-title">Discover
+                            <a href="{{ route('about') }}" class="theme-btn btn-style-one"><span class="btn-title">Discover
                                     More</span></a>
                             <div class="contact-info">
                                 <div class="icon-box"><i class="flaticon-customer-service"></i></div>

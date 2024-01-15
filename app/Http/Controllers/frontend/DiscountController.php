@@ -24,6 +24,8 @@ class DiscountController extends Controller
 
     public function store(Request $request)
     {
+
+       
         // dd($request->all());
 
         $discount = $request->all();
