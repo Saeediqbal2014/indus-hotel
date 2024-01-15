@@ -11,8 +11,8 @@ class RoomsrequestController extends Controller
     public function index()
     {
         // dd(" index");
-        $roomsrequest = Roomsrequest::latest()->get();
-        return view('admin.roomsrequest.index', ['roomsrequest' => $roomsrequest]);
+        $roomsrequests = Roomsrequest::latest()->get();
+        return view('admin.roomsrequest.index', ['roomsrequests' => $roomsrequests]);
     }
 
 

@@ -513,6 +513,26 @@
                             </div>
                         </li>
 
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#roomsrequest" data-bs-toggle="collapse"
+                                role="button" aria-expanded="false" aria-controls="sidebarApps">
+                                <i class="ri-contacts-book-line"></i> <span data-key="t-authentication">
+                                    Rooms Request</span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="roomsrequest">
+                                <ul class="nav nav-sm flex-column">
+
+                                    <li class="nav-item">
+                                        <a href="{{ route('roomsrequest.all') }}" class="nav-link"
+                                            data-key="t-area">
+                                            All request
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </li>
+
                     </ul>
                 </div>
                 </li>
