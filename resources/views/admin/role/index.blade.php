@@ -39,7 +39,7 @@
                                         <thead class="table-light">
                                             <tr>
 
-                                                <th class="sort" data-sort="customer_name">Role</th>
+                                                <th class="">Role</th>
                                                 <th class="sort" data-sort="action">Action</th>
                                             </tr>
                                         </thead>

@@ -52,16 +52,16 @@
                                         <table class="table align-middle table-nowrap" id="customerTable">
                                             <thead class="table-light">
                                                 <tr>
-                                                    <th scope="col" style="width: 50px;">
+                                                    {{-- <th scope="col" style="width: 50px;">
                                                         <div class="form-check">
                                                             <input class="form-check-input" type="checkbox" id="checkAll"
                                                                 value="option">
                                                         </div>
-                                                    </th>
-                                                    <th class="sort" data-sort="customer_name">Image</th>
-                                                    <th scope="col-3" class="sort" data-sort="customer_name">Text</th>
+                                                    </th> --}}
+                                                    <th class="">Image</th>
+                                                    <th scope="col-3" class="">Text</th>
 
-                                                    <th class="sort" data-sort="customer_name">Action</th>
+                                                    <th class="">Action</th>
 
                                                 </tr>
                                             </thead>

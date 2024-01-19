@@ -31,7 +31,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="mb-3">
-                                                    <label for="firstNameinput" class="form-label">Name</label>
+                                                    <label for="firstNameinput" class="form-label">Image</label>
                                                     <input type="file" class="form-control" name="image"
                                                         id="firstNameinput" required>
 
@@ -39,34 +39,17 @@
                                                         <div class="alert alert-danger">{{ $message }}</div>
                                                     @enderror
                                                 </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="mb-3">
-                                                    <label for="firstNameinput" class="form-label">Position</label>
-
-                                                    <select class="form-control" name="position" id="">
-                                                        <option class="form-control" value="left">left</option>
-                                                        <option class="form-control" value="right">right</option>
-
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="mb-3">
-                                                    <label for="firstNameinput" class="form-label">Title </label>
-                                                    <input type="text" class="form-control"
-                                                        name="title"value="{{ $beauty->title ?? '' }}" id="firstNameinput"
-                                                        required>
-
-                                                    @error('title')
-                                                        <div class="alert alert-danger">{{ $message }}</div>
-                                                    @enderror
-                                                </div>
+                                                @isset($beauty)
+                                                    <div class="col-md-12">
+                                                        <img style="width: 200px; height: 100px;"
+                                                            src="{{ asset('beauty_images') }}/{{ $beauty->image }}">
+                                                    </div>
+                                                @endisset
                                             </div>
 
-                                            <div class="col-md-6">
+                                            <div class="col-md-6 ">
                                                 <div class="mb-3">
-                                                    <label for="firstNameinput" class="form-label">Heading</label>
+                                                    <label for="firstNameinput" class="form-label">Title</label>
                                                     <input type="text" class="form-control"
                                                         name="subtitle"value="{{ $beauty->subtitle ?? '' }}"
                                                         id="firstNameinput" required>
@@ -77,11 +60,26 @@
                                                 </div>
                                             </div>
 
+                                            <div class="col-md-6 mt-4">
+                                                <div class="mb-3">
+                                                    <label for="firstNameinput" class="form-label">Heading </label>
+                                                    <input type="text" class="form-control"
+                                                        name="title"value="{{ $beauty->title ?? '' }}" id="firstNameinput"
+                                                        required>
+
+                                                    @error('title')
+                                                        <div class="alert alert-danger">{{ $message }}</div>
+                                                    @enderror
+                                                </div>
+                                            </div>
+
+
+
                                             <div class="col-md-12">
                                                 <div class="mb-3">
                                                     <label for="firstNameinput" class="form-label">Paragraph
 
-                                                        <textarea class="form-control" name="para" cols="200" rows="10">{{ $beauty->paragraph ?? '' }}</textarea>
+                                                        <textarea class="form-control" name="para" cols="200" rows="10">{{ $beauty->para ?? '' }}</textarea>
 
                                                         @error('text')
                                                             <div class="alert alert-danger">{{ $message }}</div>
@@ -102,12 +100,7 @@
                                                 </div>
                                             </div>
 
-                                            @isset($beauty)
-                                                <div class="col-md-12">
-                                                    <img style="width: 200px; height: 100px;"
-                                                        src="{{ asset('beauty_images') }}/{{ $beauty->image }}">
-                                                </div>
-                                            @endisset
+
 
                                             <!--end col-->
                                         </div>
@@ -123,5 +116,5 @@
                 <pre class="language-markup" style="height: 375px;">
 
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <!--end row-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <!--end row-->
 @endsection

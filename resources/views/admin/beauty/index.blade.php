@@ -3,9 +3,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
-    {{-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.6/css/dataTables.bootstrap4.min.css"> --}}
 
     <div class="vertical-overlay"></div>
 
@@ -33,61 +30,34 @@
                                                     onclick="window.location.href='{{ url('admin/add-beauty') }}'">
                                                     <i class="ri-add-line align-bottom me-1"></i> Add
                                                 </button>
-                                                {{-- <button class="btn btn-soft-danger" onclick="deleteMultiple()"><i
-                                                        class="ri-delete-bin-2-line"></i></button> --}}
+
                                             </div>
                                         </div>
-                                        {{-- <div class="col-sm">
-                                            <div class="d-flex justify-content-sm-end">
-                                                <div class="search-box ms-2">
-                                                    <input type="text" class="form-control search"
-                                                        placeholder="Search...">
-                                                    <i class="ri-search-line search-icon"></i>
-                                                </div>
-                                            </div>
-                                        </div> --}}
+
                                     </div>
 
                                     <div class="table-responsive table-card mt-3 mb-1">
                                         <table class="table align-middle table-nowrap" id="customerTable">
                                             <thead class="table-light">
                                                 <tr>
-                                                    <th scope="col" style="width: 50px;">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="checkAll"
-                                                                value="option">
-                                                        </div>
-                                                    </th>
-                                                    <th class="sort" data-sort="customer_name">Image</th>
-                                                    <th class="sort" data-sort="customer_name">Title</th>
-
-                                                    <th class="sort" data-sort="customer_name">Heading</th>
-                                                    <th class="sort" data-sort="customer_name">para</th>
-
-                                                    <th class="sort" data-sort="customer_name">Action</th>
+                                                    <th scope="col" style="width: 50px;" class="">#</th>
+                                                    <th class="">Heading</th>
+                                                    <th class="">Title</th>
+                                                    <th class="">Content</th>
+                                                    <th class="">Action</th>
 
                                                 </tr>
                                             </thead>
                                             <tbody class="list form-check-all">
-                                                @foreach ($images as $image)
+                                                @foreach ($images as $k => $image)
                                                     <tr>
-                                                        <th scope="row">
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox"
-                                                                    name="chk_child" value="option1">
-                                                            </div>
 
-
-
-                                                        </th>
-                                                        <td class="id" style="display:none;"><a
-                                                                href="javascript:void(0);"
-                                                                class="fw-medium link-primary">#VZ2101</a></td>
-                                                        <td class="customer_name">
+                                                        <td>{{ $k + 1 }}</td>
+                                                        {{-- <td class="customer_name">
 
                                                             <img style="width: 200px; height: 100px;"
                                                                 src="{{ asset('beauty_images') }}/{{ $image->image }}">
-                                                        </td>
+                                                        </td> --}}
                                                         <td class="customer_name">{{ $image->title }}
                                                         </td>
                                                         <td class="customer_name">{{ $image->subtitle }}

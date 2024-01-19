@@ -15,8 +15,9 @@ class HomeController extends Controller
      *
      * @return void
      */
-    
-    function data_check() {
+
+    function data_check()
+    {
         $msg = [
             'success' => 'Blog Category has been added',
             'reload' => true,
@@ -32,7 +33,8 @@ class HomeController extends Controller
     {
         return view('admin.dashboard.index');
     }
-    public function logout(){
+    public function logout()
+    {
         Auth::logout();
         return redirect('/login');
     }

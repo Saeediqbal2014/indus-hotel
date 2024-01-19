@@ -36,7 +36,7 @@ class RoomsrequestController extends Controller
         ]);
         Roomsrequest::create($validatedData);
 
-        \Mail::to('raxa.kzx@gmail.com')->send(new \App\Mail\roomsrequestMail($validatedData));
+        \Mail::to('info@gexton.com ')->send(new \App\Mail\roomsrequestMail($validatedData));
         $msg = 'roomsrequest Inserted and Email Sent';
         return response()->json([
             'success' => 'Send your request',

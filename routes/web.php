@@ -53,7 +53,7 @@ Route::controller(ContactController::class)->as('contact.')->group(function () {
     Route::get('delete-messages/{id}', 'delete')->name('delete');
 });
 Route::controller(QueryController::class)->as('query.')->group(function () {
-    Route::get('/admin/all-query',  'index')->name('all');
+    Route::get('/admin/Event-bookings',  'index')->name('all');
     Route::post('/store-query',  'store')->name('store');
     Route::get('delete-query/{id}', 'delete')->name('delete');
 });
@@ -66,17 +66,19 @@ Route::controller(RoomsrequestController::class)->as('roomsrequest.')->group(fun
 
 Route::prefix('admin')->middleware(['auth'])->group(function () {
     //User Controller
-    Route::controller(DashboardController::class)->group(function () {
-        Route::get('/', 'index')->name('dashboard');
-        // Route::get('user-add', 'create')->name('user.add');
-        // Route::post('user-save', 'store')->name('user.save');
-        // Route::get('user-edit/{id}', 'edit')->name('user.edit');
-        // Route::get('user-delete/{id}', 'delete')->name('user.delete');
+    Route::controller(UserController::class)->group(function () {
+        Route::get('user-index', 'index')->name('user.index');
+        Route::get('user-add', 'create')->name('user.add');
+        Route::post('user-save', 'store')->name('user.save');
+        Route::get('user-edit/{id}', 'edit')->name('user.edit');
+        Route::get('user-delete/{id}', 'delete')->name('user.delete');
         //Profile
         Route::get('profile/{id}', 'profile')->name('user.profile');
         Route::get('edit-profile/{id}', 'edit_profile')->name('user.edit_profile');
         Route::post('profile-update', 'profile_update')->name('user.profile_update');
     });
+
+
     Route::controller(AccommodationController::class)->as('accommodation.')->group(function () {
         Route::get('/all-accommodation',  'index')->name('all');
         Route::get('/add-accommodation',  'create')->name('add');

@@ -64,16 +64,11 @@
                                             <div class="">
                                                 <button type="submit"
                                                     class="btn btn-primary">{{ isset($video) ? 'Update' : 'Add' }}
-                                                    video Image</button>
+                                                    video </button>
                                             </div>
                                         </div>
 
-                                        @isset($video)
-                                            <div class="col-md-12">
-                                                <img style="width: 200px; height: 100px;"
-                                                    src="http://127.0.0.1:8000/video_videos/indus_vid2.mp4">
-                                            </div>
-                                        @endisset
+
 
                                         <!--end col-->
                                     </div>
@@ -89,5 +84,5 @@
         <pre class="language-markup" style="height: 375px;">
 
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <!--end row-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <!--end row-->
 @endsection

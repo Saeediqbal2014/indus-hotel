@@ -21,7 +21,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title mb-0">roomsrequest </h4>
+                                <h2 class="card-title mb-0">Bookings </h2>
                             </div><!-- end card header -->
 
                             <div class="card-body">
@@ -52,40 +52,31 @@
                                         <table class="table align-middle table-nowrap" id="customerTable">
                                             <thead class="table-light">
                                                 <tr>
-                                                    <th scope="col" style="width: 50px;">
+                                                    {{-- <th scope="col" style="width: 50px;">
                                                         <div class="form-check">
                                                             <input class="form-check-input" type="checkbox" id="checkAll"
                                                                 value="option">
                                                         </div>
-                                                    </th>
-                                                    <th class="sort" data-sort="customer_name">Id</th>
+                                                    </th> --}}
+                                                    <th class="">Id</th>
 
-                                                    <th class="sort" data-sort="customer_name">Name</th>
-                                                    <th class="sort" data-sort="customer_name">Room Name </th>
-                                                    <th class="sort" data-sort="customer_name">Nationality</th>
-                                                    <th class="sort" data-sort="customer_name">Check In</th>
-                                                    <th class="sort" data-sort="customer_name">Check Out</th>
-                                                    <th class="sort" data-sort="customer_name">email</th>
-                                                    <th class="sort" data-sort="customer_name">Message</th>
-                                                    <th class="sort" data-sort="customer_name">Action</th>
+                                                    <th class="">Name</th>
+                                                    <th class="">Room Name </th>
+                                                    <th class="">Nationality</th>
+                                                    <th class="">Check In</th>
+                                                    <th class="">Check Out</th>
+                                                    <th class="">email</th>
+                                                    <th class="">Message</th>
+                                                    <th class="">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody class="list form-check-all">
-                                                @foreach ($roomsrequests as $roomsrequest)
+                                                @foreach ($roomsrequests as $k => $roomsrequest)
                                                     <tr>
-                                                        <th scope="row">
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox"
-                                                                    name="chk_child" value="option1">
-                                                            </div>
-                                                        </th>
-                                                        <td class="id" style="display:none;"><a
-                                                                href="javascript:void(0);"
-                                                                class="fw-medium link-primary">#VZ2101</a>
-                                                        </td>
+
 
                                                         <td class="customer_name">
-                                                            #VZ2101
+                                                            {{ $k + 1 }}
                                                         </td>
 
                                                         <td class="customer_name">
@@ -202,6 +193,7 @@
                 </div>
             </div>
         </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jroomsrequest/3.7.1/jroomsrequest.min.js"></script>
-    @endsection
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jroomsrequest/3.7.1/jroomsrequest.min.js"></script>
+@endsection

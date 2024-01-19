@@ -52,30 +52,30 @@
                                         <table class="table align-middle table-nowrap" id="customerTable">
                                             <thead class="table-light">
                                                 <tr>
-                                                    <th scope="col" style="width: 50px;">
+                                                    {{-- <th scope="col" style="width: 50px;">
                                                         <div class="form-check">
                                                             <input class="form-check-input" type="checkbox" id="checkAll"
                                                                 value="option">
                                                         </div>
-                                                    </th>
-                                                    <th class="sort" data-sort="customer_name">Id</th>
+                                                    </th> --}}
+                                                    <th class="">Id</th>
 
-                                                    <th class="sort" data-sort="customer_name">name</th>
-                                                    <th class="sort" data-sort="customer_name">email</th>
-                                                    <th class="sort" data-sort="customer_name">Message</th>
+                                                    <th class="">name</th>
+                                                    <th class="">email</th>
+                                                    <th class="">Message</th>
 
-                                                    <th class="sort" data-sort="customer_name">Action</th>
+                                                    <th class="">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody class="list form-check-all">
                                                 @foreach ($contacts as $contact)
                                                     <tr>
-                                                        <th scope="row">
+                                                        {{-- <th scope="row">
                                                             <div class="form-check">
                                                                 <input class="form-check-input" type="checkbox"
                                                                     name="chk_child" value="option1">
                                                             </div>
-                                                        </th>
+                                                        </th> --}}
                                                         <td class="id" style="display:none;"><a
                                                                 href="javascript:void(0);"
                                                                 class="fw-medium link-primary">#VZ2101</a>

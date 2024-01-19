@@ -21,7 +21,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title mb-0">query </h4>
+                                <h4 class="card-title mb-0">Event Bookings </h4>
                             </div><!-- end card header -->
 
                             <div class="card-body">
@@ -29,10 +29,7 @@
                                     <div class="row g-4 mb-3">
                                         <div class="col-sm-auto">
                                             <div>
-                                                <button type="button" class="btn btn-success add-btn" id="create-btn"
-                                                    onclick="window.location.href='{{ url('admin/add-query') }}'">
-                                                    <i class="ri-add-line align-bottom me-1"></i> Add
-                                                </button>
+
                                                 {{-- <button class="btn btn-soft-danger" onclick="deleteMultiple()"><i
                                                         class="ri-delete-bin-2-line"></i></button> --}}
                                             </div>
@@ -52,41 +49,35 @@
                                         <table class="table align-middle table-nowrap" id="customerTable">
                                             <thead class="table-light">
                                                 <tr>
-                                                    <th scope="col" style="width: 50px;">
+                                                    {{-- <th scope="col" style="width: 50px;">
                                                         <div class="form-check">
                                                             <input class="form-check-input" type="checkbox" id="checkAll"
                                                                 value="option">
                                                         </div>
-                                                    </th>
-                                                    <th class="sort" data-sort="customer_name">Id</th>
+                                                    </th> --}}
+                                                    <th class="">#</th>
 
-                                                    <th class="sort" data-sort="customer_name">Name</th>
-                                                    <th class="sort" data-sort="customer_name">Hall</th>
-                                                    <th class="sort" data-sort="customer_name">Nationality</th>
-                                                    <th class="sort" data-sort="customer_name">Type of Event</th>
-                                                    <th class="sort" data-sort="customer_name">Event Date</th>
-                                                    <th class="sort" data-sort="customer_name">email</th>
-                                                    <th class="sort" data-sort="customer_name">Message</th>
-                                                    <th class="sort" data-sort="customer_name">Action</th>
+                                                    <th class="">Name</th>
+                                                    <th class="">Hall</th>
+                                                    <th class="">Nationality</th>
+                                                    <th class="">Type of Event</th>
+                                                    <th class="">Event Date</th>
+                                                    <th class="">email</th>
+                                                    <th class="">Message</th>
+                                                    <th class="">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody class="list form-check-all">
-                                                @foreach ($queries as $query)
+                                                @foreach ($queries as $k => $query)
                                                     <tr>
-                                                        <th scope="row">
+                                                        {{-- <th scope="row">
                                                             <div class="form-check">
                                                                 <input class="form-check-input" type="checkbox"
                                                                     name="chk_child" value="option1">
                                                             </div>
-                                                        </th>
-                                                        <td class="id" style="display:none;"><a
-                                                                href="javascript:void(0);"
-                                                                class="fw-medium link-primary">#VZ2101</a>
-                                                        </td>
+                                                        </th> --}}
+                                                        <td> {{ $k + 1 }}</td>
 
-                                                        <td class="customer_name">
-                                                            #VZ2101
-                                                        </td>
 
                                                         <td class="customer_name">{{ $query->title }}
                                                             {{ $query->first_name }} {{ $query->last_name }}
@@ -96,7 +87,7 @@
                                                         <td class="customer_name">{{ $query->country }}
                                                         </td>
 
-                                                        <td class="customer_name">{{ $query->hall }}
+                                                        <td class="customer_name">{{ $query->event }}
                                                         </td>
                                                         <td class="customer_name">{{ $query->date }}
                                                         </td>
@@ -202,6 +193,7 @@
                 </div>
             </div>
         </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    @endsection
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+@endsection

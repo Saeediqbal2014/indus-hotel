@@ -47,6 +47,10 @@ class VideoController extends Controller
         if (isset($video_update)) {
             $video_update->update($videoData);
             $msg = 'Video Updated';
+            return response()->json([
+                'success' => $msg,
+                'redirect' => route('video.all-video'),
+            ]);
         } else {
             Video::create($videoData);
             $msg = 'Video Inserted';

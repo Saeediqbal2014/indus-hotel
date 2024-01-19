@@ -119,12 +119,12 @@
                             <div class="dropdown-menu dropdown-menu-end">
                                 <!-- item-->
                                 <h6 class="dropdown-header">Welcome {{ Auth::user()->name }}!</h6>
-                                <a class="dropdown-item" href=""><i
+                                <a class="dropdown-item" href="{{ route('user.profile', Auth::user()->id) }}"><i
                                         class="mdi
                                     mdi-account-circle text-muted fs-16 align-middle me-1"></i>
                                     <span class="align-middle">Profile</span></a>
 
-                                <a class="dropdown-item" href=""><i
+                                <a class="dropdown-item" href="{{ route('logout') }}"><i
                                         class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span
                                         class="align-middle" data-key="t-logout">Logout</span></a>
                             </div>
@@ -198,34 +198,20 @@
                     <ul class="navbar-nav" id="navbar-nav">
                         <li class="menu-title"><span data-key="t-menu">Dashbord</span></li>
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="{{ route('dashboard') }}" role="button"
-                                aria-expanded="false" aria-controls="sidebarDashboards">
+                            <a class="nav-link menu-link" href="" role="button" aria-expanded="false"
+                                aria-controls="sidebarDashboards">
                                 <i class="ri-dashboard-2-line"></i> <span data-key="t-dashboards">Dashboard</span>
                             </a>
                         </li>
                         {{-- <li class="menu-title"><span data-key="t-menu">Manage Website</span></li> --}}
 
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="#accommodation1" data-bs-toggle="collapse"
-                                role="button" aria-expanded="false" aria-controls="sidebarApps">
-                                <i class="ri-pages-line"></i> <span data-key="t-authentication">
+                            <a class="nav-link menu-link" href="{{ route('accommodation.all') }}" role="button"
+                                aria-expanded="false" aria-controls="sidebarApps">
+                                <i class="ri-layout-masonry-line"></i> <span data-key="t-authentication">
                                     Accommodation</span>
                             </a>
-                            <div class="collapse menu-dropdown" id="accommodation1">
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a href="{{ route('accommodation.add') }}" class="nav-link"
-                                            data-key="t-line"> Add Accommodation
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{ route('accommodation.all') }}" class="nav-link"
-                                            data-key="t-area"> All Accommodation
-                                        </a>
-                                    </li>
 
-                                </ul>
-                            </div>
                         </li>
                         {{-- <li class="nav-item">
                             <a class="nav-link menu-link" href="#sidebarCharts" data-bs-toggle="collapse"
@@ -235,13 +221,11 @@
 
                         {{-- <div class="collapse menu-dropdown" id="sidebarCharts"> --}}
 
-
-
-
+                        {{-- 
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="#sliders" data-bs-toggle="collapse" role="button"
                                 aria-expanded="false" aria-controls="sidebarApps">
-                                <i class="ri-image-fill"></i> <span data-key="t-authentication">
+                                <i class="ri-image-line"></i> <span data-key="t-authentication">
                                     Slider</span>
                             </a>
                             <div class="collapse menu-dropdown" id="sliders">
@@ -259,32 +243,107 @@
 
                                 </ul>
                             </div>
-                        </li>
+                        </li> --}}
 
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="#welcome" data-bs-toggle="collapse" role="button"
                                 aria-expanded="false" aria-controls="sidebarApps">
-                                <i class="ri-gallery-line"></i> <span data-key="t-authentication">
-                                    Welcome</span>
+                                <i class=" ri-pages-line"></i> <span data-key="t-authentication">
+                                    Home Pages</span>
                             </a>
                             <div class="collapse menu-dropdown" id="welcome">
                                 <ul class="nav nav-sm flex-column">
+
                                     <li class="nav-item">
-                                        <a href="{{ url('http://127.0.0.1:8000/admin/edit-welcome/1') }}"
-                                            class="nav-link" data-key="t-line"> Add welcome
+
+                                        <a class="nav-link " href="{{ url('admin/edit-welcome/1') }}" role="button"
+                                            aria-expanded="false" aria-controls="sidebarApps">
+                                            <i class="ri-gallery-line"></i> <span data-key="t-authentication">
+                                                Welcome</span>
                                         </a>
                                     </li>
-                                    {{-- <li class="nav-item">
-                                                    <a href="{{ url('admin/all-welcome') }}" class="nav-link"
-                                                        data-key="t-area"> All welcome
-                                                    </a>
-                                                </li> --}}
+                                    <li class="nav-item">
+
+                                        <a class="nav-link " href="{{ url('admin/edit-about/1') }}" role="button"
+                                            aria-expanded="false" aria-controls="sidebarApps">
+                                            <i class="ri-folder-user-line"></i> <span data-key="t-authentication">
+                                                About</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+
+                                        <a class="nav-link" href="{{ route('slider.all-slider') }}" role="button"
+                                            aria-expanded="false" aria-controls="sidebarApps">
+                                            <i class="ri-image-line"></i> <span data-key="t-authentication">
+                                                Slider</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="{{ url('admin/edit-facility/1') }}"
+                                            role="button" aria-expanded="false" aria-controls="sidebarApps">
+                                            <i class="ri-customer-service-2-line"></i> <span
+                                                data-key="t-authentication">
+                                                Facility</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="{{ route('discount.all-discount') }}"
+                                            role="button" aria-expanded="false" aria-controls="sidebarApps">
+                                            <i class="ri-percent-line"></i> <span data-key="t-authentication">
+                                                Discount</span>
+                                        </a>
+                                    </li>
+
+
+                                    <li class="nav-item">
+
+                                        <a class="nav-link " href="{{ route('video.all-video') }}" role="button"
+                                            aria-expanded="false" aria-controls="sidebarApps">
+                                            <i class="ri-video-line"></i> <span data-key="t-authentication">
+                                                Videos</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+
+                                        <a class="nav-link " href="{{ route('event.all-event') }}" role="button"
+                                            aria-expanded="false" aria-controls="sidebarApps">
+                                            <i class="ri-calendar-event-line"></i> <span data-key="t-authentication">
+                                                Event</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+
+                                        <a class="nav-link " href="{{ route('dinein.all-dinein') }}" role="button"
+                                            aria-expanded="false" aria-controls="sidebarApps">
+                                            <i class="ri-restaurant-2-line"></i> <span data-key="t-authentication">
+                                                Dine in</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item">
+
+                                        <a class="nav-link " href="{{ route('beauty.all-beauty') }}" role="button"
+                                            aria-expanded="false" aria-controls="sidebarApps">
+                                            <i class="ri-brush-line"></i> <span data-key="t-authentication">
+                                                Beauty And Wellness</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item">
+
+                                        <a class="nav-link " href="{{ route('place.all-place') }}" role="button"
+                                            aria-expanded="false" aria-controls="sidebarApps">
+                                            <i class="ri-map-pin-line"></i> <span data-key="t-authentication">
+                                                Hyderabad Places</span>
+                                        </a>
+                                    </li>
+
 
                                 </ul>
                             </div>
                         </li>
 
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link menu-link" href="#about" data-bs-toggle="collapse" role="button"
                                 aria-expanded="false" aria-controls="sidebarApps">
                                 <i class="ri-folder-user-line"></i> <span data-key="t-authentication">
@@ -293,21 +352,16 @@
 
                             <div class="collapse menu-dropdown" id="about">
                                 <ul class="nav nav-sm flex-column">
-                                    {{-- <li class="nav-item">
-                                                    <a href="{{ url('admin/add-about') }}" class="nav-link"
-                                                        data-key="t-line"> Add about
-                                                    </a>
-                                                </li> --}}
-                                    <li class="nav-item">
-                                        <a href="{{ url('admin/edit-about/1') }}" class="nav-link"
-                                            data-key="t-area">About Us
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
+                                
                         <li class="nav-item">
+                            <a href="{{ url('admin/edit-about/1') }}" class="nav-link" data-key="t-area">About Us
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                </li> --}}
+
+                        {{-- <li class="nav-item">
                             <a class="nav-link menu-link" href="#facility" data-bs-toggle="collapse" role="button"
                                 aria-expanded="false" aria-controls="sidebarApps">
                                 <i class="ri-customer-service-2-line"></i> <span data-key="t-authentication">
@@ -315,11 +369,7 @@
                             </a>
                             <div class="collapse menu-dropdown" id="facility">
                                 <ul class="nav nav-sm flex-column">
-                                    {{-- <li class="nav-item">
-                                                    <a href="{{ url('admin/add-facility') }}" class="nav-link"
-                                                        data-key="t-line"> Add facility
-                                                    </a>
-                                                </li> --}}
+                         
                                     <li class="nav-item">
                                         <a href="{{ url('admin/edit-facility/1') }}" class="nav-link"
                                             data-key="t-area">facility
@@ -328,9 +378,9 @@
 
                                 </ul>
                             </div>
-                        </li>
+                        </li> --}}
 
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link menu-link" href="#discount" data-bs-toggle="collapse" role="button"
                                 aria-expanded="false" aria-controls="sidebarApps">
                                 <i class="ri-percent-line"></i> <span data-key="t-authentication">
@@ -341,21 +391,23 @@
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
                                         <a href="{{ url('admin/add-discount') }}" class="nav-link"
-                                            data-key="t-line"> Add Discount
+                                            data-key="t-line"> Add
+                                            Discount
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="{{ url('admin/all-discount') }}" class="nav-link"
-                                            data-key="t-area"> All Discount
+                                            data-key="t-area"> All
+                                            Discount
                                         </a>
                                     </li>
 
                                 </ul>
                             </div>
-                        </li>
+                        </li> --}}
 
 
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link menu-link" href="#video" data-bs-toggle="collapse" role="button"
                                 aria-expanded="false" aria-controls="sidebarApps">
                                 <i class="ri-video-line"></i> <span data-key="t-authentication">
@@ -377,13 +429,13 @@
 
                                 </ul>
                             </div>
-                        </li>
+                        </li> --}}
 
 
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link menu-link" href="#event" data-bs-toggle="collapse" role="button"
                                 aria-expanded="false" aria-controls="sidebarApps">
-                                <i class="ri-calendar-event-fill"></i> <span data-key="t-authentication">
+                                <i class="ri-calendar-event-line"></i> <span data-key="t-authentication">
                                     Event</span>
                             </a>
                             <div class="collapse menu-dropdown" id="event">
@@ -401,9 +453,9 @@
 
                                 </ul>
                             </div>
-                        </li>
+                        </li> --}}
 
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link menu-link" href="#dineins" data-bs-toggle="collapse" role="button"
                                 aria-expanded="false" aria-controls="sidebarApps">
                                 <i class="ri-restaurant-2-line"></i> <span data-key="t-authentication">
@@ -424,10 +476,10 @@
 
                                 </ul>
                             </div>
-                        </li>
+                        </li> --}}
 
 
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
 
                             <a class="nav-link menu-link" href="#beauty" data-bs-toggle="collapse" role="button"
                                 aria-expanded="false" aria-controls="sidebarApps">
@@ -450,9 +502,9 @@
 
                                 </ul>
                             </div>
-                        </li>
+                        </li> --}}
 
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link menu-link" href="#place" data-bs-toggle="collapse" role="button"
                                 aria-expanded="false" aria-controls="sidebarApps">
                                 <i class="ri-map-pin-line"></i> <span data-key="t-authentication">
@@ -474,63 +526,32 @@
 
                                 </ul>
                             </div>
-                        </li>
+                        </li> --}}
 
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="#contact" data-bs-toggle="collapse" role="button"
+                            <a class="nav-link menu-link" href="{{ route('contact.all') }}" role="button"
                                 aria-expanded="false" aria-controls="sidebarApps">
                                 <i class="ri-contacts-book-line"></i> <span data-key="t-authentication">
                                     Contact</span>
                             </a>
-                            <div class="collapse menu-dropdown" id="contact">
-                                <ul class="nav nav-sm flex-column">
 
-                                    <li class="nav-item">
-                                        <a href="{{ route('contact.all') }}" class="nav-link" data-key="t-area">
-                                            All Contact
-                                        </a>
-                                    </li>
-
-                                </ul>
-                            </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="#query" data-bs-toggle="collapse" role="button"
+                            <a class="nav-link menu-link" href="{{ route('query.all') }}" role="button"
                                 aria-expanded="false" aria-controls="sidebarApps">
-                                <i class="ri-contacts-book-line"></i> <span data-key="t-authentication">
-                                    Query</span>
+                                <i class="ri-calendar-event-line"></i> <span data-key="t-authentication">
+                                    Event Booking</span>
                             </a>
-                            <div class="collapse menu-dropdown" id="query">
-                                <ul class="nav nav-sm flex-column">
 
-                                    <li class="nav-item">
-                                        <a href="{{ route('query.all') }}" class="nav-link" data-key="t-area">
-                                            All Query
-                                        </a>
-                                    </li>
-
-                                </ul>
-                            </div>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="#roomsrequest" data-bs-toggle="collapse"
-                                role="button" aria-expanded="false" aria-controls="sidebarApps">
-                                <i class="ri-contacts-book-line"></i> <span data-key="t-authentication">
-                                    Rooms Request</span>
+                            <a class="nav-link menu-link" href="{{ route('roomsrequest.all') }}" role="button"
+                                aria-expanded="false" aria-controls="sidebarApps">
+                                <i class="ri-hotel-bed-line"></i> <span data-key="t-authentication">
+                                    Rooms Booking</span>
                             </a>
-                            <div class="collapse menu-dropdown" id="roomsrequest">
-                                <ul class="nav nav-sm flex-column">
 
-                                    <li class="nav-item">
-                                        <a href="{{ route('roomsrequest.all') }}" class="nav-link"
-                                            data-key="t-area">
-                                            All request
-                                        </a>
-                                    </li>
-
-                                </ul>
-                            </div>
                         </li>
 
                     </ul>

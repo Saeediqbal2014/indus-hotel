@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'role',
+        'number',
         'password',
         'img',
         'address',
@@ -36,8 +37,9 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
-    public function role_data(){
-        return $this->hasOne(Role::class,'id','role');
+    public function role_data()
+    {
+        return $this->hasOne(Role::class, 'id', 'role');
     }
     /**
      * The attributes that should be cast.

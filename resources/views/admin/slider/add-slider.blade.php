@@ -31,7 +31,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="mb-3">
-                                                    <label for="firstNameinput" class="form-label">Name</label>
+                                                    <label for="firstNameinput" class="form-label">Image</label>
                                                     <input type="file" class="form-control" name="image"
                                                         id="firstNameinput" required>
 
@@ -44,7 +44,7 @@
 
                                             <div class="col-md-6">
                                                 <div class="mb-3">
-                                                    <label for="firstNameinput" class="form-label">Text Here</label>
+                                                    <label for="firstNameinput" class="form-label">Heading</label>
                                                     <input type="text" class="form-control"
                                                         name="text"value="{{ $slider->text ?? '' }}" id="firstNameinput"
                                                         required>
@@ -89,5 +89,5 @@
                 <pre class="language-markup" style="height: 375px;">
 
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <!--end row-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <!--end row-->
 @endsection
