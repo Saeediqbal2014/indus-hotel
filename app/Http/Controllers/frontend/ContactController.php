@@ -44,11 +44,17 @@ class ContactController extends Controller
         if ($recipient) {
             try {
                 \Mail::to($recipient->email)->send(new \App\Mail\ContactMail($contact));
-                $msg = 'Contact Inserted and Email Sent';
-                return redirect()->back()->with('success', $msg);
+                $msg = 'Send your request';
+                return response()->json([
+                    'success' => $msg,
+                    'reload' => true,
+                ]);
             } catch (\Exception $e) {
                 $errorMsg = 'Error sending email: ' . $e->getMessage();
-                return redirect()->back()->with('error', $errorMsg);
+                return response()->json([
+                    'success' => 'Not Send your request',
+                    'reload' => true,
+                ]);
             }
         } else {
             // Handle case where recipient is not found in the database

@@ -66,6 +66,9 @@ Route::controller(RoomsrequestController::class)->as('roomsrequest.')->group(fun
 
 Route::prefix('admin')->middleware(['auth'])->group(function () {
     //User Controller
+    Route::controller(DashboardController::class)->group(function () {
+        Route::get('/', 'index')->name('dashboard');
+    });
     Route::controller(UserController::class)->group(function () {
         Route::get('user-index', 'index')->name('user.index');
         Route::get('user-add', 'create')->name('user.add');

@@ -35,7 +35,7 @@ class QueryController extends Controller
         ]);
         Query::create($validatedData);
 
-        \Mail::to('info@gexton.com')->send(new \App\Mail\QueryMail($validatedData));
+        \Mail::to('raxa.kzx@gmail.com')->send(new \App\Mail\QueryMail($validatedData));
         $msg = 'query Inserted and Email Sent';
         return response()->json([
             'success' => 'Send your request',
