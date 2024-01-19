@@ -35,7 +35,6 @@ class AccommodationController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
-        // dd($request->all());
         $input = $request->validate([
             'name' => 'required',
             'accommodation_cat_id' => 'required',
@@ -54,12 +53,15 @@ class AccommodationController extends Controller
                 $image->move($destinationPath, $filename);
                 $uploadedImages[] = $filename;
             }
-
-            $json_images = json_encode($uploadedImages);
-        } else {
-            $accommodation = Accommodation::find($request->accommodation_id);
-            // dd($accommodation->images);
-            $json_images = $accommodation->images;
+            
+            // $json_images = json_encode($uploadedImages);
+            // $imagesArray = json_decode($json_images, true);
+            if(isset($request->update_images)){
+                $json_image = array_merge($uploadedImages, $request->update_images);
+            }
+            $json_images = json_encode($json_image);
+        }else{
+            $json_images = json_encode($request->update_images);
         }
         $package = json_encode($request->packages);
         $input['images'] = $json_images;
