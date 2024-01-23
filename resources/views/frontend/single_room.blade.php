@@ -1,6 +1,7 @@
 @extends('front_layout.app')
 @section('title', $rooms->name)
 @section('content')
+    {{-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> --}}
     <!-- Start main-content -->
     <section class="page-title" style="background-image: url({{ asset('front_assets/images/banner/room.jpg') }});">
         <div class="auto-container">
@@ -463,9 +464,10 @@
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    {{-- <input name="form_botcheck" class="form-control" type="hidden" value="">
-                                    <div class="g-recaptcha" data-sitekey="6Ld9MyUpAAAAAEQ4im_xUthSS8YWrpxmyPkKS0XG"
-                                        style="background-size: 100%; background-repeat: no-repeat;"></div> --}}
+                                    <input name="form_botcheck" class="form-control" type="hidden" value="">
+                                    <div class="g-recaptcha"
+                                        data-sitekey="6Ld9MyUpAAAAAEQ4im_xUthSS8YWrpxmyPkKS0XG-jGKFjF7Cai"
+                                        style="background-size: 100%; background-repeat: no-repeat;"></div>
                                     <div id="submit" class="mt20"
                                         style="background-size: 100%; background-repeat: no-repeat;">
                                         <input type='submit'

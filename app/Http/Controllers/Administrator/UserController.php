@@ -34,6 +34,7 @@ class UserController extends Controller
         $input = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email',
+            'send_email' => 'required|email',
             'password' => 'required',
             'role' => 'required',
         ]);

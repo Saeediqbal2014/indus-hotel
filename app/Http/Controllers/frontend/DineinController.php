@@ -83,7 +83,7 @@ class DineinController extends Controller
 
         if (!$dinein) {
             // Handle case where the dinein is not found
-            return response()->json(['error' => 'dinein not found'], 404);
+            return response()->json(['error' => 'Dinein not found'], 404);
         }
 
         // Update other fields based on user input
@@ -106,17 +106,21 @@ class DineinController extends Controller
                 $image->move($destinationPath, $filename);
                 $uploadedImages[] = $filename;
             }
-
-            // Update the images field with the new images as JSON
-            $dinein->image = json_encode($uploadedImages);
         }
+
+        // Update the images field with the new images as JSON
+        $json_images = isset($request->update_images)
+            ? array_merge($uploadedImages, $request->update_images)
+            : $uploadedImages;
+
+        $dinein->image = json_encode($json_images);
+
 
         // Save the updated dinein
         $dinein->save();
 
         return redirect()->back();
     }
-
 
     public function edit($id)
     {

@@ -96,12 +96,15 @@ class EventController extends Controller
                 $image->move($destinationPath, $filename);
                 $uploadedImages[] = $filename;
             }
-
             // Update the images field with the new images
-            $event->image = $uploadedImages;
         }
 
         // Save the updated event
+        $json_images = isset($request->update_images)
+            ? array_merge($uploadedImages, $request->update_images)
+            : $uploadedImages;
+
+        $event->image = json_encode($json_images);
         $event->save();
 
         return redirect()->back();

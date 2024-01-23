@@ -53,21 +53,20 @@ class AccommodationController extends Controller
                 $image->move($destinationPath, $filename);
                 $uploadedImages[] = $filename;
             }
-            
+
             // $json_images = json_encode($uploadedImages);
             // $imagesArray = json_decode($json_images, true);
-            if(isset($request->update_images)){
+            if (isset($request->update_images)) {
                 $json_image = array_merge($uploadedImages, $request->update_images);
             }
             $json_images = json_encode($json_image);
-        }else{
+        } else {
             $json_images = json_encode($request->update_images);
         }
         $package = json_encode($request->packages);
         $input['images'] = $json_images;
         $input['packages'] = $package;
         Accommodation::create($input);
-
 
         if ($request->accommodation_id != null) {
             $accommodation_update = Accommodation::find($request->accommodation_id);

@@ -8,6 +8,7 @@ use App\Models\Contact;
 
 use App\Models\EmailConfiguration;
 use App\Http\Controllers\EmailConfigController;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -36,14 +37,14 @@ class ContactController extends Controller
         // return redirect()->back();
 
 
-        $emailConfigController = new EmailConfigController();
-        $emailConfigController->setConfig();
+        // $emailConfigController = new EmailConfigController();
+        // $emailConfigController->setConfig();
 
-        $recipient = EmailConfiguration::first();
+        $recipient = User::first();
 
         if ($recipient) {
             try {
-                \Mail::to($recipient->email)->send(new \App\Mail\ContactMail($contact));
+                \Mail::to($recipient->send_mail)->send(new \App\Mail\ContactMail($contact));
                 $msg = 'Send your request';
                 return response()->json([
                     'success' => $msg,

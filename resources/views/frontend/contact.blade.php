@@ -61,9 +61,9 @@
                         </div>
                         <div class="mb-5  dis_flx">
                             <input name="form_botcheck" class="form-control" type="hidden" value="">
-                            <div class="g-recaptcha" data-sitekey="6Ld9MyUpAAAAAEQ4im_xUthSS8YWrpxmyPkKS0XG"
+                            {{-- <div class="g-recaptcha" data-sitekey="6Ld9MyUpAAAAAEQ4im_xUthSS8YWrpxmyPkKS0XG"
                                 style="background-size: 100%; background-repeat: no-repeat;">
-                            </div>
+                            </div> --}}
                             <div id="submit" class="mt20"
                                 style="background-size: 100%; background-repeat:
                                 no-repeat;">

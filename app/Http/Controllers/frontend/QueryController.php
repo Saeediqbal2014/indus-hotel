@@ -4,6 +4,7 @@ namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Query;
+use App\Models\User;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
@@ -34,8 +35,9 @@ class QueryController extends Controller
 
         ]);
         Query::create($validatedData);
+        $mail = User::first();
 
-        \Mail::to('raxa.kzx@gmail.com')->send(new \App\Mail\QueryMail($validatedData));
+        \Mail::to($mail->send_mail)->send(new \App\Mail\QueryMail($validatedData));
         $msg = 'query Inserted and Email Sent';
         return response()->json([
             'success' => 'Send your request',

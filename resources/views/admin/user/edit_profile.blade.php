@@ -108,9 +108,19 @@
                                                                 value="">
                                                         </div>
                                                     </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="mb-3">
+                                                            <label for="phonenumberInput" class="form-label">Send
+                                                                Email At</label>
+                                                            <input type="email" class="form-control"
+                                                                placeholder="Enter your Sending Email" name="send_email"
+                                                                value="{{ $user->send_email }}">
+                                                        </div>
+                                                    </div>
                                                     <div class="col-lg-12">
                                                         <div class="mb-3">
-                                                            <label for="phonenumberInput" class="form-label">Address</label>
+                                                            <label for="phonenumberInput"
+                                                                class="form-label">Address</label>
                                                             <textarea placeholder="Enter your address" class="form-control" name="address" cols="30" rows="5">{{ $user->address }}</textarea>
                                                         </div>
                                                     </div>

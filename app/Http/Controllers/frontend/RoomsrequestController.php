@@ -4,6 +4,9 @@ namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Roomsrequest;
+use App\Models\User;
+use App\Http\Controllers\EmailConfigController;
+use App\Models\EmailConfiguration;
 use Illuminate\Http\Request;
 
 class RoomsrequestController extends Controller
@@ -35,8 +38,8 @@ class RoomsrequestController extends Controller
 
         ]);
         Roomsrequest::create($validatedData);
-
-        \Mail::to('info@gexton.com ')->send(new \App\Mail\roomsrequestMail($validatedData));
+        $mail = User::first();
+        \Mail::to($mail->send_mail)->send(new \App\Mail\roomsrequestMail($validatedData));
         $msg = 'roomsrequest Inserted and Email Sent';
         return response()->json([
             'success' => 'Send your request',

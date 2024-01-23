@@ -75,11 +75,23 @@
                                                             <!-- Display multiple images if $imageArray is an array -->
                                                             @foreach ($imageArray as $k => $imageName)
                                                                 @if (is_string($imageName))
-                                                                    <img style="width: 200px; height: 100px;" id="change_image_{{$k}}"
-                                                                        src="{{ asset('rooms_images/' . trim($imageName)) }}"
-                                                                        alt="dinein Image"
-                                                                        onclick="delete_image({{ $k }})" >
-                                                                        <input type="hidden" name="update_images[]" id="change_input_{{$k}}" value="{{$imageName}}">
+                                                                    <div style="position: relative; display: inline-block;">
+                                                                        <img style="width: 200px; height: 100px;"
+                                                                            id="change_image_{{ $k }}"
+                                                                            src="{{ asset('rooms_images/' . trim($imageName)) }}"
+                                                                            alt="dinein Image"
+                                                                            onclick="delete_image({{ $k }})">
+                                                                        <input type="hidden" name="update_images[]"
+                                                                            id="change_input_{{ $k }}"
+                                                                            value="{{ $imageName }}">
+
+                                                                        <button type="button"
+                                                                            id="change_btn_{{ $k }}"
+                                                                            onclick="delete_image({{ $k }})"
+                                                                            style="position: absolute; top: 0; right: 0; padding: 5px;"
+                                                                            class="btn btn-danger btn-icon waves-effect waves-light"><i
+                                                                                class="ri-delete-bin-5-line"></i></button>
+                                                                    </div>
                                                                 @endif
                                                             @endforeach
                                                         @else
@@ -213,40 +225,44 @@
     </div>
     <div class="d-none code-view">
         <pre class="language-markup" style="height: 375px;">
-                                                                                                                                                    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-                                                                                                                                                    <script>
-                                function delete_image(id){
-                                    var imageToRemove = document.getElementById('change_image_' + id);
-                                    var hiidenToRemove = document.getElementById('change_input_' + id);
-                                        if (imageToRemove) {
-                                            imageToRemove.remove();
-                                        }
-                                        if (hiidenToRemove) {
-                                            hiidenToRemove.remove();
-                                        }
-                                }                                                                          $(document).ready(function() {
-                                                                                                                                                            $('#imageInput').change(function() {
-                                                                                                                                                                displayImages(this);
-                                                                                                                                                            });
+            @endsection
+                <script>
+                    function delete_image(id) {
+                        var imageToRemove = document.getElementById('change_image_' + id);
+                        var btnToRemove = document.getElementById('change_btn_' + id);
 
-                                                                                                                                                            function displayImages(input) {
-                                                                                                                                                                var container = $('#imagePreviewContainer');
-                                                                                                                                                                container.empty();
+                        var hiidenToRemove = document.getElementById('change_input_' + id);
+                        if (btnToRemove) {
+                            btnToRemove.remove();
+                        }
+                        if (imageToRemove) {
+                            imageToRemove.remove();
+                        }
+                        if (hiidenToRemove) {
+                            hiidenToRemove.remove();
+                        }
+                    }
+                    $(document).ready(function() {
+                        $('#imageInput').change(function() {
+                            displayImages(this);
+                        });
 
-                                                                                                                                                                if (input.files && input.files.length > 0) {
-                                                                                                                                                                    for (var i = 0; i < input.files.length; i++) {
-                                                                                                                                                                        var reader = new FileReader();
-                                                                                                                                                                        reader.onload = function(e) {
-                                                                                                                                                                            container.append('<img src="' + e.target.result +
-                                                                                                                                                                                '" class="img-thumbnail" style="max-width:100px; max-height:100px; margin-right: 5px;">'
-                                                                                                                                                                            );
-                                                                                                                                                                        };
-                                                                                                                                                                        reader.readAsDataURL(input.files[i]);
-                                                                                                                                                                    }
-                                                                                                                                                                }
-                                                                                                                                                            }
-                                                                                                                                                        });
-                                                                                                                                                    </script>
+                        function displayImages(input) {
+                            var container = $('#imagePreviewContainer');
+                            container.empty();
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <!--end row-->
-@endsection
+                            if (input.files && input.files.length > 0) {
+                                for (var i = 0; i < input.files.length; i++) {
+                                    var reader = new FileReader();
+                                    reader.onload = function(e) {
+                                        container.append('<img src="' + e.target.result +
+                                            '" class="img-thumbnail" style="max-width:100px; max-height:100px; margin-right: 5px;">'
+                                        );
+                                    };
+                                    reader.readAsDataURL(input.files[i]);
+                                }
+                            }
+                        }
+                    });
+                </script>
+          

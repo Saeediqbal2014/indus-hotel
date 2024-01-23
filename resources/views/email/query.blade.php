@@ -39,11 +39,11 @@
                 <div class="container-fluid">
 
                     <div class="row">
-                        <div class="col-lg-12">
+                        {{-- <div class="col-lg-12">
                             <div class="justify-content-between d-flex align-items-center mt-3 mb-4">
                                 <h5 class="mb-0 pb-1 text-decoration-underline">Invoice Action</h5>
                             </div>
-                        </div>
+                        </div> --}}
                         <!--end col-->
                         <div class="col-12">
                             <table class="body-wrap"
@@ -105,8 +105,6 @@
 
                                                                                     <p
                                                                                         style="color: #878a99; font-size: 13px; margin-bottom: 2px; font-weight: 400;">
-                                                                                        {{ $query['title'] }}</p> --}}
-                                                                                    <p><strong>Name:</strong>
                                                                                         {{ $query['title'] }}
                                                                                         {{ $query['first_name'] }}
                                                                                         {{ $query['last_name'] }} </p>
@@ -201,17 +199,11 @@
                                                 </tr>
                                             </table>
 
-                                            <div style="margin-top: 32px; text-align: center;">
-                                                <a href="#" itemprop="url"
-                                                    style="font-family: 'Roboto', sans-serif; box-sizing: border-box; font-size: .8125rem; color: #FFF; text-decoration: none; font-weight: 400; text-align: center; cursor: pointer; display: inline-block; border-radius: .25rem; text-transform: capitalize; background-color: #405189; margin: 0; border-color: #405189; border-style: solid; border-width: 1px; padding: .5rem .9rem;">Download</a>
-                                                <a href="#" itemprop="url"
-                                                    style="font-family: 'Roboto', sans-serif; box-sizing: border-box; font-size: .8125rem; color: #FFF; text-decoration: none; font-weight: 400; text-align: center; cursor: pointer; display: inline-block; border-radius: .25rem; text-transform: capitalize; background-color: #0ab39c; margin: 0; border-color: #0ab39c; border-style: solid; border-width: 1px; padding: .5rem .9rem;">Back
-                                                    to Shop</a>
-                                            </div>
+
                                             <div style="text-align: center; margin: 28px auto 0px auto;">
                                                 <p
                                                     style="font-family: 'Roboto', sans-serif; font-size: 14px;color: #98a6ad; margin: 0px;">
-                                                    2022 Velzon. Design & Develop by Themesbrand</p>
+                                                    Design & Develop by Gexton Inc</p>
                                             </div>
                                         </div>
                                     </td>

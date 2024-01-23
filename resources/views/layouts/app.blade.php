@@ -303,40 +303,40 @@
                                                 Videos</span>
                                         </a>
                                     </li>
-                                    <li class="nav-item">
+                                    {{-- <li class="nav-item">
 
                                         <a class="nav-link " href="{{ route('event.all-event') }}" role="button"
                                             aria-expanded="false" aria-controls="sidebarApps">
                                             <i class="ri-calendar-event-line"></i> <span data-key="t-authentication">
                                                 Event</span>
                                         </a>
-                                    </li>
-                                    <li class="nav-item">
+                                    </li> --}}
+                                    {{-- <li class="nav-item">
 
                                         <a class="nav-link " href="{{ route('dinein.all-dinein') }}" role="button"
                                             aria-expanded="false" aria-controls="sidebarApps">
                                             <i class="ri-restaurant-2-line"></i> <span data-key="t-authentication">
                                                 Dine in</span>
                                         </a>
-                                    </li>
+                                    </li> --}}
 
-                                    <li class="nav-item">
+                                    {{-- <li class="nav-item">
 
                                         <a class="nav-link " href="{{ route('beauty.all-beauty') }}" role="button"
                                             aria-expanded="false" aria-controls="sidebarApps">
                                             <i class="ri-brush-line"></i> <span data-key="t-authentication">
                                                 Beauty And Wellness</span>
                                         </a>
-                                    </li>
+                                    </li> --}}
 
-                                    <li class="nav-item">
+                                    {{-- <li class="nav-item">
 
                                         <a class="nav-link " href="{{ route('place.all-place') }}" role="button"
                                             aria-expanded="false" aria-controls="sidebarApps">
                                             <i class="ri-map-pin-line"></i> <span data-key="t-authentication">
                                                 Hyderabad Places</span>
                                         </a>
-                                    </li>
+                                    </li> --}}
 
 
                                 </ul>
@@ -528,6 +528,41 @@
                             </div>
                         </li> --}}
 
+
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="{{ route('event.all-event') }}" role="button"
+                                aria-expanded="false" aria-controls="sidebarApps">
+                                <i class="ri-calendar-event-line"></i> <span data-key="t-authentication">
+                                    Events</span>
+                            </a>
+
+
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="{{ route('dinein.all-dinein') }}" role="button"
+                                aria-expanded="false" aria-controls="sidebarApps">
+                                <i class="ri-restaurant-2-line"></i> <span data-key="t-authentication">
+                                    Dine in</span>
+                            </a>
+
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="{{ route('beauty.all-beauty') }}" role="button"
+                                aria-expanded="false" aria-controls="sidebarApps">
+                                <i class="ri-brush-line"></i> <span data-key="t-authentication">
+                                    Beauty And Wellness</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="{{ route('place.all-place') }}" role="button"
+                                aria-expanded="false" aria-controls="sidebarApps">
+                                <i class="ri-map-pin-line"></i> <span data-key="t-authentication">
+                                    Hyderabad Places</span>
+                            </a>
+
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="{{ route('contact.all') }}" role="button"
                                 aria-expanded="false" aria-controls="sidebarApps">
