@@ -17,10 +17,11 @@ class ContactMail extends Mailable
      * Create a new message instance.
      */
 
-    public $contact;
-    public function __construct($contact)
+    public $contact ,$emailSettings;
+    public function __construct($contact,$emailSettings)
     {
         $this->contact = $contact;
+        $this->emailSettings = $emailSettings;
     }
 
     /**
@@ -28,7 +29,7 @@ class ContactMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Mail from Indus Hotel')
+        return $this->from($this->emailSettings->email_username)->subject('Mail from Indus Hotel')
             ->view('email.contact');
     }
 

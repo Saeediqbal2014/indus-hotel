@@ -38,7 +38,7 @@ class AccommodationController extends Controller
         $input = $request->validate([
             'name' => 'required',
             'accommodation_cat_id' => 'required',
-            'description' => 'required',
+            'description' => 'required',    
             'bed' => 'required',
             'occupancy' => 'required',
         ]);
