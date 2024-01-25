@@ -10,6 +10,7 @@ use App\Models\EmailConfiguration;
 use App\Http\Controllers\EmailConfigController;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
@@ -31,15 +32,7 @@ class ContactController extends Controller
         // dd($contact);
 
         Contact::create($contact);
-
-        // \Mail::to('info@gexton.com ')->send(new \App\Mail\ContactMail($contact));
-        // $msg = 'Contact Inserted and Email Sent';
-        // return redirect()->back();
-
-
-        // $emailConfigController = new EmailConfigController();
-        // $emailConfigController->setConfig();
-
+        $this->set_confg();
         $recipient = User::first();
 
         if ($recipient) {
@@ -64,7 +57,17 @@ class ContactController extends Controller
         }
     }
 
-
+    function set_confg(){
+        $emailSettings = EmailConfiguration::first();
+        Config::set([
+            'mail.mailers.smtp.transport' => 'smtp',
+            'mail.mailers.smtp.host' => $emailSettings->email_host,
+            'mail.mailers.smtp.port' => $emailSettings->email_port,
+            'mail.mailers.smtp.username' => $emailSettings->email_username,
+            'mail.mailers.smtp.password' => $emailSettings->email_password,
+            'mail.mailers.smtp.encryption' => 'tls',
+        ]);
+    }
     public function delete(Request $request, $id)
     {
         // dd($id);
