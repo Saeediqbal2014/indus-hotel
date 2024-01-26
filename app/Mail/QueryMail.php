@@ -16,10 +16,11 @@ class QueryMail extends Mailable
     /**
      * Create a new message instance.
      */
-    public $query;
-    public function __construct($query)
+    public $query, $emailSettings;
+    public function __construct($query, $emailSettings)
     {
         $this->query = $query;
+        $this->emailSettings = $emailSettings;
     }
 
     /**
@@ -27,7 +28,7 @@ class QueryMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Mail from Indus Hotel')
+        return $this->from($this->emailSettings->email_username)->subject('Mail from Indus Hotel')
             ->view('email.query');
     }
 

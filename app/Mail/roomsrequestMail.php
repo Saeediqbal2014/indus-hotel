@@ -17,9 +17,12 @@ class roomsrequestMail extends Mailable
      * Create a new message instance.
      */
     public $roomsrequest;
-    public function __construct($roomsrequest)
+    public $emailSettings;
+
+    public function __construct($roomsrequest, $emailSettings)
     {
         $this->roomsrequest = $roomsrequest;
+        $this->emailSettings = $emailSettings;
     }
 
     /**
@@ -27,7 +30,7 @@ class roomsrequestMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Mail from Indus Hotel')
+        return $this->from($this->emailSettings->email_username)->subject('Mail from Indus Hotel')
             ->view('email.roomrequest');
     }
 

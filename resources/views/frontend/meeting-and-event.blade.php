@@ -69,20 +69,22 @@
             <div class="row">
                 <!-- News Block -->
 
-
+                {{-- 527523 1 --}}
+                {{-- 270,021 2 --}}
+                {{-- 532,223 3 --}}
                 @foreach ($events as $event)
                     <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
                         <div class="inner-box wow fadeInLeft">
                             <div class="image-box">
                                 <figure class="image overlay-anim">
-                                    @if (count($event->image) > 0)
+                                    @if (is_array($event->image) && count($event->image) > 0)
                                         <a href="{{ asset('event_images/' . $event->image[0]) }}"
                                             data-lightbox="continental">
                                             <img src="{{ asset('event_images/' . $event->image[0]) }}" alt="">
                                         </a>
                                     @endif
 
-                                    @if (count($event->image) > 1)
+                                    @if (is_array($event->image) && count($event->image) > 1)
                                         @foreach ($event->image as $index => $imageName)
                                             @if ($index > 0)
                                                 <a href="{{ asset('event_images/' . $imageName) }}" class="dis_no"
@@ -93,6 +95,7 @@
                                         @endforeach
                                     @endif
                                 </figure>
+
                             </div>
                             <div class="content-box">
                                 <h4 class="title"><a href="#">{{ $event->title }}</a></h4>

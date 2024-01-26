@@ -465,9 +465,9 @@
                                 </div>
                                 <div class="mb-3">
                                     <input name="form_botcheck" class="form-control" type="hidden" value="">
-                                    <div class="g-recaptcha"
+                                    {{-- <div class="g-recaptcha"
                                         data-sitekey="6Ld9MyUpAAAAAEQ4im_xUthSS8YWrpxmyPkKS0XG-jGKFjF7Cai"
-                                        style="background-size: 100%; background-repeat: no-repeat;"></div>
+                                        style="background-size: 100%; background-repeat: no-repeat;"></div> --}}
                                     <div id="submit" class="mt20"
                                         style="background-size: 100%; background-repeat: no-repeat;">
                                         <input type='submit'

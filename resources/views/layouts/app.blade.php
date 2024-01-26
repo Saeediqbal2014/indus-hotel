@@ -21,7 +21,6 @@
 
     <!-- Begin page -->
     <div id="layout-wrapper">
-
         <header id="page-topbar">
             <div class="layout-width">
                 <div class="navbar-header">
@@ -30,22 +29,22 @@
                         <div class="navbar-brand-box horizontal-logo">
                             <a href="index-2.html" class="logo logo-dark">
                                 <span class="logo-sm">
-                                    <img src="{{ asset('front_assets/images/logo.png') }}" alt=""
+                                    <img src="{{ asset('front_assets/images/adminlogo.png') }}" alt=""
                                         height="22">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="{{ asset('front_assets/images/logo.png') }}" alt=""
+                                    <img src="{{ asset('front_assets/images/adminlogo.png') }}" alt=""
                                         height="17">
                                 </span>
                             </a>
 
                             <a href="index-2.html" class="logo logo-light">
                                 <span class="logo-sm">
-                                    <img src="{{ asset('front_assets/images/logo.png') }}" alt=""
+                                    <img src="{{ asset('front_assets/images/adminlogo.png') }}" alt=""
                                         height="22">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="{{ asset('front_assets/images/logo.png') }}" alt=""
+                                    <img src="{{ asset('front_assets/images/adminlogo.png') }}" alt=""
                                         height="17">
                                 </span>
                             </a>
@@ -169,19 +168,19 @@
                 <!-- Dark Logo-->
                 <a href="index-2.html" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="{{ asset('front_assets/images/logo.png') }}" alt="" height="72">
+                        <img src="{{ asset('front_assets/images/adminlogo.png') }}" alt="" height="72">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{ asset('front_assets/images/logo.png') }}" alt="" height="72">
+                        <img src="{{ asset('front_assets/images/adminlogo.png') }}" alt="" height="72">
                     </span>
                 </a>
                 <!-- Light Logo-->
                 <a href="index-2.html" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="{{ asset('front_assets/images/logo.png') }}" alt="" height="72">
+                        <img src="{{ asset('front_assets/images/adminlogo.png') }}" alt="" height="72">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{ asset('front_assets/images/logo.png') }}" alt="" height="72">
+                        <img src="{{ asset('front_assets/images/adminlogo.png') }}" alt="" height="72">
                     </span>
                 </a>
                 <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
@@ -587,6 +586,14 @@
                                     Rooms Booking</span>
                             </a>
 
+                        </li>
+                        <li class="nav-item">
+
+                            <a class="nav-link menu-link" href="{{ url('admin/edit-emailconfiguration/1') }}"
+                                role="button" aria-expanded="false" aria-controls="sidebarApps">
+                                <i class="ri-mail-line"></i> <span data-key="t-authentication">
+                                    Email setup</span>
+                            </a>
                         </li>
 
                     </ul>

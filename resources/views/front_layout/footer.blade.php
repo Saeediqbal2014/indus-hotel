@@ -30,15 +30,19 @@
                         <h4 class="widget-title">Services Links</h4>
                         <div class="widget-content">
                             <ul class="user-links">
-                                <li><a href="accommodation.php"><i class="fa-solid fa-crosshairs"></i>Accommodation</a>
+                                <li><a href="{{ route('accommodation') }}"><i
+                                            class="fa-solid fa-crosshairs"></i>Accommodation</a>
                                 </li>
-                                <li><a href="meeting-and-events.php"><i class="fa-solid fa-crosshairs"></i>Meetings &
+                                <li><a href="{{ route('meet') }}"><i class="fa-solid fa-crosshairs"></i>Meetings &
                                         Events</a></li>
-                                <li><a href="dine-in.php"><i class="fa-solid fa-crosshairs"></i>Dine In</a></li>
-                                <li><a href="beauty-and-wellness.php"><i class="fa-solid fa-crosshairs"></i>Beauty &
+                                <li><a href="{{ route('dinein') }}"><i class="fa-solid fa-crosshairs"></i>Dine In</a>
+                                </li>
+                                <li><a href="{{ route('beauty') }}"><i class="fa-solid fa-crosshairs"></i>Beauty &
                                         Wellness</a></li>
-                                <li><a href="about.php"><i class="fa-solid fa-crosshairs"></i>About Hotel</a></li>
-                                <li><a href="contact.php"><i class="fa-solid fa-crosshairs"></i>Contact</a></li>
+                                <li><a href="{{ route('about') }}"><i class="fa-solid fa-crosshairs"></i>About Hotel</a>
+                                </li>
+                                <li><a href="{{ route('contact') }}"><i class="fa-solid fa-crosshairs"></i>Contact</a>
+                                </li>
                             </ul>
                         </div>
                     </div>

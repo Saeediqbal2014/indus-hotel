@@ -6,6 +6,7 @@ use App\Http\Controllers\Administrator\ExpenseController;
 use App\Http\Controllers\Administrator\GymClassController;
 use App\Http\Controllers\Administrator\RoleController;
 use App\Http\Controllers\Administrator\UserController;
+use App\Http\Controllers\EmailConfigController;
 use App\Http\Controllers\frontend\BeautyController;
 use App\Http\Controllers\frontend\DiscountController;
 use App\Http\Controllers\frontend\AboutController;
@@ -20,6 +21,7 @@ use App\Http\Controllers\frontend\QueryController;
 use App\Http\Controllers\frontend\RoomsrequestController;
 use App\Http\Controllers\frontend\VideoController;
 use App\Http\Controllers\frontend\WelcomeController;
+use App\Models\EmailConfiguration;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -127,6 +129,15 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
         Route::get('edit-welcome/{id}', 'edit')->name('editwelcome');
         // Route::post('update-welcome/{id}', 'update')->name('updatewelcome');
         Route::get('delete-welcome/{id}', 'deletewelcome')->name('deletewelcome');
+    });
+    Route::controller(EmailConfigController::class)->as('emailconfiguration.')->group(function () {
+
+        Route::get('/all-emailconfiguration',  'index')->name('all-emailconfiguration');
+        Route::get('/add-emailconfiguration',  'add_emailconfiguration')->name('add-emailconfiguration');
+        Route::post('/save-emailconfiguration',  'store')->name('store_emailconfiguration');
+        Route::get('/edit-emailconfiguration/{id}', 'edit')->name('editemailconfiguration');
+        // Route::post('update-emailconfiguration/{id}', 'update')->name('updateemailconfiguration');
+        Route::get('delete-emailconfiguration/{id}', 'deletewelcome')->name('deleteemailconfiguration');
     });
 
     Route::controller(AboutController::class)->as('about.')->group(function () {
